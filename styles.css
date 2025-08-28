@@ -1,18 +1,35 @@
-/* CSS Variables for the new theme based on the watercolor image */
+/* CSS Variables for the new sophisticated color palette */
 :root {
-    --sage-green-primary: #8FA68E;
-    --sage-green-light: #A8C090;
-    --sage-green-dark: #6B8E6B;
-    --teal-accent: #7FB3B3;
-    --teal-light: #9BC4C4;
-    --teal-dark: #5A8A8A;
-    --cream-bg: #F5F7F2;
-    --off-white: #FAFCF7;
-    --text-dark: #2C3E50;
-    --text-light: #5A6B7A;
-    --shadow-soft: 0 4px 20px rgba(143, 166, 142, 0.15);
-    --shadow-medium: 0 8px 30px rgba(143, 166, 142, 0.2);
-    --shadow-strong: 0 12px 40px rgba(143, 166, 142, 0.25);
+    /* Primary Colors from the palette */
+    --cream-light: #F0F0E9;
+    --greige-medium: #96948D;
+    --blush-pale: #EADCD7;
+    --sage-muted: #829B97;
+    --greige-light: #C7C4BD;
+    --grey-medium: #8C8C8C;
+    --beige-warm: #E0DCD4;
+    --mint-seafoam: #C4DED9;
+    --teal-deep: #3B5C5C;
+    
+    /* Background and Text Colors */
+    --bg-primary: #F0F0E9;
+    --bg-secondary: #E0DCD4;
+    --bg-accent: #C4DED9;
+    --text-dark: #3B5C5C;
+    --text-medium: #829B97;
+    --text-light: #96948D;
+    
+    /* Component Colors */
+    --primary-color: #3B5C5C;
+    --secondary-color: #829B97;
+    --accent-color: #C4DED9;
+    --highlight-color: #EADCD7;
+    
+    /* Shadows with new color palette */
+    --shadow-soft: 0 4px 20px rgba(59, 92, 92, 0.1);
+    --shadow-medium: 0 8px 30px rgba(59, 92, 92, 0.15);
+    --shadow-strong: 0 12px 40px rgba(59, 92, 92, 0.2);
+    
     --border-radius: 12px;
     --transition: all 0.3s ease;
     --title-font: 'Ink Free', 'Segoe Script', cursive;
@@ -57,7 +74,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(168, 192, 144, 0.3) 0%, rgba(155, 196, 196, 0.3) 50%, rgba(143, 166, 142, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(196, 222, 217, 0.2) 0%, rgba(130, 155, 151, 0.2) 50%, rgba(59, 92, 92, 0.2) 100%);
     opacity: 0.15;
     animation: float 25s ease-in-out infinite;
 }
@@ -68,7 +85,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(127, 179, 179, 0.2) 0%, rgba(143, 166, 142, 0.2) 100%);
+    background: linear-gradient(45deg, rgba(130, 155, 151, 0.15) 0%, rgba(59, 92, 92, 0.15) 100%);
     opacity: 0.1;
     animation: float 30s ease-in-out infinite reverse;
 }
@@ -80,8 +97,8 @@ body {
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle, var(--sage-green-primary) 1px, transparent 1px),
-        radial-gradient(circle, var(--teal-accent) 1px, transparent 1px);
+        radial-gradient(circle, var(--secondary-color) 1px, transparent 1px),
+        radial-gradient(circle, var(--primary-color) 1px, transparent 1px);
     background-size: 60px 60px, 80px 80px;
     background-position: 0 0, 30px 30px;
     opacity: 0.04;
@@ -155,15 +172,15 @@ body {
 .author-name {
     font-family: var(--title-font);
     font-size: 2.5rem;
-    color: var(--sage-green-dark);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
-    text-shadow: 0 2px 4px rgba(143, 166, 142, 0.2);
+    text-shadow: 0 2px 4px rgba(59, 92, 92, 0.2);
 }
 
 .tagline {
     font-family: 'Merriweather', serif;
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: var(--text-medium);
     font-weight: 300;
     font-style: italic;
 }
@@ -212,7 +229,7 @@ body {
 }
 
 .social-media-btn.email {
-    background: var(--sage-green-primary);
+    background: var(--primary-color);
 }
 
 .social-media-btn:hover {
@@ -237,14 +254,14 @@ body {
 }
 
 .social-media-btn.email:hover {
-    background: var(--sage-green-dark);
+    background: var(--secondary-color);
 }
 
 /* Navigation Bar */
 .navigation {
-    background: rgba(245, 247, 242, 0.95);
+    background: rgba(240, 240, 233, 0.95);
     backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(143, 166, 142, 0.2);
+    border-top: 1px solid rgba(59, 92, 92, 0.2);
 }
 
 .nav-content {
@@ -280,8 +297,8 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--sage-green-primary);
-    background: rgba(143, 166, 142, 0.05);
+    color: var(--primary-color);
+    background: rgba(59, 92, 92, 0.05);
 }
 
 .nav-link.active::after {
@@ -291,12 +308,12 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--sage-green-primary);
+    background: var(--primary-color);
 }
 
 .nav-cta {
-    background: var(--sage-green-primary);
-    color: var(--off-white) !important;
+    background: var(--primary-color);
+    color: var(--cream-light) !important;
     border-radius: var(--border-radius);
     margin-left: 1rem;
     font-weight: 600;
@@ -353,18 +370,18 @@ body {
 
 /* Content Sections */
 .content-section {
-    background: rgba(250, 252, 247, 0.95);
+    background: rgba(240, 240, 233, 0.95);
     backdrop-filter: blur(10px);
     border-radius: var(--border-radius);
     padding: 3rem 2rem;
     margin-bottom: 3rem;
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(143, 166, 142, 0.2);
+    border: 1px solid rgba(59, 92, 92, 0.2);
 }
 
 /* Hero section */
 .hero-section {
-    background: linear-gradient(135deg, rgba(168, 192, 144, 0.95) 0%, rgba(127, 179, 179, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(196, 222, 217, 0.95) 0%, rgba(130, 155, 151, 0.9) 100%);
     backdrop-filter: blur(15px);
     border-radius: var(--border-radius);
     padding: 3rem 2rem;
@@ -372,7 +389,7 @@ body {
     box-shadow: var(--shadow-medium);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(143, 166, 142, 0.3);
+    border: 1px solid rgba(59, 92, 92, 0.3);
 }
 
 .hero-section::before {
@@ -409,8 +426,8 @@ body {
     font-family: var(--title-font);
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: var(--sage-green-dark);
-    text-shadow: 0 2px 4px rgba(143, 166, 142, 0.2);
+    color: var(--primary-color);
+    text-shadow: 0 2px 4px rgba(59, 92, 92, 0.2);
 }
 
 .hero-subtitle {
@@ -418,7 +435,7 @@ body {
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
     font-weight: 300;
-    color: var(--text-light);
+    color: var(--text-medium);
 }
 
 .hero-description {
@@ -429,25 +446,25 @@ body {
 }
 
 .release-info {
-    background: rgba(245, 247, 242, 0.8);
+    background: rgba(224, 220, 212, 0.8);
     padding: 1rem 1.5rem;
     border-radius: var(--border-radius);
     margin-bottom: 2rem;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(143, 166, 142, 0.3);
+    border: 1px solid rgba(59, 92, 92, 0.3);
     box-shadow: var(--shadow-soft);
 }
 
 .release-date {
     font-family: var(--title-font);
     font-size: 1.5rem;
-    color: var(--sage-green-dark);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 
 .release-note {
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: var(--text-medium);
 }
 
 .hero-visuals {
@@ -466,14 +483,14 @@ body {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid var(--off-white);
+    border: 5px solid var(--cream-light);
     box-shadow: var(--shadow-strong);
     transition: var(--transition);
 }
 
 .author-image:hover {
     transform: scale(1.05);
-    box-shadow: var(--shadow-strong), 0 0 30px rgba(143, 166, 142, 0.3);
+    box-shadow: var(--shadow-strong), 0 0 30px rgba(59, 92, 92, 0.3);
 }
 
 .book-cover {
@@ -488,12 +505,12 @@ body {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-strong);
     transition: var(--transition);
-    border: 3px solid var(--off-white);
+    border: 3px solid var(--cream-light);
 }
 
 .book-cover-image:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: var(--shadow-strong), 0 20px 40px rgba(143, 166, 142, 0.3);
+    box-shadow: var(--shadow-strong), 0 20px 40px rgba(59, 92, 92, 0.3);
 }
 
 /* About Section */
@@ -541,7 +558,7 @@ body {
 .book-info h3 {
     font-family: var(--title-font);
     font-size: 2rem;
-    color: var(--sage-green-dark);
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
 }
 
@@ -594,11 +611,11 @@ body {
 }
 
 .book-preview {
-    background: var(--cream-bg);
+    background: var(--bg-secondary);
     padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(143, 166, 142, 0.1);
+    border: 1px solid rgba(59, 92, 92, 0.1);
     transition: var(--transition);
 }
 
@@ -610,20 +627,20 @@ body {
 .book-placeholder {
     width: 80px;
     height: 80px;
-    background: var(--sage-green-primary);
+    background: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.5rem;
-    color: var(--off-white);
+    color: var(--cream-light);
     font-size: 2rem;
 }
 
 .book-preview h3 {
     font-family: var(--title-font);
     font-size: 1.5rem;
-    color: var(--sage-green-dark);
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
@@ -635,8 +652,8 @@ body {
 
 .coming-soon {
     display: inline-block;
-    background: var(--sage-green-light);
-    color: var(--off-white);
+    background: var(--secondary-color);
+    color: var(--cream-light);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -653,11 +670,11 @@ body {
 .event-item {
     display: flex;
     gap: 2rem;
-    background: var(--cream-bg);
+    background: var(--bg-secondary);
     padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(143, 166, 142, 0.1);
+    border: 1px solid rgba(59, 92, 92, 0.1);
     transition: var(--transition);
 }
 
@@ -673,8 +690,8 @@ body {
     justify-content: center;
     min-width: 80px;
     padding: 1rem;
-    background: var(--sage-green-primary);
-    color: var(--off-white);
+    background: var(--primary-color);
+    color: var(--cream-light);
     border-radius: var(--border-radius);
     text-align: center;
 }
@@ -692,14 +709,14 @@ body {
 }
 
 .event-details h3 {
-    color: var(--sage-green-dark);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
 }
 
 .event-location,
 .event-time {
-    color: var(--text-light);
+    color: var(--text-medium);
     font-size: 0.95rem;
     margin-bottom: 0.5rem;
     display: flex;
@@ -819,7 +836,7 @@ body {
 }
 
 .contact-form-container h3 {
-    color: var(--sage-green-dark);
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
     font-family: var(--title-font);
     font-size: 1.8rem;
@@ -841,9 +858,9 @@ body {
 .contact-form textarea {
     width: 100%;
     padding: 1rem;
-    border: 2px solid rgba(143, 166, 142, 0.2);
+    border: 2px solid rgba(59, 92, 92, 0.2);
     border-radius: var(--border-radius);
-    background: rgba(250, 252, 247, 0.95);
+    background: rgba(240, 240, 233, 0.95);
     color: var(--text-dark);
     font-size: 1rem;
     font-family: 'Merriweather', serif;
@@ -854,8 +871,8 @@ body {
 .contact-form select:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: var(--sage-green-primary);
-    box-shadow: 0 0 0 3px rgba(143, 166, 142, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 92, 92, 0.1);
 }
 
 .contact-form select {
@@ -868,8 +885,8 @@ body {
 }
 
 .contact-thank-you {
-    background: rgba(143, 166, 142, 0.1);
-    border: 2px solid var(--sage-green-primary);
+    background: rgba(59, 92, 92, 0.1);
+    border: 2px solid var(--primary-color);
     border-radius: var(--border-radius);
     padding: 2rem;
     margin-top: 2rem;
@@ -891,12 +908,12 @@ body {
 
 .prayer-form {
     text-align: left;
-    background: rgba(245, 247, 242, 0.95);
+    background: rgba(224, 220, 212, 0.95);
     backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(143, 166, 142, 0.2);
+    border: 1px solid rgba(59, 92, 92, 0.2);
 }
 
 .prayer-form .form-group {
@@ -918,9 +935,9 @@ body {
 .prayer-form textarea {
     width: 100%;
     padding: 1rem;
-    border: 2px solid rgba(143, 166, 142, 0.2);
+    border: 2px solid rgba(59, 92, 92, 0.2);
     border-radius: var(--border-radius);
-    background: rgba(250, 252, 247, 0.95);
+    background: rgba(240, 240, 233, 0.95);
     color: var(--text-dark);
     font-size: 1rem;
     font-family: 'Merriweather', serif;
@@ -930,8 +947,8 @@ body {
 .prayer-form input:focus,
 .prayer-form textarea:focus {
     outline: none;
-    border-color: var(--sage-green-primary);
-    box-shadow: 0 0 0 3px rgba(143, 166, 142, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 92, 92, 0.1);
 }
 
 .prayer-form textarea {
@@ -1022,26 +1039,26 @@ body {
 .section-header h2 {
     font-family: var(--title-font);
     font-size: 2.5rem;
-    color: var(--sage-green-dark);
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
 .section-header p {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: var(--text-medium);
     max-width: 600px;
     margin: 0 auto;
 }
 
 /* Endorsement section */
 .endorsement-section {
-    background: rgba(250, 252, 247, 0.95);
+    background: rgba(240, 240, 233, 0.95);
     backdrop-filter: blur(10px);
     border-radius: var(--border-radius);
     padding: 3rem 2rem;
     margin-bottom: 3rem;
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(143, 166, 142, 0.2);
+    border: 1px solid rgba(59, 92, 92, 0.2);
 }
 
 .endorsement-content {
@@ -1064,7 +1081,7 @@ body {
 .endorsement-quote::after {
     content: '"';
     font-size: 3rem;
-    color: var(--sage-green-primary);
+    color: var(--primary-color);
     position: absolute;
     top: -1rem;
 }
@@ -1079,7 +1096,7 @@ body {
 
 .endorsement-author {
     font-weight: 600;
-    color: var(--sage-green-dark);
+    color: var(--primary-color);
     font-size: 1.1rem;
 }
 
@@ -1087,13 +1104,13 @@ body {
 
 /* Retailers section */
 .retailers-section {
-    background: rgba(250, 252, 247, 0.95);
+    background: rgba(240, 240, 233, 0.95);
     backdrop-filter: blur(10px);
     border-radius: var(--border-radius);
     padding: 3rem 2rem;
     margin-bottom: 3rem;
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(143, 166, 142, 0.2);
+    border: 1px solid rgba(59, 92, 92, 0.2);
 }
 
 .retailers-content {
@@ -1103,13 +1120,13 @@ body {
 .retailers-title {
     font-family: var(--title-font);
     font-size: 2.5rem;
-    color: var(--sage-green-dark);
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
 .retailers-description {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: var(--text-medium);
     margin-bottom: 2rem;
 }
 
@@ -1127,7 +1144,7 @@ body {
     justify-content: center;
     gap: 0.5rem;
     padding: 1.5rem;
-    background: var(--cream-bg);
+    background: var(--bg-secondary);
     border-radius: var(--border-radius);
     text-decoration: none;
     color: var(--text-dark);
@@ -1137,8 +1154,8 @@ body {
 }
 
 .retailer-link:hover {
-    background: var(--sage-green-primary);
-    color: var(--off-white);
+    background: var(--primary-color);
+    color: var(--cream-light);
     transform: translateY(-3px);
     box-shadow: var(--shadow-medium);
 }
@@ -1150,8 +1167,8 @@ body {
     right: 20px;
     width: 50px;
     height: 50px;
-    background: var(--sage-green-primary);
-    color: var(--off-white);
+    background: var(--primary-color);
+    color: var(--cream-light);
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -1172,7 +1189,7 @@ body {
 }
 
 .back-to-top:hover {
-    background: var(--sage-green-dark);
+    background: var(--secondary-color);
     transform: translateY(-3px);
     box-shadow: var(--shadow-strong);
 }
