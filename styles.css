@@ -28,7 +28,7 @@ body {
     font-family: 'Merriweather', serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background: var(--cream-bg);
+    background: url('background books.JPEG') center/cover no-repeat fixed;
     overflow-x: hidden;
 }
 
@@ -56,8 +56,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--sage-green-light) 0%, var(--teal-light) 50%, var(--sage-green-primary) 100%);
-    opacity: 0.08;
+    background: linear-gradient(135deg, rgba(168, 192, 144, 0.3) 0%, rgba(155, 196, 196, 0.3) 50%, rgba(143, 166, 142, 0.3) 100%);
+    opacity: 0.15;
     animation: float 25s ease-in-out infinite;
 }
 
@@ -67,8 +67,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, var(--teal-accent) 0%, var(--sage-green-primary) 100%);
-    opacity: 0.05;
+    background: linear-gradient(45deg, rgba(127, 179, 179, 0.2) 0%, rgba(143, 166, 142, 0.2) 100%);
+    opacity: 0.1;
     animation: float 30s ease-in-out infinite reverse;
 }
 
@@ -241,9 +241,9 @@ body {
 
 /* Navigation Bar */
 .navigation {
-    background: rgba(245, 247, 242, 0.98);
-    backdrop-filter: blur(15px);
-    border-top: 1px solid rgba(143, 166, 142, 0.1);
+    background: rgba(245, 247, 242, 0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(143, 166, 142, 0.2);
 }
 
 .nav-content {
@@ -352,24 +352,26 @@ body {
 
 /* Content Sections */
 .content-section {
-    background: var(--off-white);
+    background: rgba(250, 252, 247, 0.95);
+    backdrop-filter: blur(10px);
     border-radius: var(--border-radius);
     padding: 3rem 2rem;
     margin-bottom: 3rem;
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(143, 166, 142, 0.1);
+    border: 1px solid rgba(143, 166, 142, 0.2);
 }
 
 /* Hero section */
 .hero-section {
-    background: linear-gradient(135deg, rgba(168, 192, 144, 0.9) 0%, rgba(127, 179, 179, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(168, 192, 144, 0.95) 0%, rgba(127, 179, 179, 0.9) 100%);
+    backdrop-filter: blur(15px);
     border-radius: var(--border-radius);
     padding: 3rem 2rem;
     margin-bottom: 3rem;
     box-shadow: var(--shadow-medium);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(143, 166, 142, 0.2);
+    border: 1px solid rgba(143, 166, 142, 0.3);
 }
 
 .hero-section::before {
@@ -840,7 +842,7 @@ body {
     padding: 1rem;
     border: 2px solid rgba(143, 166, 142, 0.2);
     border-radius: var(--border-radius);
-    background: var(--off-white);
+    background: rgba(250, 252, 247, 0.95);
     color: var(--text-dark);
     font-size: 1rem;
     font-family: 'Merriweather', serif;
@@ -888,11 +890,12 @@ body {
 
 .prayer-form {
     text-align: left;
-    background: var(--cream-bg);
+    background: rgba(245, 247, 242, 0.95);
+    backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(143, 166, 142, 0.1);
+    border: 1px solid rgba(143, 166, 142, 0.2);
 }
 
 .prayer-form .form-group {
@@ -916,7 +919,7 @@ body {
     padding: 1rem;
     border: 2px solid rgba(143, 166, 142, 0.2);
     border-radius: var(--border-radius);
-    background: var(--off-white);
+    background: rgba(250, 252, 247, 0.95);
     color: var(--text-dark);
     font-size: 1rem;
     font-family: 'Merriweather', serif;
@@ -1031,12 +1034,13 @@ body {
 
 /* Endorsement section */
 .endorsement-section {
-    background: var(--off-white);
+    background: rgba(250, 252, 247, 0.95);
+    backdrop-filter: blur(10px);
     border-radius: var(--border-radius);
     padding: 3rem 2rem;
     margin-bottom: 3rem;
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(143, 166, 142, 0.1);
+    border: 1px solid rgba(143, 166, 142, 0.2);
 }
 
 .endorsement-content {
@@ -1082,12 +1086,13 @@ body {
 
 /* Retailers section */
 .retailers-section {
-    background: var(--off-white);
+    background: rgba(250, 252, 247, 0.95);
+    backdrop-filter: blur(10px);
     border-radius: var(--border-radius);
     padding: 3rem 2rem;
     margin-bottom: 3rem;
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(143, 166, 142, 0.1);
+    border: 1px solid rgba(143, 166, 142, 0.2);
 }
 
 .retailers-content {
