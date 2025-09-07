@@ -402,6 +402,10 @@ section {
 /* Content box specific styling */
 .speaking-box {
     border-left: 4px solid var(--secondary-color);
+    background: linear-gradient(rgba(244, 243, 239, 0.85), rgba(244, 243, 239, 0.85)), url('desk.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .books-box {
