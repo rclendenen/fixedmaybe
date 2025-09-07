@@ -1115,6 +1115,7 @@ section {
         max-width: 350px;
         padding: 40px 30px;
         height: 400px;
+        margin: 0 auto;
     }
     
     .content-icon {
@@ -1133,8 +1134,12 @@ section {
     }
     
     .content-btn {
-        padding: 14px 28px;
+        padding: 16px 32px;
         font-size: 1rem;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .photo-row {
@@ -1168,12 +1173,14 @@ section {
     .events-content {
         flex-direction: column;
         gap: 20px;
+        align-items: center;
     }
     
     .calendar-box {
         padding: 40px 30px;
         max-width: 350px;
-        min-height: 400px;
+        height: 400px;
+        margin: 0 auto;
     }
     
     .calendar-box h3 {
@@ -1197,7 +1204,8 @@ section {
     .events-info {
         padding: 40px 30px;
         max-width: 350px;
-        min-height: 400px;
+        height: 400px;
+        margin: 0 auto;
     }
     
     .contact-form {
@@ -1207,7 +1215,8 @@ section {
     .events-content .contact-form {
         padding: 40px 30px;
         max-width: 350px;
-        min-height: 400px;
+        height: 400px;
+        margin: 0 auto;
     }
     
     /* Books Section Mobile */
@@ -1248,6 +1257,12 @@ section {
         gap: 40px;
     }
     
+    .prayer-description p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+    
     .prayer-description {
         padding: 40px 30px;
     }
@@ -1267,6 +1282,11 @@ section {
 }
 
 @media (max-width: 480px) {
+    :root {
+        --section-padding: 40px 0;
+        --container-padding: 0 10px;
+    }
+    
     .book-title {
         font-size: 1.8rem;
     }
@@ -1280,10 +1300,30 @@ section {
         width: 100%;
         max-width: 250px;
         justify-content: center;
+        min-height: 48px;
+        padding: 16px 24px;
     }
     
     .book-features {
         grid-template-columns: 1fr;
+    }
+    
+    .content-box {
+        padding: 30px 20px;
+        max-width: 320px;
+    }
+    
+    .prayer-description {
+        padding: 30px 20px;
+    }
+    
+    .prayer-form {
+        padding: 30px 20px;
+    }
+    
+    .events-info, .calendar-box, .events-content .contact-form {
+        padding: 30px 20px;
+        max-width: 320px;
     }
 }
 
