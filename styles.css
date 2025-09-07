@@ -329,7 +329,77 @@ section {
 }
 
 .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
     text-align: left;
+}
+
+.about-photos {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+.photo-container {
+    position: absolute;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition);
+    border: 3px solid rgba(244, 243, 239, 0.8);
+}
+
+.photo-container:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-strong);
+    z-index: 10;
+}
+
+.about-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.photo-container:hover .about-photo {
+    transform: scale(1.05);
+}
+
+/* Scattered positioning */
+.photo-1 {
+    width: 180px;
+    height: 200px;
+    top: 20px;
+    left: 20px;
+    transform: rotate(-3deg);
+    z-index: 3;
+}
+
+.photo-2 {
+    width: 220px;
+    height: 160px;
+    top: 80px;
+    right: 30px;
+    transform: rotate(2deg);
+    z-index: 2;
+}
+
+.photo-3 {
+    width: 160px;
+    height: 200px;
+    bottom: 40px;
+    left: 60px;
+    transform: rotate(-1deg);
+    z-index: 1;
+}
+
+.photo-1:hover,
+.photo-2:hover,
+.photo-3:hover {
+    transform: translateY(-5px) scale(1.02) rotate(0deg);
 }
 
 .about-text p {
@@ -585,6 +655,37 @@ section {
     .contact-content {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-photos {
+        height: 300px;
+        margin-top: 20px;
+    }
+    
+    .photo-1 {
+        width: 140px;
+        height: 160px;
+        top: 10px;
+        left: 10px;
+    }
+    
+    .photo-2 {
+        width: 180px;
+        height: 120px;
+        top: 60px;
+        right: 20px;
+    }
+    
+    .photo-3 {
+        width: 130px;
+        height: 160px;
+        bottom: 20px;
+        left: 40px;
     }
     
     .footer-content {
