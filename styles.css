@@ -425,6 +425,10 @@ section {
     background-repeat: no-repeat;
 }
 
+.prayer-box p {
+    margin-bottom: 50px;
+}
+
 /* Events Section */
 .events {
     padding: 120px 0;
