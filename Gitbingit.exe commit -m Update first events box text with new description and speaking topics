@@ -1,0 +1,5 @@
+[33maed76e1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Increase calendar and contact form box heights to match speaking topics box size
+[33mc1acb02[m Add missing transition and hover effects to Events boxes to match top content boxes exactly
+[33m69ba137[m Apply exact sizing from top content boxes to Events section boxes for consistency
+[33m09325a5[m Make Events section boxes wider and shorter while maintaining equal sizes
+[33me6928bd[m Reorder sections: About Me, Events, Books, Prayer with proper spacing and no overlap

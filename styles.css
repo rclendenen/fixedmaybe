@@ -32,6 +32,7 @@
     /* Typography */
     --font-primary: 'Playfair Display', serif;
     --font-secondary: 'Source Sans Pro', sans-serif;
+    --title-font: 'Ink Free', cursive;
     
     /* Spacing */
     --section-padding: 80px 0;
@@ -133,12 +134,14 @@ p {
     font-size: 2rem;
     color: var(--primary-color);
     margin-bottom: 0.25rem;
+    font-family: var(--title-font);
 }
 
 .tagline {
     color: var(--text-light);
     font-size: 1.1rem;
     margin: 0;
+    font-family: var(--title-font);
 }
 
 
@@ -438,7 +441,7 @@ section {
     text-align: center;
     max-width: 450px;
     width: 100%;
-    min-height: 450px;
+    min-height: 550px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -896,7 +899,7 @@ section {
     border: 2px solid rgba(194, 192, 183, 0.3);
     display: flex;
     flex-direction: column;
-    min-height: 500px;
+    min-height: 550px;
 }
 
 /* Events Form Specific Styling */
@@ -1172,13 +1175,13 @@ section {
     
     .events-info {
         padding: 40px 30px;
-        min-height: 400px;
+        min-height: 500px;
         max-width: 350px;
     }
     
     .contact-form {
         padding: 40px 30px;
-        min-height: 400px;
+        min-height: 500px;
     }
     
     .events-content .contact-form {
