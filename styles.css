@@ -232,6 +232,7 @@ section {
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 2;
+    margin-bottom: 0;
 }
 
 .about-content {
@@ -410,11 +411,12 @@ section {
 
 /* Events Section */
 .events {
-    padding: 150px 0;
+    padding: 120px 0;
     background: rgba(244, 243, 239, 0.1);
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 3;
+    margin-top: 0;
 }
 
 .events-content {
@@ -602,11 +604,12 @@ section {
 
 /* Books Section */
 .books {
-    padding: 150px 0;
+    padding: 120px 0;
     background: rgba(244, 243, 239, 0.1);
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 4;
+    margin-top: 0;
 }
 
 .current-book {
@@ -713,11 +716,12 @@ section {
 
 /* Updated Prayer Section */
 .prayer {
-    padding: 150px 0;
+    padding: 120px 0;
     background: rgba(244, 243, 239, 0.1);
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 5;
+    margin-top: 0;
 }
 
 .prayer-content {
@@ -1019,6 +1023,7 @@ section {
     
     .about {
         padding: 80px 0;
+        margin-bottom: 0;
     }
     
     .about-content {
@@ -1092,7 +1097,8 @@ section {
     
     /* Events Section Mobile */
     .events {
-        padding: 100px 0;
+        padding: 80px 0;
+        margin-top: 0;
     }
     
     .events-content {
@@ -1136,7 +1142,8 @@ section {
     
     /* Books Section Mobile */
     .books {
-        padding: 100px 0;
+        padding: 80px 0;
+        margin-top: 0;
     }
     
     .book-content {
@@ -1162,7 +1169,8 @@ section {
     
     /* Prayer Section Mobile */
     .prayer {
-        padding: 100px 0;
+        padding: 80px 0;
+        margin-top: 0;
     }
     
     .prayer-content {
