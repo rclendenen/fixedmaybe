@@ -433,6 +433,7 @@ section {
     border-radius: 20px;
     padding: 50px 40px;
     box-shadow: var(--shadow-medium);
+    transition: var(--transition);
     border: 2px solid rgba(194, 192, 183, 0.3);
     text-align: center;
     max-width: 450px;
@@ -441,6 +442,12 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.events-info:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-strong);
+    z-index: 10;
 }
 
 .speaking-topics h3 {
@@ -479,6 +486,7 @@ section {
     border-radius: 20px;
     padding: 50px 40px;
     box-shadow: var(--shadow-medium);
+    transition: var(--transition);
     border: 2px solid rgba(194, 192, 183, 0.3);
     text-align: center;
     max-width: 450px;
@@ -487,6 +495,12 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.calendar-box:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-strong);
+    z-index: 10;
 }
 
 .calendar-box h3 {
@@ -895,6 +909,13 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: var(--transition);
+}
+
+.events-content .contact-form:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-strong);
+    z-index: 10;
 }
 
 .form-group {
