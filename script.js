@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initActiveNavigation();
     initContactForm();
     initPrayerForm();
+    initEventsForm();
     initScrollEffects();
     initParallaxEffects();
     initAccessibility();
@@ -132,17 +133,17 @@ function initPrayerForm() {
             
             // Get form data
             const formData = new FormData(this);
-            const name = formData.get('name')?.trim() || 'Anonymous';
-            const email = formData.get('email')?.trim();
+            const email = formData.get('email').trim();
+            const subject = formData.get('subject').trim();
             const request = formData.get('request').trim();
             
             // Basic validation
-            if (!request) {
-                showMessage('Please enter your prayer request.', 'error');
+            if (!email || !subject || !request) {
+                showMessage('Please fill in all required fields.', 'error');
                 return;
             }
             
-            if (email && !isValidEmail(email)) {
+            if (!isValidEmail(email)) {
                 showMessage('Please enter a valid email address.', 'error');
                 return;
             }
@@ -162,7 +163,54 @@ function initPrayerForm() {
                 submitBtn.disabled = false;
                 
                 // Log form data (for future backend integration)
-                console.log('Prayer request submitted:', { name, email, request });
+                console.log('Prayer request submitted:', { email, subject, request });
+            }, 1500);
+        });
+    }
+}
+
+// Events form handling
+function initEventsForm() {
+    const eventsForm = document.getElementById('eventsForm');
+    
+    if (eventsForm) {
+        eventsForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name').trim();
+            const email = formData.get('email').trim();
+            const subject = formData.get('subject').trim();
+            const message = formData.get('message').trim();
+            
+            // Basic validation
+            if (!name || !email || !subject || !message) {
+                showMessage('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                showMessage('Thank you for your speaking engagement request! I\'ll get back to you soon.', 'success');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Log form data (for future backend integration)
+                console.log('Events form submitted:', { name, email, subject, message });
             }, 1500);
         });
     }

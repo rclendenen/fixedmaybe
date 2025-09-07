@@ -497,6 +497,189 @@ section {
     border-left: 4px solid var(--dusty-green);
 }
 
+/* Events Section */
+.events {
+    padding: 100px 0;
+    background: rgba(244, 243, 239, 0.1);
+}
+
+.events-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.events-info {
+    background: rgba(244, 243, 239, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: var(--shadow-medium);
+}
+
+.speaking-topics h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-family: var(--heading-font);
+}
+
+.speaking-topics ul {
+    list-style: none;
+    padding: 0;
+}
+
+.speaking-topics li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(54, 76, 75, 0.1);
+    position: relative;
+    padding-left: 25px;
+}
+
+.speaking-topics li:before {
+    content: "•";
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Books Section */
+.books {
+    padding: 100px 0;
+    background: rgba(244, 243, 239, 0.05);
+}
+
+.current-book {
+    margin-bottom: 80px;
+}
+
+.current-book h3 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-family: var(--heading-font);
+    text-align: center;
+}
+
+.book-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.book-text {
+    background: rgba(244, 243, 239, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: var(--shadow-medium);
+}
+
+.book-actions {
+    margin-top: 30px;
+}
+
+.book-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-cover-large {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow-strong);
+    transition: var(--transition);
+}
+
+.book-cover-large:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-strong);
+}
+
+.upcoming-books h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-family: var(--heading-font);
+    text-align: center;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.book-card {
+    background: rgba(244, 243, 239, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: var(--shadow-medium);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-strong);
+}
+
+.book-card h4 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-family: var(--heading-font);
+}
+
+/* Updated Prayer Section */
+.prayer {
+    padding: 100px 0;
+    background: rgba(244, 243, 239, 0.1);
+}
+
+.prayer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.prayer-description {
+    background: rgba(244, 243, 239, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: var(--shadow-medium);
+}
+
+.prayer-description p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.prayer-form {
+    background: rgba(244, 243, 239, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: var(--shadow-medium);
+}
+
+.prayer-form h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    font-family: var(--heading-font);
+    text-align: center;
+}
+
 .about-text p {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -818,6 +1001,52 @@ section {
         width: 150px;
         height: 180px;
         transform: rotate(-1deg);
+    }
+    
+    /* Events Section Mobile */
+    .events-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .events-info {
+        padding: 30px;
+    }
+    
+    /* Books Section Mobile */
+    .book-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .book-text {
+        padding: 30px;
+    }
+    
+    .current-book h3 {
+        font-size: 2rem;
+    }
+    
+    .upcoming-books h3 {
+        font-size: 1.8rem;
+    }
+    
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Prayer Section Mobile */
+    .prayer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .prayer-description {
+        padding: 30px;
+    }
+    
+    .prayer-form {
+        padding: 30px;
     }
     
     .footer-content {

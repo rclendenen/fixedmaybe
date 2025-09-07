@@ -56,9 +56,9 @@
     <nav class="navigation" role="navigation" aria-label="Primary navigation">
         <div class="container">
             <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#book" class="nav-link">Book</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#books" class="nav-link">Books</a></li>
                 <li><a href="#prayer" class="nav-link nav-cta">Prayer Request</a></li>
             </ul>
         </div>
@@ -103,7 +103,7 @@
                             </div>
                             <h3>Speaking Engagements</h3>
                             <p>Elizabeth shares her story of grief, healing, and hope through powerful speaking engagements. Available for book clubs, women's groups, grief support events, and faith-based gatherings.</p>
-                            <a href="#contact" class="content-btn">Book Elizabeth</a>
+                            <a href="#events" class="content-btn">Book Elizabeth</a>
                         </div>
                         <div class="content-box books-box">
                             <div class="content-icon">
@@ -111,7 +111,7 @@
                             </div>
                             <h3>Books</h3>
                             <p>Unspoken Goodbyes: A Daughter's Story of Grief, Love, and Healing is available now on Amazon. Elizabeth is currently working on her next book, continuing her journey of storytelling and healing.</p>
-                            <a href="https://a.co/d/gGJN8Hv" class="content-btn" target="_blank" rel="noopener">Buy Now</a>
+                            <a href="#books" class="content-btn">View Books</a>
                         </div>
                         <div class="content-box prayer-box">
                             <div class="content-icon">
@@ -172,80 +172,89 @@
             </div>
         </section>
 
-        <!-- Book Section -->
-        <section class="book" id="book">
+        <!-- Events Section -->
+        <section class="events" id="events">
             <div class="container">
                 <div class="section-content">
-                    <h2 class="section-title">Unspoken Goodbyes</h2>
-                    <div class="book-content">
-                        <div class="book-details">
-                            <h3>Available Now</h3>
-                            <p>
-                                This heartfelt memoir takes readers on an intimate journey through grief, 
-                                love, and the healing power of family. Elizabeth's story is one of courage, 
-                                resilience, and the unbreakable bond between a father and daughter.
-                            </p>
-                            <div class="book-features">
-                                <div class="feature">
-                                    <i class="fas fa-heart"></i>
-                                    <span>Heartfelt storytelling</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-leaf"></i>
-                                    <span>Journey of healing</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-family"></i>
-                                    <span>Family love & legacy</span>
-                                </div>
+                    <h2 class="section-title">Upcoming Events</h2>
+                    <div class="events-content">
+                        <div class="events-info">
+                            <p>Elizabeth is available for speaking engagements, book clubs, and special events. She shares her story of grief, healing, and hope with authenticity and grace, offering encouragement to those walking through their own seasons of loss and growth.</p>
+                            <div class="speaking-topics">
+                                <h3>Speaking Topics Include:</h3>
+                                <ul>
+                                    <li>Grief and Healing</li>
+                                    <li>Finding Hope in Loss</li>
+                                    <li>The Power of Storytelling</li>
+                                    <li>Faith and Family</li>
+                                    <li>Writing as Therapy</li>
+                                </ul>
                             </div>
-                            <a href="https://a.co/d/gGJN8Hv" class="btn btn-primary" target="_blank" rel="noopener">
-                                <i class="fas fa-book"></i>
-                                Get Your Copy
-                            </a>
                         </div>
+                        <form class="contact-form" id="eventsForm">
+                            <h3>Request a Speaking Engagement</h3>
+                            <div class="form-group">
+                                <label for="eventsName">Name *</label>
+                                <input type="text" id="eventsName" name="name" required placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventsEmail">Email *</label>
+                                <input type="email" id="eventsEmail" name="email" required placeholder="your.email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventsSubject">Event Type *</label>
+                                <input type="text" id="eventsSubject" name="subject" required placeholder="e.g., Book Club, Women's Group, Church Event">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventsMessage">Event Details *</label>
+                                <textarea id="eventsMessage" name="message" required rows="5" placeholder="Please provide details about your event, date, location, and audience..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-calendar"></i>
+                                Request Booking
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="contact" id="contact">
+        <!-- Books Section -->
+        <section class="books" id="books">
             <div class="container">
                 <div class="section-content">
-                    <h2 class="section-title">Get In Touch</h2>
-                    <div class="contact-content">
-                        <div class="contact-info">
-                            <h3>Connect with Elizabeth</h3>
-                            <p>I'd love to hear from you! Whether you have questions about my book, 
-                            want to share your own story, or just want to connect, please reach out.</p>
-                            
-                            <div class="contact-methods">
-                                <a href="mailto:writeovercoffeee@gmail.com" class="contact-method">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>writeovercoffeee@gmail.com</span>
-                                </a>
+                    <h2 class="section-title">Books</h2>
+                    
+                    <!-- Current Book -->
+                    <div class="current-book">
+                        <h3>Unspoken Goodbyes</h3>
+                        <div class="book-content">
+                            <div class="book-text">
+                                <p>
+                                    Elizabeth Green is a devoted wife, mother, "Gammy," and a storyteller at heart. She carries both tenderness and tenacity in everything she does. Her father was her hero, her protector, and her greatest cheerleader. When he passed, the grief that followed became the foundation for this memoir. Unspoken Goodbyes: A Daughter's Story of Grief, Love, and Healing was born from heartbreak but rooted in hope. Through these pages, Elizabeth invites readers into her journey of grieving, remembering, growing, and ultimately rediscovering joy. Surrounded by meaningful friendships, heartfelt conversations, and the love of her ever-expanding family, she has learned to live with a deep sense of purpose. She believes in laughing often, loving boldly, and writing bravely. In honoring her father—who, like a mighty oak, stood tall in love and grace—Elizabeth shares her story with the hope that it helps you feel seen in your own.
+                                </p>
+                                <div class="book-actions">
+                                    <a href="https://a.co/d/gGJN8Hv" class="btn btn-primary" target="_blank" rel="noopener">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Buy on Amazon
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="book-image">
+                                <img src="book cover.jpg" alt="Unspoken Goodbyes Book Cover" class="book-cover-large">
                             </div>
                         </div>
-                        
-                        <form class="contact-form" id="contact-form">
-                            <div class="form-group">
-                                <label for="name">Name *</label>
-                                <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <!-- Upcoming Books -->
+                    <div class="upcoming-books">
+                        <h3>Upcoming Books</h3>
+                        <div class="books-grid">
+                            <div class="book-card">
+                                <h4>Coming Soon</h4>
+                                <p>Elizabeth is currently working on her next book, continuing her journey of storytelling and healing. This upcoming work will explore themes of faith, family, and finding purpose through life's challenges.</p>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-paper-plane"></i>
-                                Send Message
-                            </button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -257,27 +266,37 @@
                 <div class="section-content">
                     <h2 class="section-title">Prayer Request</h2>
                     <div class="prayer-content">
-                        <p class="prayer-intro">
-                            I believe in the power of prayer and community. If you're going through 
-                            a difficult time or have a prayer request, I'd be honored to pray for you.
-                        </p>
-                        
+                        <div class="prayer-description">
+                            <p>
+                                Life brings seasons of joy, growth, and also deep challenges. Whether I'm walking with someone through grief, helping them find clarity, or supporting them in their personal growth, my heart is to remind you that you don't have to go through it alone.
+                            </p>
+                            <p>
+                                Through grief counseling, life coaching, and personal development services, I offer guidance and encouragement to help you move forward with strength, hope, and purpose.
+                            </p>
+                            <p>
+                                If you're carrying something heavy, I'd love to hear from you. You can use the prayer request form or the contact form to share what's on your mind. Whether you're looking for guidance, encouragement, or simply someone to listen, I'm here to walk alongside you.
+                            </p>
+                            <p>
+                                Together, we can create space for healing, growth, and a renewed sense of direction in your life.
+                            </p>
+                        </div>
                         <form class="prayer-form" id="prayer-form">
+                            <h3>Submit a Prayer Request</h3>
                             <div class="form-group">
-                                <label for="prayer-name">Name (optional)</label>
-                                <input type="text" id="prayer-name" name="name">
+                                <label for="prayer-email">Email *</label>
+                                <input type="email" id="prayer-email" name="email" required placeholder="your.email@example.com">
                             </div>
                             <div class="form-group">
-                                <label for="prayer-email">Email (optional)</label>
-                                <input type="email" id="prayer-email" name="email">
+                                <label for="prayer-subject">Subject *</label>
+                                <input type="text" id="prayer-subject" name="subject" required placeholder="Brief subject of your request">
                             </div>
                             <div class="form-group">
                                 <label for="prayer-request">Prayer Request *</label>
-                                <textarea id="prayer-request" name="request" rows="4" required placeholder="Please share your prayer request..."></textarea>
+                                <textarea id="prayer-request" name="request" rows="5" required placeholder="Please share your prayer request or what you'd like guidance on..."></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-praying-hands"></i>
-                                Submit Prayer Request
+                                Send Prayer Request
                             </button>
                         </form>
                     </div>
