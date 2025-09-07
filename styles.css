@@ -344,16 +344,24 @@ section {
 }
 
 .about-photos {
-    position: relative;
-    height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
     width: 100%;
-    min-height: 500px;
-    padding: 10px;
-    overflow: visible;
+    padding: 20px 0;
+}
+
+.photo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
 }
 
 .photo-container {
-    position: absolute;
+    position: relative;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-medium);
@@ -380,32 +388,23 @@ section {
     transform: scale(1.05);
 }
 
-/* Uneven collage positioning - organic and scattered */
+/* 3 uneven rows layout */
 .photo-1 {
     width: 200px;
     height: 220px;
-    top: 20px;
-    left: 20px;
-    transform: rotate(-8deg);
-    z-index: 2;
+    transform: rotate(-3deg);
 }
 
 .photo-2 {
     width: 260px;
     height: 180px;
-    top: 80px;
-    right: 10px;
-    transform: rotate(5deg);
-    z-index: 3;
+    transform: rotate(2deg);
 }
 
 .photo-3 {
     width: 180px;
     height: 200px;
-    bottom: 30px;
-    left: 120px;
-    transform: rotate(-4deg);
-    z-index: 1;
+    transform: rotate(-1deg);
 }
 
 .photo-1:hover,
@@ -675,33 +674,31 @@ section {
     }
     
     .about-photos {
-        height: 450px;
+        gap: 15px;
         margin-top: 20px;
-        padding: 10px;
+        padding: 15px 0;
+    }
+    
+    .photo-row {
+        gap: 20px;
     }
     
     .photo-1 {
         width: 160px;
         height: 180px;
-        top: 20px;
-        left: 15px;
-        transform: rotate(-6deg);
+        transform: rotate(-2deg);
     }
     
     .photo-2 {
         width: 200px;
         height: 140px;
-        top: 80px;
-        right: 20px;
-        transform: rotate(4deg);
+        transform: rotate(1deg);
     }
     
     .photo-3 {
         width: 150px;
         height: 180px;
-        bottom: 40px;
-        left: 80px;
-        transform: rotate(-3deg);
+        transform: rotate(-1deg);
     }
     
     .footer-content {
