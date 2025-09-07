@@ -421,15 +421,21 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
-    align-items: start;
+    align-items: stretch;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .events-info {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 60px 50px;
+    padding: 50px 40px;
     box-shadow: var(--shadow-medium);
+    border: 2px solid rgba(194, 192, 183, 0.3);
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
 }
 
 .speaking-topics h3 {
@@ -466,8 +472,12 @@ section {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 60px 50px;
+    padding: 50px 40px;
     box-shadow: var(--shadow-medium);
+    border: 2px solid rgba(194, 192, 183, 0.3);
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
 }
 
 .calendar-box h3 {
@@ -855,10 +865,13 @@ section {
 .prayer-form {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-light);
-    border: 1px solid rgba(194, 192, 183, 0.3);
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-medium);
+    border: 2px solid rgba(194, 192, 183, 0.3);
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
 }
 
 .form-group {
@@ -1085,10 +1098,12 @@ section {
     .events-content {
         grid-template-columns: 1fr;
         gap: 40px;
+        max-width: 100%;
     }
     
     .calendar-box {
         padding: 40px 30px;
+        min-height: 400px;
     }
     
     .calendar-box h3 {
@@ -1111,6 +1126,12 @@ section {
     
     .events-info {
         padding: 40px 30px;
+        min-height: 400px;
+    }
+    
+    .contact-form {
+        padding: 40px 30px;
+        min-height: 400px;
     }
     
     /* Books Section Mobile */
