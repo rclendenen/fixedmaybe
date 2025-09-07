@@ -420,24 +420,27 @@ section {
 }
 
 .events-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
+    display: flex;
+    justify-content: center;
     align-items: stretch;
-    max-width: 1600px;
-    margin: 0 auto;
+    gap: 30px;
+    width: 100%;
 }
 
 .events-info {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 40px 50px;
+    padding: 50px 40px;
     box-shadow: var(--shadow-medium);
     border: 2px solid rgba(194, 192, 183, 0.3);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    min-height: 450px;
     display: flex;
     flex-direction: column;
-    min-height: 400px;
+    justify-content: space-between;
 }
 
 .speaking-topics h3 {
@@ -474,12 +477,16 @@ section {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 40px 50px;
+    padding: 50px 40px;
     box-shadow: var(--shadow-medium);
     border: 2px solid rgba(194, 192, 183, 0.3);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    min-height: 450px;
     display: flex;
     flex-direction: column;
-    min-height: 400px;
+    justify-content: space-between;
 }
 
 .calendar-box h3 {
@@ -880,8 +887,14 @@ section {
 
 /* Events Form Specific Styling */
 .events-content .contact-form {
-    padding: 40px 50px;
-    min-height: 400px;
+    padding: 50px 40px;
+    min-height: 450px;
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .form-group {
@@ -1108,14 +1121,14 @@ section {
     }
     
     .events-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        max-width: 100%;
+        flex-direction: column;
+        gap: 20px;
     }
     
     .calendar-box {
-        padding: 35px 30px;
-        min-height: 350px;
+        padding: 40px 30px;
+        min-height: 400px;
+        max-width: 350px;
     }
     
     .calendar-box h3 {
@@ -1137,18 +1150,20 @@ section {
     }
     
     .events-info {
-        padding: 35px 30px;
-        min-height: 350px;
+        padding: 40px 30px;
+        min-height: 400px;
+        max-width: 350px;
     }
     
     .contact-form {
-        padding: 35px 30px;
-        min-height: 350px;
+        padding: 40px 30px;
+        min-height: 400px;
     }
     
     .events-content .contact-form {
-        padding: 35px 30px;
-        min-height: 350px;
+        padding: 40px 30px;
+        min-height: 400px;
+        max-width: 350px;
     }
     
     /* Books Section Mobile */
