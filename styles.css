@@ -417,6 +417,10 @@ section {
     background-repeat: no-repeat;
 }
 
+.books-box p {
+    margin-bottom: 30px;
+}
+
 .prayer-box {
     border-left: 4px solid var(--dusty-green);
     background: linear-gradient(rgba(244, 243, 239, 0.6), rgba(244, 243, 239, 0.6)), url('outside.jpg');
