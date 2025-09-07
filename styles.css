@@ -441,10 +441,6 @@ section {
     text-align: center;
     max-width: 450px;
     width: 100%;
-    min-height: 550px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .events-info:hover {
@@ -494,10 +490,6 @@ section {
     text-align: center;
     max-width: 450px;
     width: 100%;
-    min-height: 550px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .calendar-box:hover {
@@ -905,13 +897,9 @@ section {
 /* Events Form Specific Styling */
 .events-content .contact-form {
     padding: 50px 40px;
-    min-height: 550px;
     max-width: 450px;
     width: 100%;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     transition: var(--transition);
 }
 
@@ -1151,7 +1139,6 @@ section {
     
     .calendar-box {
         padding: 40px 30px;
-        min-height: 500px;
         max-width: 350px;
     }
     
@@ -1175,18 +1162,15 @@ section {
     
     .events-info {
         padding: 40px 30px;
-        min-height: 500px;
         max-width: 350px;
     }
     
     .contact-form {
         padding: 40px 30px;
-        min-height: 500px;
     }
     
     .events-content .contact-form {
         padding: 40px 30px;
-        min-height: 500px;
         max-width: 350px;
     }
     
