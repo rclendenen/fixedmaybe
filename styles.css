@@ -235,15 +235,14 @@ section {
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1.5fr 1fr;
     gap: 80px;
     align-items: start;
     text-align: left;
 }
 
 .about-text {
-    max-width: 1000px;
-    margin: 0 auto;
+    width: 100%;
     padding-right: 0;
     text-align: left;
 }
@@ -372,20 +371,20 @@ section {
 
 /* 3 uneven rows layout */
 .photo-1 {
-    width: 200px;
-    height: 220px;
+    width: 220px;
+    height: 240px;
     transform: rotate(-3deg);
 }
 
 .photo-2 {
-    width: 260px;
-    height: 180px;
+    width: 280px;
+    height: 200px;
     transform: rotate(2deg);
 }
 
 .photo-3 {
-    width: 180px;
-    height: 200px;
+    width: 200px;
+    height: 220px;
     transform: rotate(-1deg);
 }
 
@@ -927,20 +926,20 @@ section {
     }
     
     .photo-1 {
-        width: 160px;
-        height: 180px;
+        width: 180px;
+        height: 200px;
         transform: rotate(-2deg);
     }
     
     .photo-2 {
-        width: 200px;
-        height: 140px;
+        width: 220px;
+        height: 160px;
         transform: rotate(1deg);
     }
     
     .photo-3 {
-        width: 150px;
-        height: 180px;
+        width: 170px;
+        height: 200px;
         transform: rotate(-1deg);
     }
     
