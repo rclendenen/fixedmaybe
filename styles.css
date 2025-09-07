@@ -336,12 +336,18 @@ section {
     text-align: left;
 }
 
+.about-text {
+    max-width: none;
+    padding-right: 40px;
+}
+
 .about-photos {
     position: relative;
     height: 500px;
     width: 100%;
     min-height: 500px;
-    padding: 20px;
+    padding: 10px;
+    overflow: visible;
 }
 
 .photo-container {
@@ -372,31 +378,31 @@ section {
     transform: scale(1.05);
 }
 
-/* Scattered positioning - more spaced and wider */
+/* Uneven collage positioning - organic and scattered */
 .photo-1 {
-    width: 220px;
-    height: 240px;
-    top: 40px;
-    left: 50px;
-    transform: rotate(-3deg);
-    z-index: 3;
-}
-
-.photo-2 {
-    width: 280px;
-    height: 200px;
-    top: 140px;
-    right: 60px;
-    transform: rotate(2deg);
+    width: 200px;
+    height: 220px;
+    top: 20px;
+    left: 20px;
+    transform: rotate(-8deg);
     z-index: 2;
 }
 
+.photo-2 {
+    width: 260px;
+    height: 180px;
+    top: 80px;
+    right: 10px;
+    transform: rotate(5deg);
+    z-index: 3;
+}
+
 .photo-3 {
-    width: 200px;
-    height: 240px;
-    bottom: 80px;
-    left: 100px;
-    transform: rotate(-1deg);
+    width: 180px;
+    height: 200px;
+    bottom: 30px;
+    left: 120px;
+    transform: rotate(-4deg);
     z-index: 1;
 }
 
@@ -669,28 +675,31 @@ section {
     .about-photos {
         height: 450px;
         margin-top: 20px;
-        padding: 15px;
+        padding: 10px;
     }
     
     .photo-1 {
-        width: 180px;
-        height: 200px;
-        top: 30px;
-        left: 30px;
+        width: 160px;
+        height: 180px;
+        top: 20px;
+        left: 15px;
+        transform: rotate(-6deg);
     }
     
     .photo-2 {
-        width: 220px;
-        height: 160px;
-        top: 100px;
-        right: 40px;
+        width: 200px;
+        height: 140px;
+        top: 80px;
+        right: 20px;
+        transform: rotate(4deg);
     }
     
     .photo-3 {
-        width: 170px;
-        height: 200px;
-        bottom: 50px;
-        left: 60px;
+        width: 150px;
+        height: 180px;
+        bottom: 40px;
+        left: 80px;
+        transform: rotate(-3deg);
     }
     
     .footer-content {
