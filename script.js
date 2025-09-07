@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initPrayerForm();
     initScrollEffects();
+    initParallaxEffects();
     initAccessibility();
 });
 
@@ -167,6 +168,90 @@ function initPrayerForm() {
     }
 }
 
+// Parallax effects
+function initParallaxEffects() {
+    // Parallax for sections
+    const sections = document.querySelectorAll('section');
+    
+    const parallaxObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const section = entry.target;
+                const speed = section.dataset.speed || 0.5;
+                
+                // Add parallax scroll effect
+                const handleScroll = () => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * -speed;
+                    section.style.transform = `translateY(${rate}px)`;
+                };
+                
+                // Throttle scroll events for performance
+                let ticking = false;
+                const throttledScroll = () => {
+                    if (!ticking) {
+                        requestAnimationFrame(() => {
+                            handleScroll();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                };
+                
+                window.addEventListener('scroll', throttledScroll);
+                
+                // Store the handler for cleanup
+                section._parallaxHandler = throttledScroll;
+            } else {
+                // Clean up event listener when section is not visible
+                const section = entry.target;
+                if (section._parallaxHandler) {
+                    window.removeEventListener('scroll', section._parallaxHandler);
+                    section._parallaxHandler = null;
+                }
+            }
+        });
+    }, {
+        threshold: 0,
+        rootMargin: '50px 0px -50px 0px'
+    });
+    
+    // Add parallax data attributes to sections
+    sections.forEach((section, index) => {
+        // Different speeds for different sections
+        const speeds = [0.3, 0.2, 0.4, 0.1, 0.3];
+        section.dataset.speed = speeds[index] || 0.2;
+        parallaxObserver.observe(section);
+    });
+    
+    // Parallax for hero elements
+    const heroElements = document.querySelectorAll('.hero-text, .hero-image');
+    
+    const heroParallax = () => {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * 0.5;
+        
+        heroElements.forEach((element, index) => {
+            const speed = (index + 1) * 0.1;
+            element.style.transform = `translateY(${rate * speed}px)`;
+        });
+    };
+    
+    // Throttle hero parallax
+    let heroTicking = false;
+    const throttledHeroParallax = () => {
+        if (!heroTicking) {
+            requestAnimationFrame(() => {
+                heroParallax();
+                heroTicking = false;
+            });
+            heroTicking = true;
+        }
+    };
+    
+    window.addEventListener('scroll', throttledHeroParallax);
+}
+
 // Scroll effects and animations
 function initScrollEffects() {
     // Fade in elements on scroll
@@ -194,7 +279,7 @@ function initScrollEffects() {
         observer.observe(el);
     });
     
-    // Header scroll effect
+    // Header scroll effect with new colors
     let lastScrollY = window.scrollY;
     const header = document.querySelector('.header');
     
@@ -202,11 +287,11 @@ function initScrollEffects() {
         const currentScrollY = window.scrollY;
         
         if (currentScrollY > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
+            header.style.background = 'rgba(244, 243, 239, 0.98)';
+            header.style.backdropFilter = 'blur(15px)';
         } else {
-            header.style.background = '#ffffff';
-            header.style.backdropFilter = 'none';
+            header.style.background = 'rgba(244, 243, 239, 0.95)';
+            header.style.backdropFilter = 'blur(15px)';
         }
         
         lastScrollY = currentScrollY;
