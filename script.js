@@ -4,7 +4,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
     initSmoothScrolling();
-    initActiveNavigation();
     initContactForm();
     initPrayerForm();
     initEventsForm();
@@ -13,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initAccessibility();
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for content box links
 function initSmoothScrolling() {
-    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const contentLinks = document.querySelectorAll('.content-btn[href^="#"], .btn[href^="#"]');
     
-    navLinks.forEach(link => {
+    contentLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
@@ -26,8 +25,7 @@ function initSmoothScrolling() {
             
             if (targetSection) {
                 const headerHeight = document.querySelector('.header').offsetHeight;
-                const navHeight = document.querySelector('.navigation').offsetHeight;
-                const offset = headerHeight + navHeight + 20;
+                const offset = headerHeight + 20;
                 
                 const targetPosition = targetSection.offsetTop - offset;
                 
@@ -43,39 +41,6 @@ function initSmoothScrolling() {
     });
 }
 
-// Active navigation highlighting
-function initActiveNavigation() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-    
-    // Create intersection observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const activeId = entry.target.getAttribute('id');
-                
-                // Remove active class from all links
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                });
-                
-                // Add active class to current link
-                const activeLink = document.querySelector(`.nav-link[href="#${activeId}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-            }
-        });
-    }, {
-        threshold: 0.3,
-        rootMargin: '-100px 0px -100px 0px'
-    });
-    
-    // Observe all sections
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-}
 
 // Contact form handling
 function initContactForm() {

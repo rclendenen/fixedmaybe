@@ -141,48 +141,6 @@ p {
     margin: 0;
 }
 
-/* Navigation */
-.navigation {
-    background: rgba(54, 76, 75, 0.95);
-    backdrop-filter: blur(15px);
-    padding: 0;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-menu li {
-    margin: 0;
-}
-
-.nav-link {
-    display: block;
-    padding: 15px 25px;
-    color: white;
-    text-decoration: none;
-    transition: var(--transition);
-    font-weight: 400;
-}
-
-.nav-link:hover,
-.nav-link:focus {
-    background: var(--secondary-color);
-    color: white;
-}
-
-.nav-cta {
-    background: var(--accent-color);
-    margin-left: auto;
-}
-
-.nav-cta:hover,
-.nav-cta:focus {
-    background: #c0392b;
-}
 
 /* Main Content */
 main {
@@ -353,8 +311,8 @@ section {
 }
 
 .hero-content-boxes {
-    margin-top: 60px;
-    padding: 40px 0;
+    margin-top: 80px;
+    padding: 60px 0;
 }
 
 .content-row {
@@ -501,6 +459,9 @@ section {
 .events {
     padding: 100px 0;
     background: rgba(244, 243, 239, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 3;
 }
 
 .events-content {
@@ -548,7 +509,10 @@ section {
 /* Books Section */
 .books {
     padding: 100px 0;
-    background: rgba(244, 243, 239, 0.05);
+    background: rgba(244, 243, 239, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 4;
 }
 
 .current-book {
@@ -641,6 +605,9 @@ section {
 .prayer {
     padding: 100px 0;
     background: rgba(244, 243, 239, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 5;
 }
 
 .prayer-content {
