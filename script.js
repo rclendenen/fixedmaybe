@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initPrayerForm();
     initEventsForm();
+    initCalendar();
     initScrollEffects();
     initParallaxEffects();
     initAccessibility();
@@ -469,4 +470,161 @@ window.addEventListener('scroll', optimizedScrollHandler);
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     // Disable animations for users who prefer reduced motion
     document.documentElement.style.setProperty('--transition', 'none');
+}
+
+// Calendar functionality
+function initCalendar() {
+    const calendarGrid = document.getElementById('calendarGrid');
+    const currentMonthEl = document.getElementById('currentMonth');
+    const prevMonthBtn = document.getElementById('prevMonth');
+    const nextMonthBtn = document.getElementById('nextMonth');
+    
+    if (!calendarGrid || !currentMonthEl || !prevMonthBtn || !nextMonthBtn) {
+        return; // Calendar elements not found
+    }
+    
+    let currentDate = new Date();
+    let currentMonth = currentDate.getMonth();
+    let currentYear = currentDate.getFullYear();
+    
+    // Sample booked dates (you can replace this with real data)
+    const bookedDates = new Set([
+        '2025-01-15',
+        '2025-01-22',
+        '2025-02-05',
+        '2025-02-12',
+        '2025-02-19',
+        '2025-03-08',
+        '2025-03-15',
+        '2025-03-22',
+        '2025-04-12',
+        '2025-04-19',
+        '2025-05-03',
+        '2025-05-10',
+        '2025-05-17',
+        '2025-06-07',
+        '2025-06-14',
+        '2025-06-21',
+        '2025-07-05',
+        '2025-07-12',
+        '2025-08-02',
+        '2025-08-09',
+        '2025-08-16',
+        '2025-09-06',
+        '2025-09-13',
+        '2025-09-20',
+        '2025-10-04',
+        '2025-10-11',
+        '2025-10-18',
+        '2025-11-01',
+        '2025-11-08',
+        '2025-11-15',
+        '2025-12-06',
+        '2025-12-13',
+        '2025-12-20'
+    ]);
+    
+    const monthNames = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+    
+    function renderCalendar() {
+        const firstDay = new Date(currentYear, currentMonth, 1);
+        const lastDay = new Date(currentYear, currentMonth + 1, 0);
+        const daysInMonth = lastDay.getDate();
+        const startingDayOfWeek = firstDay.getDay();
+        
+        currentMonthEl.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+        
+        calendarGrid.innerHTML = '';
+        
+        // Add day headers
+        const dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        dayHeaders.forEach(day => {
+            const dayHeader = document.createElement('div');
+            dayHeader.className = 'calendar-day-header';
+            dayHeader.textContent = day;
+            dayHeader.style.cssText = `
+                font-weight: 600;
+                color: var(--primary-color);
+                text-align: center;
+                padding: 8px 0;
+                font-size: 0.8rem;
+            `;
+            calendarGrid.appendChild(dayHeader);
+        });
+        
+        // Add empty cells for days before the first day of the month
+        for (let i = 0; i < startingDayOfWeek; i++) {
+            const emptyDay = document.createElement('div');
+            emptyDay.className = 'calendar-day other-month';
+            calendarGrid.appendChild(emptyDay);
+        }
+        
+        // Add days of the month
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayElement = document.createElement('div');
+            dayElement.className = 'calendar-day';
+            dayElement.textContent = day;
+            
+            const dateString = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            const isBooked = bookedDates.has(dateString);
+            const isToday = currentDate.getDate() === day && 
+                           currentDate.getMonth() === currentMonth && 
+                           currentDate.getFullYear() === currentYear;
+            
+            if (isToday) {
+                dayElement.classList.add('today');
+            }
+            
+            if (isBooked) {
+                dayElement.classList.add('booked');
+                dayElement.title = 'This date is already booked';
+            } else {
+                dayElement.classList.add('available');
+                dayElement.title = 'Click to select this date';
+                
+                dayElement.addEventListener('click', function() {
+                    // You can add booking functionality here
+                    showMessage(`Selected date: ${monthNames[currentMonth]} ${day}, ${currentYear}`, 'info');
+                });
+            }
+            
+            calendarGrid.appendChild(dayElement);
+        }
+    }
+    
+    function changeMonth(direction) {
+        if (direction === 'prev') {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+        } else {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+        }
+        
+        // Don't allow going beyond December 2026
+        if (currentYear > 2026 || (currentYear === 2026 && currentMonth > 11)) {
+            if (direction === 'next') {
+                currentMonth = 11;
+                currentYear = 2026;
+                return;
+            }
+        }
+        
+        renderCalendar();
+    }
+    
+    prevMonthBtn.addEventListener('click', () => changeMonth('prev'));
+    nextMonthBtn.addEventListener('click', () => changeMonth('next'));
+    
+    // Initial render
+    renderCalendar();
 }
