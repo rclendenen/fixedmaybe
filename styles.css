@@ -410,10 +410,18 @@ section {
 
 .books-box {
     border-left: 4px solid var(--accent-color);
+    background: linear-gradient(rgba(244, 243, 239, 0.85), rgba(244, 243, 239, 0.85)), url('table.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .prayer-box {
     border-left: 4px solid var(--dusty-green);
+    background: linear-gradient(rgba(244, 243, 239, 0.85), rgba(244, 243, 239, 0.85)), url('outside.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Events Section */
