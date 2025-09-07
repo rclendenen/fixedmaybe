@@ -147,66 +147,13 @@ main {
     min-height: calc(100vh - 200px);
 }
 
-/* Hero Section */
-.hero {
-    padding: var(--section-padding);
-    background: rgba(244, 243, 239, 0.85);
+/* Content Boxes Hero Section */
+.content-boxes-hero {
+    padding: 120px 0 80px;
+    background: rgba(244, 243, 239, 0.1);
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 1;
-}
-
-.hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.hero-text {
-    max-width: 500px;
-}
-
-.book-title {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.book-subtitle {
-    font-size: 1.3rem;
-    color: var(--secondary-color);
-    margin-bottom: 1.5rem;
-    font-style: italic;
-}
-
-.book-description {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.hero-image {
-    text-align: center;
-}
-
-.book-cover {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: var(--shadow-medium);
-    transition: var(--transition);
-}
-
-.book-cover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Buttons */
@@ -295,7 +242,7 @@ section {
 }
 
 .about-text {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding-right: 0;
     text-align: left;
@@ -343,14 +290,18 @@ section {
 .content-box {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 30px;
+    border-radius: 20px;
+    padding: 50px 40px;
     box-shadow: var(--shadow-medium);
     transition: var(--transition);
     border: 2px solid rgba(194, 192, 183, 0.3);
     text-align: center;
-    max-width: 300px;
+    max-width: 450px;
     width: 100%;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .content-box:hover {
@@ -360,33 +311,35 @@ section {
 }
 
 .content-icon {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     color: var(--secondary-color);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .content-box h3 {
     color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 2rem;
+    margin-bottom: 20px;
     font-family: var(--font-primary);
+    font-weight: 600;
 }
 
 .content-box p {
     color: var(--text-light);
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
 }
 
 .content-btn {
     display: inline-block;
     background: var(--secondary-color);
     color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
+    padding: 16px 32px;
+    border-radius: 12px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 1.1rem;
     transition: var(--transition);
     border: none;
     cursor: pointer;
@@ -474,16 +427,17 @@ section {
 .events-info {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 40px;
+    border-radius: 20px;
+    padding: 60px 50px;
     box-shadow: var(--shadow-medium);
 }
 
 .speaking-topics h3 {
     color: var(--primary-color);
-    font-size: 1.4rem;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
     font-family: var(--heading-font);
+    font-weight: 600;
 }
 
 .speaking-topics ul {
@@ -492,10 +446,11 @@ section {
 }
 
 .speaking-topics li {
-    padding: 8px 0;
+    padding: 12px 0;
     border-bottom: 1px solid rgba(54, 76, 75, 0.1);
     position: relative;
-    padding-left: 25px;
+    padding-left: 30px;
+    font-size: 1.1rem;
 }
 
 .speaking-topics li:before {
@@ -521,10 +476,11 @@ section {
 
 .current-book h3 {
     color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+    font-size: 3rem;
+    margin-bottom: 40px;
     font-family: var(--heading-font);
     text-align: center;
+    font-weight: 600;
 }
 
 .book-content {
@@ -537,13 +493,20 @@ section {
 .book-text {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 40px;
+    border-radius: 20px;
+    padding: 60px 50px;
     box-shadow: var(--shadow-medium);
 }
 
+.book-text p {
+    font-size: 1.3rem;
+    line-height: 1.9;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
 .book-actions {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .book-image {
@@ -567,10 +530,11 @@ section {
 
 .upcoming-books h3 {
     color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 30px;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
     font-family: var(--heading-font);
     text-align: center;
+    font-weight: 600;
 }
 
 .books-grid {
@@ -582,8 +546,8 @@ section {
 .book-card {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 30px;
+    border-radius: 20px;
+    padding: 50px 40px;
     box-shadow: var(--shadow-medium);
     text-align: center;
     transition: var(--transition);
@@ -596,9 +560,16 @@ section {
 
 .book-card h4 {
     color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
     font-family: var(--heading-font);
+    font-weight: 600;
+}
+
+.book-card p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--text-color);
 }
 
 /* Updated Prayer Section */
@@ -620,37 +591,39 @@ section {
 .prayer-description {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 40px;
+    border-radius: 20px;
+    padding: 60px 50px;
     box-shadow: var(--shadow-medium);
 }
 
 .prayer-description p {
-    margin-bottom: 20px;
-    line-height: 1.8;
+    margin-bottom: 25px;
+    line-height: 1.9;
     color: var(--text-color);
+    font-size: 1.3rem;
 }
 
 .prayer-form {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 40px;
+    border-radius: 20px;
+    padding: 60px 50px;
     box-shadow: var(--shadow-medium);
 }
 
 .prayer-form h3 {
     color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 25px;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
     font-family: var(--heading-font);
     text-align: center;
+    font-weight: 600;
 }
 
 .about-text p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    line-height: 1.9;
+    margin-bottom: 2rem;
 }
 
 /* Book Section */
@@ -924,28 +897,29 @@ section {
     }
     
     .content-box {
-        max-width: 280px;
-        padding: 25px;
+        max-width: 350px;
+        padding: 40px 30px;
+        min-height: 400px;
     }
     
     .content-icon {
-        font-size: 2rem;
-        margin-bottom: 15px;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
     }
     
     .content-box h3 {
-        font-size: 1.3rem;
-        margin-bottom: 12px;
-    }
-    
-    .content-box p {
-        font-size: 0.9rem;
+        font-size: 1.6rem;
         margin-bottom: 18px;
     }
     
+    .content-box p {
+        font-size: 1.1rem;
+        margin-bottom: 22px;
+    }
+    
     .content-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 14px 28px;
+        font-size: 1rem;
     }
     
     .photo-row {
@@ -977,7 +951,7 @@ section {
     }
     
     .events-info {
-        padding: 30px;
+        padding: 40px 30px;
     }
     
     /* Books Section Mobile */
@@ -987,7 +961,7 @@ section {
     }
     
     .book-text {
-        padding: 30px;
+        padding: 40px 30px;
     }
     
     .current-book h3 {
@@ -1009,11 +983,11 @@ section {
     }
     
     .prayer-description {
-        padding: 30px;
+        padding: 40px 30px;
     }
     
     .prayer-form {
-        padding: 30px;
+        padding: 40px 30px;
     }
     
     .footer-content {
