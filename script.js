@@ -2,6 +2,9 @@
 // Clean, modern functionality for Elizabeth K. Green's website
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS
+    initEmailJS();
+    
     // Initialize all functionality
     initSmoothScrolling();
     initContactForm();
@@ -12,6 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
     initParallaxEffects();
     initAccessibility();
 });
+
+// Initialize EmailJS
+function initEmailJS() {
+    // Initialize EmailJS with your public key
+    // You'll need to replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+    emailjs.init('YOUR_PUBLIC_KEY');
+}
 
 // Smooth scrolling for content box links
 function initSmoothScrolling() {
@@ -114,18 +124,35 @@ function initPrayerForm() {
                 return;
             }
             
-            // Create email content for prayer request
-            const emailSubject = `Prayer Request: ${subject}`;
-            const emailBody = `Email: ${email}\nSubject: ${subject}\n\nPrayer Request:\n${request}\n\nThis is a prayer request from the website contact form.`;
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
             
-            // Create mailto link
-            const mailtoLink = `mailto:writeovercoffeee@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            // Prepare email template parameters
+            const templateParams = {
+                from_email: email,
+                from_name: email.split('@')[0], // Use email prefix as name
+                subject: subject,
+                message: request,
+                to_email: 'writeovercoffeee@gmail.com'
+            };
             
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            showMessage('Your email client will open with your prayer request. Please send the email to complete your prayer request.', 'success');
+            // Send email using EmailJS
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                .then(function(response) {
+                    showMessage('Thank you for sharing your prayer request. I will be praying for you.', 'success');
+                    prayerForm.reset();
+                }, function(error) {
+                    showMessage('Sorry, there was an error sending your prayer request. Please try again.', 'error');
+                    console.error('EmailJS error:', error);
+                })
+                .finally(function() {
+                    // Reset button state
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 }
@@ -156,18 +183,35 @@ function initEventsForm() {
                 return;
             }
             
-            // Create email content
-            const emailSubject = `Speaking Engagement Request: ${subject}`;
-            const emailBody = `Name: ${name}\nEmail: ${email}\nEvent Type: ${subject}\n\nEvent Details:\n${message}`;
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
             
-            // Create mailto link
-            const mailtoLink = `mailto:writeovercoffeee@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            // Prepare email template parameters
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                event_type: subject,
+                event_details: message,
+                to_email: 'writeovercoffeee@gmail.com'
+            };
             
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            showMessage('Your email client will open with your booking request. Please send the email to complete your booking request.', 'success');
+            // Send email using EmailJS
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                .then(function(response) {
+                    showMessage('Thank you for your booking request! I will get back to you soon.', 'success');
+                    eventsForm.reset();
+                }, function(error) {
+                    showMessage('Sorry, there was an error sending your booking request. Please try again.', 'error');
+                    console.error('EmailJS error:', error);
+                })
+                .finally(function() {
+                    // Reset button state
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 }
