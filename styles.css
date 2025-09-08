@@ -349,7 +349,7 @@ section {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 40px 35px;
+    padding: 25px 35px;
     box-shadow: var(--shadow-medium);
     transition: var(--transition);
     border: 2px solid rgba(194, 192, 183, 0.3);
@@ -367,21 +367,21 @@ section {
 .content-icon {
     font-size: 3.5rem;
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .content-box h3 {
     color: var(--primary-color);
     font-size: 2.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-family: var(--font-primary);
     font-weight: 600;
 }
 
 .content-box p {
     color: var(--text-dark);
-    line-height: 1.7;
-    margin-bottom: 20px;
+    line-height: 1.6;
+    margin-bottom: 15px;
     font-size: 1.3rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
