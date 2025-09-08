@@ -958,6 +958,23 @@ section {
     font-weight: 600;
 }
 
+.prayer-form .btn {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.prayer-form .btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+    border: 2px solid var(--secondary-color);
+}
+
+.prayer-form .btn-secondary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
 .about-text p {
     font-size: 1.3rem;
     line-height: 1.9;

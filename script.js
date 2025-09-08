@@ -132,6 +132,42 @@ function initPrayerForm() {
                 console.log('Prayer request submitted:', { email, subject, request });
             }, 1500);
         });
+        
+        // Add Request Booking button functionality
+        const requestBookingBtn = document.getElementById('request-booking-btn');
+        if (requestBookingBtn) {
+            requestBookingBtn.addEventListener('click', function() {
+                // Get form data
+                const formData = new FormData(prayerForm);
+                const email = formData.get('email').trim();
+                const subject = formData.get('subject').trim();
+                const request = formData.get('request').trim();
+                
+                // Basic validation
+                if (!email || !subject || !request) {
+                    showMessage('Please fill in all required fields before requesting a booking.', 'error');
+                    return;
+                }
+                
+                if (!isValidEmail(email)) {
+                    showMessage('Please enter a valid email address.', 'error');
+                    return;
+                }
+                
+                // Create email content for booking request
+                const emailSubject = `Booking Request: ${subject}`;
+                const emailBody = `Name: ${email}\nEmail: ${email}\nRequest Type: ${subject}\n\nDetails:\n${request}\n\nThis is a booking request from the prayer request form.`;
+                
+                // Create mailto link
+                const mailtoLink = `mailto:writeovercoffeee@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                // Show success message
+                showMessage('Your email client will open with your booking request. Please send the email to complete your booking request.', 'success');
+            });
+        }
     }
 }
 
