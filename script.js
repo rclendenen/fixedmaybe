@@ -187,88 +187,93 @@ function initEventsForm() {
     }
 }
 
-// Parallax effects
+// Optimized Parallax effects
 function initParallaxEffects() {
-    // Parallax for sections
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        return; // Skip parallax if user prefers reduced motion
+    }
+    
+    // Disable parallax on mobile devices for better performance
+    if (window.innerWidth <= 768) {
+        return;
+    }
+    
+    // Single optimized parallax handler
+    let ticking = false;
+    const parallaxElements = [];
+    
+    // Collect all parallax elements
     const sections = document.querySelectorAll('section');
-    
-    const parallaxObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const section = entry.target;
-                const speed = section.dataset.speed || 0.5;
-                
-                // Add parallax scroll effect
-                const handleScroll = () => {
-                    const scrolled = window.pageYOffset;
-                    const rate = scrolled * -speed;
-                    section.style.transform = `translateY(${rate}px)`;
-                };
-                
-                // Throttle scroll events for performance
-                let ticking = false;
-                const throttledScroll = () => {
-                    if (!ticking) {
-                        requestAnimationFrame(() => {
-                            handleScroll();
-                            ticking = false;
-                        });
-                        ticking = true;
-                    }
-                };
-                
-                window.addEventListener('scroll', throttledScroll);
-                
-                // Store the handler for cleanup
-                section._parallaxHandler = throttledScroll;
-            } else {
-                // Clean up event listener when section is not visible
-                const section = entry.target;
-                if (section._parallaxHandler) {
-                    window.removeEventListener('scroll', section._parallaxHandler);
-                    section._parallaxHandler = null;
-                }
-            }
-        });
-    }, {
-        threshold: 0,
-        rootMargin: '50px 0px -50px 0px'
-    });
-    
-    // Add parallax data attributes to sections
-    sections.forEach((section, index) => {
-        // Different speeds for different sections
-        const speeds = [0.3, 0.2, 0.4, 0.1, 0.3];
-        section.dataset.speed = speeds[index] || 0.2;
-        parallaxObserver.observe(section);
-    });
-    
-    // Parallax for hero elements
     const heroElements = document.querySelectorAll('.hero-text, .hero-image');
     
-    const heroParallax = () => {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * 0.5;
-        
-        heroElements.forEach((element, index) => {
-            const speed = (index + 1) * 0.1;
-            element.style.transform = `translateY(${rate * speed}px)`;
+    // Add sections to parallax elements with reduced speeds for smoother effect
+    sections.forEach((section, index) => {
+        const speeds = [0.05, 0.03, 0.08, 0.02, 0.05]; // Much more subtle speeds
+        parallaxElements.push({
+            element: section,
+            speed: speeds[index] || 0.03,
+            type: 'section'
         });
+    });
+    
+    // Add hero elements to parallax elements
+    heroElements.forEach((element, index) => {
+        parallaxElements.push({
+            element: element,
+            speed: (index + 1) * 0.01, // Very subtle hero parallax
+            type: 'hero'
+        });
+    });
+    
+    // Single scroll handler for all parallax effects
+    const updateParallax = () => {
+        const scrolled = window.pageYOffset;
+        
+        parallaxElements.forEach(({ element, speed, type }) => {
+            if (!element || !element.isConnected) return;
+            
+            const rect = element.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            
+            if (isVisible) {
+                const rate = scrolled * -speed;
+                
+                // Use transform3d for hardware acceleration and smoother performance
+                element.style.transform = `translate3d(0, ${rate}px, 0)`;
+                element.style.willChange = 'transform';
+            } else {
+                // Reset will-change when not visible for better performance
+                element.style.willChange = 'auto';
+            }
+        });
+        
+        ticking = false;
     };
     
-    // Throttle hero parallax
-    let heroTicking = false;
-    const throttledHeroParallax = () => {
-        if (!heroTicking) {
-            requestAnimationFrame(() => {
-                heroParallax();
-                heroTicking = false;
-            });
-            heroTicking = true;
+    // Optimized scroll handler with passive listener
+    const handleScroll = () => {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
         }
     };
     
-    window.addEventListener('scroll', throttledHeroParallax);
+    // Add scroll listener with passive option for better performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Clean up function
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+        // Reset all transforms
+        parallaxElements.forEach(({ element }) => {
+            if (element) {
+                element.style.transform = '';
+                element.style.willChange = 'auto';
+            }
+        });
+    };
 }
 
 // Scroll effects and animations

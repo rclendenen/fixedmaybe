@@ -5,6 +5,17 @@
     box-sizing: border-box;
 }
 
+/* Performance optimizations */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
 :root {
     /* New Color Palette */
     --off-white: #F4F3EF;
@@ -55,7 +66,7 @@ body {
     background-image: url('background books.JPEG');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-repeat: no-repeat;
     min-height: 100vh;
 }
@@ -1093,6 +1104,17 @@ section {
 .social-links a:focus {
     background: var(--accent-color);
     transform: translateY(-2px);
+}
+
+/* Disable parallax on mobile for better performance */
+@media (max-width: 768px) {
+    section {
+        transform: none !important;
+    }
+    
+    .hero-text, .hero-image {
+        transform: none !important;
+    }
 }
 
 /* Responsive Design */
