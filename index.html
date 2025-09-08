@@ -144,11 +144,15 @@
             <div class="container">
                 <div class="section-content">
                     <h2 class="section-title">Upcoming Events</h2>
-                    <div class="events-content">
-                        <div class="events-info">
+                    <div class="events-row">
+                        <div class="content-box events-info-box">
+                            <div class="content-icon">
+                                <i class="fas fa-microphone-alt"></i>
+                            </div>
+                            <h3>Speaking Topics</h3>
                             <p>Elizabeth is available for book clubs, speaking engagements, and special events. She shares her journey of grief and healing with authenticity and hope, inviting others to find comfort and strength in their own stories.</p>
                             <div class="speaking-topics">
-                                <h3>Speaking Topics Include:</h3>
+                                <h4>Speaking Topics Include:</h4>
                                 <ul>
                                     <li>Grief and Healing</li>
                                     <li>Finding Hope in Loss</li>
@@ -158,7 +162,10 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="calendar-box">
+                        <div class="content-box calendar-box">
+                            <div class="content-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
                             <h3>Available Dates</h3>
                             <div class="calendar-container">
                                 <div class="calendar-header">
@@ -185,29 +192,34 @@
                                 </div>
                             </div>
                         </div>
-                        <form class="contact-form" id="eventsForm">
-                            <h3>Request a Speaking Engagement</h3>
-                            <div class="form-group">
-                                <label for="eventsName">Name *</label>
-                                <input type="text" id="eventsName" name="name" required placeholder="Your name">
+                        <div class="content-box events-form-box">
+                            <div class="content-icon">
+                                <i class="fas fa-envelope"></i>
                             </div>
-                            <div class="form-group">
-                                <label for="eventsEmail">Email *</label>
-                                <input type="email" id="eventsEmail" name="email" required placeholder="your.email@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="eventsSubject">Event Type *</label>
-                                <input type="text" id="eventsSubject" name="subject" required placeholder="e.g., Book Club, Women's Group, Church Event">
-                            </div>
-                            <div class="form-group">
-                                <label for="eventsMessage">Event Details *</label>
-                                <textarea id="eventsMessage" name="message" required rows="5" placeholder="Please provide details about your event, date, location, and audience..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-calendar"></i>
-                                Request Booking
-                            </button>
-                        </form>
+                            <h3>Request Booking</h3>
+                            <form class="events-form" id="eventsForm">
+                                <div class="form-group">
+                                    <label for="eventsName">Name *</label>
+                                    <input type="text" id="eventsName" name="name" required placeholder="Your name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="eventsEmail">Email *</label>
+                                    <input type="email" id="eventsEmail" name="email" required placeholder="your.email@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="eventsSubject">Event Type *</label>
+                                    <input type="text" id="eventsSubject" name="subject" required placeholder="e.g., Book Club, Women's Group, Church Event">
+                                </div>
+                                <div class="form-group">
+                                    <label for="eventsMessage">Event Details *</label>
+                                    <textarea id="eventsMessage" name="message" required rows="3" placeholder="Please provide details about your event, date, location, and audience..."></textarea>
+                                </div>
+                                <button type="submit" class="content-btn">
+                                    <i class="fas fa-calendar"></i>
+                                    Request Booking
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
