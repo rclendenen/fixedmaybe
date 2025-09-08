@@ -344,7 +344,7 @@ section {
 
 .content-icon {
     font-size: 3.5rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-bottom: 25px;
 }
 
@@ -357,7 +357,7 @@ section {
 }
 
 .content-box p {
-    color: var(--text-light);
+    color: var(--text-dark);
     line-height: 1.7;
     margin-bottom: 25px;
     font-size: 1.2rem;
