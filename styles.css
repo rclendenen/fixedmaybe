@@ -332,8 +332,9 @@ section {
     height: 450px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    position: relative;
 }
 
 .content-box:hover {
@@ -375,6 +376,10 @@ section {
     transition: var(--transition);
     border: none;
     cursor: pointer;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .content-btn:hover {
@@ -445,7 +450,7 @@ section {
 }
 
 .books-box p {
-    margin-bottom: 60px;
+    margin-bottom: 25px;
 }
 
 .prayer-box {
@@ -457,7 +462,7 @@ section {
 }
 
 .prayer-box p {
-    margin-bottom: 80px;
+    margin-bottom: 25px;
 }
 
 /* Events Section */
