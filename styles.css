@@ -911,18 +911,22 @@ section {
 }
 
 .prayer-content {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 60px;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .prayer-description {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 60px 50px;
+    padding: 40px 30px;
     box-shadow: var(--shadow-medium);
+    width: 600px;
+    max-width: 600px;
 }
 
 .prayer-description p {
@@ -939,8 +943,10 @@ section {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 60px 50px;
+    padding: 40px 30px;
     box-shadow: var(--shadow-medium);
+    width: 600px;
+    max-width: 600px;
 }
 
 .prayer-form h3 {
@@ -1413,8 +1419,8 @@ section {
     }
     
     .prayer-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        max-width: 100%;
+        gap: 30px;
     }
     
     .prayer-description p {
@@ -1425,10 +1431,14 @@ section {
     
     .prayer-description {
         padding: 40px 30px;
+        width: 100%;
+        max-width: 100%;
     }
     
     .prayer-form {
         padding: 40px 30px;
+        width: 100%;
+        max-width: 100%;
     }
     
     .footer-content {
@@ -1477,10 +1487,14 @@ section {
     
     .prayer-description {
         padding: 30px 20px;
+        width: 100%;
+        max-width: 100%;
     }
     
     .prayer-form {
         padding: 30px 20px;
+        width: 100%;
+        max-width: 100%;
     }
     
     /* Events boxes now use the same mobile styling as top content boxes */
