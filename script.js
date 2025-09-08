@@ -168,16 +168,21 @@ function initEventsForm() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
-            // Simulate API call
-            setTimeout(() => {
-                showMessage('Thank you for your speaking engagement request! I\'ll get back to you soon.', 'success');
-                this.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                
-                // Log form data (for future backend integration)
-                console.log('Events form submitted:', { name, email, subject, message });
-            }, 1500);
+            // Create email content
+            const emailSubject = `Speaking Engagement Request: ${subject}`;
+            const emailBody = `Name: ${name}\nEmail: ${email}\nEvent Type: ${subject}\n\nEvent Details:\n${message}`;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:writeovercoffeee@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            showMessage('Your email client will open with your request. Please send the email to complete your booking request.', 'success');
+            this.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
         });
     }
 }
