@@ -190,7 +190,7 @@ main {
 
 /* Content Boxes Hero Section */
 .content-boxes-hero {
-    padding: 120px 0 80px;
+    padding: 120px 0 100px;  /* increased bottom padding for overhanging buttons */
     background: rgba(244, 243, 239, 0.1);
     backdrop-filter: blur(10px);
     position: relative;
@@ -344,7 +344,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-bottom: 4rem;   /* reserve space for button */
+    padding-bottom: 2rem;   /* reduced space since button overhangs */
     height: 450px;          /* fixed height to make larger square */
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
@@ -391,7 +391,7 @@ section {
 /* Style for the buttons inside each box */
 .top-box .box-button {
     position: absolute;
-    bottom: 1.5rem;         /* distance from bottom */
+    bottom: -15px;          /* overhang below the box */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -409,6 +409,7 @@ section {
     border: none;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 10;              /* ensure buttons appear above other elements */
 }
 
 .content-btn {
