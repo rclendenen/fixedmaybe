@@ -477,15 +477,30 @@ section {
     margin-top: 80px;
 }
 
+/* Container for the Upcoming Events section */
 .events-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    gap: 2rem; /* spacing between boxes */
+    margin-top: 2rem;
     width: 100%;
 }
 
-/* Events boxes now use the same styling as top content boxes */
+/* Individual event boxes */
+.events-row .content-box {
+    background: rgba(244, 243, 239, 0.95); /* match your site's box background */
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    height: 450px;
+    max-width: none; /* Remove max-width constraint for grid */
+    width: 100%;
+}
 
 .speaking-topics h4 {
     color: var(--primary-color);
@@ -1175,8 +1190,16 @@ section {
     }
     
     .events-row {
-        gap: 20px;
-        flex-direction: column;
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 1.5rem;
+    }
+    
+    /* Tablet breakpoint */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .events-row {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+            gap: 1.5rem;
+        }
     }
     
     /* Events boxes now use the same mobile styling as top content boxes */
