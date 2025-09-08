@@ -811,10 +811,10 @@ section {
 }
 
 .book-cover-large {
-    max-width: 90%;
+    width: 600px;
     height: auto;
-    max-height: 180px;
-    min-height: 150px;
+    max-height: 700px;
+    min-height: 400px;
     border-radius: 12px;
     box-shadow: var(--shadow-strong);
     transition: var(--transition);
