@@ -771,6 +771,35 @@ section {
 
 .book-actions {
     margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-primary {
+    background-color: #ff9900;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #e68900;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
 }
 
 .book-image {
