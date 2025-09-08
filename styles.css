@@ -573,7 +573,7 @@ section {
 .speaking-topics h4 {
     color: var(--primary-color);
     font-size: 1.4rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-family: var(--font-primary);
     font-weight: 600;
 }
@@ -584,7 +584,7 @@ section {
 }
 
 .speaking-topics li {
-    padding: 12px 0;
+    padding: 6px 0;
     border-bottom: 1px solid rgba(54, 76, 75, 0.1);
     position: relative;
     padding-left: 30px;
