@@ -738,7 +738,7 @@ section {
 
 .book-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 500px 1fr;
     gap: 30px;
     align-items: stretch;
     min-height: 650px;
@@ -755,6 +755,7 @@ section {
     justify-content: space-between;
     height: 100%;
     min-height: 650px;
+    width: 500px;
     border: 3px solid #567c67;
 }
 
