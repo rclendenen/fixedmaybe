@@ -544,18 +544,29 @@ section {
 
 /* Individual event boxes */
 .events-row .content-box {
-    background: rgba(244, 243, 239, 0.95); /* match your site's box background */
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: rgba(244, 243, 239, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px 35px;
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition);
+    border: 2px solid rgba(194, 192, 183, 0.3);
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     position: relative;
     height: 450px;
-    max-width: none; /* Remove max-width constraint for grid */
-    width: 100%;
+    max-width: 450px;
+    width: 450px;
+    padding-bottom: 2rem;
+}
+
+.events-row .content-box:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-strong);
+    z-index: 10;
 }
 
 .speaking-topics h4 {
