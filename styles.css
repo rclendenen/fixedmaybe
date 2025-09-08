@@ -536,10 +536,11 @@ section {
 /* Container for the Upcoming Events section */
 .events-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    grid-template-columns: repeat(3, 450px); /* 3 columns with fixed 450px width */
     gap: 2rem; /* spacing between boxes */
     margin-top: 2rem;
     width: 100%;
+    justify-content: center; /* center the grid */
 }
 
 /* Individual event boxes */
