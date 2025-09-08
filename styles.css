@@ -828,6 +828,28 @@ section {
     box-shadow: var(--shadow-strong);
 }
 
+.book-title {
+    color: var(--primary-color);
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    font-family: var(--heading-font);
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    letter-spacing: 1px;
+}
+
+.book-subtitle {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    font-family: var(--font-secondary);
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.8;
+}
+
 .upcoming-books h3 {
     color: var(--primary-color);
     font-size: 2.5rem;
