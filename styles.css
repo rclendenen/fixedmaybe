@@ -584,8 +584,8 @@ section {
 }
 
 .speaking-topics li {
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(54, 76, 75, 0.1);
+    padding: 3px 0;
+    border-bottom: none;
     position: relative;
     padding-left: 30px;
     font-size: 1.1rem;
