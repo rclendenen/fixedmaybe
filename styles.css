@@ -1212,8 +1212,9 @@ section {
     transform: translateY(-2px);
 }
 
-/* Disable parallax on mobile for better performance */
+/* Responsive Design */
 @media (max-width: 768px) {
+    /* Disable parallax on mobile for better performance */
     section {
         transform: none !important;
     }
@@ -1221,10 +1222,6 @@ section {
     .hero-text, .hero-image {
         transform: none !important;
     }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
     :root {
         --section-padding: 60px 0;
         --container-padding: 0 15px;
