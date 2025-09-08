@@ -319,6 +319,15 @@ section {
 }
 
 /* Apply this to the top 3 boxes */
+.top-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: 4rem;   /* reserve space for button */
+    height: 100%;
+}
+
 .content-box {
     position: relative;
     display: flex;
@@ -366,6 +375,28 @@ section {
 }
 
 /* Style for the buttons inside each box */
+.top-box .box-button {
+    position: absolute;
+    bottom: 1.5rem;         /* distance from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+
+    /* Make all buttons uniform */
+    min-width: 160px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+
+    /* Match existing styling */
+    background-color: #567c67;   /* adjust to your theme */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
 .content-btn {
     position: absolute;
     bottom: 1.5rem;         /* distance from bottom */
@@ -392,6 +423,10 @@ section {
 }
 
 /* Keep same size when buttons stack */
+.top-box .box-button:hover {
+    opacity: 0.9;
+}
+
 .content-btn:hover {
     opacity: 0.9;
 }
@@ -1141,6 +1176,11 @@ section {
         padding-bottom: 4rem;
         height: 400px;
         margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+    
+    /* Responsive stacking for top-box */
+    .top-box {
         margin-bottom: 2rem;
     }
     
