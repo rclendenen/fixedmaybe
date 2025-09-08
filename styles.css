@@ -829,27 +829,27 @@ section {
 }
 
 .book-title {
-    color: #2c3e50;
+    color: var(--primary-color);
     font-size: 3.5rem;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     font-family: var(--heading-font);
     text-align: center;
     font-weight: 700;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     letter-spacing: 1px;
-    line-height: 1.1;
+    line-height: 0.9;
 }
 
 .book-subtitle {
-    color: #34495e;
+    color: var(--text-color);
     font-size: 1.4rem;
     margin-bottom: 40px;
     font-family: var(--font-secondary);
     text-align: center;
-    font-weight: 500;
+    font-weight: 400;
     font-style: italic;
-    line-height: 1.2;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    line-height: 0.95;
+    opacity: 0.8;
 }
 
 .upcoming-books h3 {
