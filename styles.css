@@ -738,10 +738,12 @@ section {
 
 .book-content {
     display: grid;
-    grid-template-columns: 600px 1fr;
+    grid-template-columns: 600px 600px;
     gap: 30px;
     align-items: stretch;
     min-height: 700px;
+    justify-content: center;
+    width: 100%;
 }
 
 .book-text {
