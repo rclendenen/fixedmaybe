@@ -497,41 +497,33 @@ function initCalendar() {
     let currentMonth = currentDate.getMonth();
     let currentYear = currentDate.getFullYear();
     
-    // Sample booked dates (you can replace this with real data)
+    // National holidays (US) - only these dates are marked as booked
     const bookedDates = new Set([
-        '2025-01-15',
-        '2025-01-22',
-        '2025-02-05',
-        '2025-02-12',
-        '2025-02-19',
-        '2025-03-08',
-        '2025-03-15',
-        '2025-03-22',
-        '2025-04-12',
-        '2025-04-19',
-        '2025-05-03',
-        '2025-05-10',
-        '2025-05-17',
-        '2025-06-07',
-        '2025-06-14',
-        '2025-06-21',
-        '2025-07-05',
-        '2025-07-12',
-        '2025-08-02',
-        '2025-08-09',
-        '2025-08-16',
-        '2025-09-06',
-        '2025-09-13',
-        '2025-09-20',
-        '2025-10-04',
-        '2025-10-11',
-        '2025-10-18',
-        '2025-11-01',
-        '2025-11-08',
-        '2025-11-15',
-        '2025-12-06',
-        '2025-12-13',
-        '2025-12-20'
+        // 2025 Holidays
+        '2025-01-01', // New Year's Day
+        '2025-01-20', // Martin Luther King Jr. Day
+        '2025-02-17', // Presidents' Day
+        '2025-05-26', // Memorial Day
+        '2025-06-19', // Juneteenth
+        '2025-07-04', // Independence Day
+        '2025-09-01', // Labor Day
+        '2025-10-13', // Columbus Day
+        '2025-11-11', // Veterans Day
+        '2025-11-27', // Thanksgiving Day
+        '2025-12-25', // Christmas Day
+        
+        // 2026 Holidays
+        '2026-01-01', // New Year's Day
+        '2026-01-19', // Martin Luther King Jr. Day
+        '2026-02-16', // Presidents' Day
+        '2026-05-25', // Memorial Day
+        '2026-06-19', // Juneteenth
+        '2026-07-04', // Independence Day
+        '2026-09-07', // Labor Day
+        '2026-10-12', // Columbus Day
+        '2026-11-11', // Veterans Day
+        '2026-11-26', // Thanksgiving Day
+        '2026-12-25'  // Christmas Day
     ]);
     
     const monthNames = [
