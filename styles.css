@@ -725,23 +725,23 @@ section {
 
 .book-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     gap: 60px;
     align-items: stretch;
-    min-height: 400px;
+    min-height: 350px;
 }
 
 .book-text {
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 40px 50px;
+    padding: 30px 50px;
     box-shadow: var(--shadow-medium);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    min-height: 400px;
+    min-height: 350px;
     border: 2px solid rgba(54, 76, 75, 0.2);
 }
 
@@ -764,13 +764,13 @@ section {
     justify-content: center;
     align-items: center;
     height: 100%;
-    min-height: 400px;
+    min-height: 350px;
 }
 
 .book-cover-large {
     max-width: 100%;
     height: auto;
-    max-height: 400px;
+    max-height: 350px;
     border-radius: 12px;
     box-shadow: var(--shadow-strong);
     transition: var(--transition);
