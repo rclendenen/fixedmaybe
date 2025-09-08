@@ -114,23 +114,18 @@ function initPrayerForm() {
                 return;
             }
             
-            // Simulate form submission
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
+            // Create email content for prayer request
+            const emailSubject = `Prayer Request: ${subject}`;
+            const emailBody = `Email: ${email}\nSubject: ${subject}\n\nPrayer Request:\n${request}\n\nThis is a prayer request from the website contact form.`;
             
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
-            submitBtn.disabled = true;
+            // Create mailto link
+            const mailtoLink = `mailto:writeovercoffeee@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
             
-            // Simulate API call
-            setTimeout(() => {
-                showMessage('Thank you for sharing your prayer request. I will be praying for you.', 'success');
-                this.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                
-                // Log form data (for future backend integration)
-                console.log('Prayer request submitted:', { email, subject, request });
-            }, 1500);
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            showMessage('Your email client will open with your prayer request. Please send the email to complete your prayer request.', 'success');
         });
         
         // Add Request Booking button functionality
