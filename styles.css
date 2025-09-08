@@ -345,17 +345,17 @@ section {
     flex-direction: column;
     justify-content: flex-start;
     padding-bottom: 4rem;   /* reserve space for button */
-    height: 100%;
+    height: 350px;          /* fixed height to make square */
     background: rgba(244, 243, 239, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 50px 40px;
+    padding: 30px 25px;
     box-shadow: var(--shadow-medium);
     transition: var(--transition);
     border: 2px solid rgba(194, 192, 183, 0.3);
     text-align: center;
-    max-width: 450px;
-    width: 100%;
+    max-width: 350px;
+    width: 350px;           /* fixed width to match height */
 }
 
 .content-box:hover {
@@ -365,24 +365,24 @@ section {
 }
 
 .content-icon {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: var(--primary-color);
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .content-box h3 {
     color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
     font-family: var(--font-primary);
     font-weight: 600;
 }
 
 .content-box p {
     color: var(--text-dark);
-    line-height: 1.7;
-    margin-bottom: 25px;
-    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
