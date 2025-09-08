@@ -831,7 +831,7 @@ section {
 .book-title {
     color: var(--primary-color);
     font-size: 3.5rem;
-    margin-bottom: 2px;
+    margin-bottom: 0px;
     font-family: var(--heading-font);
     text-align: center;
     font-weight: 700;
@@ -848,8 +848,9 @@ section {
     text-align: center;
     font-weight: 400;
     font-style: italic;
-    line-height: 0.95;
+    line-height: 0.7;
     opacity: 0.8;
+    margin-top: -5px;
 }
 
 .upcoming-books h3 {
