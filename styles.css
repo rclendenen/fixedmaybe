@@ -372,6 +372,9 @@ section {
     line-height: 1.7;
     margin-bottom: 25px;
     font-size: 1.2rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 /* Style for the buttons inside each box */
@@ -729,6 +732,9 @@ section {
     line-height: 1.9;
     margin-bottom: 2rem;
     color: var(--text-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .book-actions {
@@ -796,6 +802,9 @@ section {
     font-size: 1.2rem;
     line-height: 1.7;
     color: var(--text-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 /* Updated Prayer Section */
@@ -805,7 +814,7 @@ section {
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 5;
-    margin-top: 0;
+    margin-top: 60px;
 }
 
 .prayer-content {
@@ -828,6 +837,9 @@ section {
     line-height: 1.9;
     color: var(--text-color);
     font-size: 1.3rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .prayer-form {
@@ -851,6 +863,9 @@ section {
     font-size: 1.3rem;
     line-height: 1.9;
     margin-bottom: 2rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 /* Book Section */
