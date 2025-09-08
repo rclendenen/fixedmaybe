@@ -728,7 +728,7 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: stretch;
-    min-height: 500px;
+    min-height: 600px;
 }
 
 .book-text {
@@ -741,7 +741,8 @@ section {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    min-height: 500px;
+    min-height: 600px;
+    border: 2px solid rgba(54, 76, 75, 0.2);
 }
 
 .book-text p {
@@ -763,13 +764,13 @@ section {
     justify-content: center;
     align-items: center;
     height: 100%;
-    min-height: 500px;
+    min-height: 600px;
 }
 
 .book-cover-large {
     max-width: 100%;
     height: auto;
-    max-height: 500px;
+    max-height: 600px;
     border-radius: 12px;
     box-shadow: var(--shadow-strong);
     transition: var(--transition);
