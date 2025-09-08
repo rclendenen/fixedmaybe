@@ -127,42 +127,6 @@ function initPrayerForm() {
             // Show success message
             showMessage('Your email client will open with your prayer request. Please send the email to complete your prayer request.', 'success');
         });
-        
-        // Add Request Booking button functionality
-        const requestBookingBtn = document.getElementById('request-booking-btn');
-        if (requestBookingBtn) {
-            requestBookingBtn.addEventListener('click', function() {
-                // Get form data
-                const formData = new FormData(prayerForm);
-                const email = formData.get('email').trim();
-                const subject = formData.get('subject').trim();
-                const request = formData.get('request').trim();
-                
-                // Basic validation
-                if (!email || !subject || !request) {
-                    showMessage('Please fill in all required fields before requesting a booking.', 'error');
-                    return;
-                }
-                
-                if (!isValidEmail(email)) {
-                    showMessage('Please enter a valid email address.', 'error');
-                    return;
-                }
-                
-                // Create email content for booking request
-                const emailSubject = `Booking Request: ${subject}`;
-                const emailBody = `Name: ${email}\nEmail: ${email}\nRequest Type: ${subject}\n\nDetails:\n${request}\n\nThis is a booking request from the prayer request form.`;
-                
-                // Create mailto link
-                const mailtoLink = `mailto:writeovercoffeee@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-                
-                // Open email client
-                window.location.href = mailtoLink;
-                
-                // Show success message
-                showMessage('Your email client will open with your booking request. Please send the email to complete your booking request.', 'success');
-            });
-        }
     }
 }
 
@@ -192,13 +156,6 @@ function initEventsForm() {
                 return;
             }
             
-            // Simulate form submission
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
             // Create email content
             const emailSubject = `Speaking Engagement Request: ${subject}`;
             const emailBody = `Name: ${name}\nEmail: ${email}\nEvent Type: ${subject}\n\nEvent Details:\n${message}`;
@@ -210,10 +167,7 @@ function initEventsForm() {
             window.location.href = mailtoLink;
             
             // Show success message
-            showMessage('Your email client will open with your request. Please send the email to complete your booking request.', 'success');
-            this.reset();
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
+            showMessage('Your email client will open with your booking request. Please send the email to complete your booking request.', 'success');
         });
     }
 }
