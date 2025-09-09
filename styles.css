@@ -920,6 +920,10 @@ section {
     transition: var(--transition);
     width: 600px;
     max-width: 600px;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .upcoming-book-text:hover {
@@ -948,6 +952,7 @@ section {
 .upcoming-book-image {
     width: 600px;
     max-width: 600px;
+    min-height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
