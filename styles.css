@@ -900,6 +900,73 @@ section {
     hyphens: auto;
 }
 
+/* Upcoming Book Content Layout */
+.upcoming-book-content {
+    display: grid;
+    grid-template-columns: 600px 600px;
+    gap: 40px;
+    justify-content: center;
+    align-items: start;
+    max-width: 100%;
+}
+
+.upcoming-book-text {
+    background: rgba(244, 243, 239, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: var(--shadow-medium);
+    text-align: left;
+    transition: var(--transition);
+    width: 600px;
+    max-width: 600px;
+}
+
+.upcoming-book-text:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-strong);
+}
+
+.upcoming-book-text h4 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    text-align: center;
+}
+
+.upcoming-book-text p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.upcoming-book-image {
+    width: 600px;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upcoming-book-cover {
+    width: 600px;
+    max-width: 600px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition);
+}
+
+.upcoming-book-cover:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-strong);
+}
+
 /* Updated Prayer Section */
 .prayer {
     padding: 120px 0;
@@ -1425,6 +1492,22 @@ section {
     
     .books-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .upcoming-book-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .upcoming-book-text,
+    .upcoming-book-image {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .upcoming-book-cover {
+        width: 100%;
+        max-width: 100%;
     }
     
     /* Prayer Section Mobile */
