@@ -1386,7 +1386,8 @@ section {
         max-width: 350px;
         padding: 40px 30px;
         padding-bottom: 4rem;
-        height: 400px;
+        min-height: 400px;
+        height: auto;
         margin: 0 auto;
         margin-bottom: 2rem;
     }
@@ -1403,12 +1404,12 @@ section {
     
     .content-box h3 {
         font-size: 1.6rem;
-        margin-bottom: 18px;
+        margin-bottom: 8px;
     }
     
     .content-box p {
         font-size: 1.1rem;
-        margin-bottom: 22px;
+        margin-bottom: 8px;
     }
     
     .content-btn {
@@ -1581,10 +1582,87 @@ section {
         grid-template-columns: 1fr;
     }
     
+    .book-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .book-text {
+        padding: 20px 15px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .book-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+    
+    .book-image {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    
+    .book-cover-large {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .current-book h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+    
+    .book-subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .upcoming-book-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .upcoming-book-text {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 15px;
+        box-sizing: border-box;
+    }
+    
+    .upcoming-book-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+    
+    .upcoming-book-image {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    
+    .upcoming-book-cover {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+    
     .content-box {
         padding: 30px 20px;
         padding-bottom: 4rem;
         max-width: 320px;
+        min-height: 350px;
+        height: auto;
         margin-bottom: 2rem;
     }
     
