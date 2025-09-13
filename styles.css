@@ -601,7 +601,7 @@ section {
     min-width: 80px;
     flex-shrink: 0;
     align-self: flex-start;
-    margin-top: 0;
+    margin-top: 40px;
 }
 
 .events-row .next-event-box .date-month {
@@ -627,7 +627,8 @@ section {
 .events-row .next-event-box .events-section-title {
     color: var(--primary-color);
     font-size: 1.4rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    font-family: var(--font-primary);
     font-weight: 600;
     text-align: left;
 }
@@ -655,7 +656,8 @@ section {
     color: var(--text-light);
     line-height: 1.5;
     margin-bottom: 10px;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    padding: 3px 0;
 }
 
 .events-row .next-event-box .event-info {
@@ -668,9 +670,10 @@ section {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     color: var(--text-medium);
     margin: 0;
+    padding: 3px 0;
 }
 
 .events-row .next-event-box .event-info i {
