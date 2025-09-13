@@ -547,7 +547,7 @@ section {
 }
 
 .events-row-1 {
-    grid-template-columns: repeat(3, 451px); /* 3 columns with fixed 451px width */
+    grid-template-columns: repeat(2, 451px); /* 2 columns with fixed 451px width */
     margin-bottom: 2rem;
 }
 
@@ -570,7 +570,7 @@ section {
     justify-content: flex-start;
     align-items: center;
     position: relative;
-    height: 359px;
+    height: 630px;
     max-width: 451px;
     width: 451px;
     padding-bottom: 2rem;
@@ -656,53 +656,69 @@ section {
     width: 12px;
 }
 
-/* Subscribe Section within Events Row */
-.events-row .subscribe-section {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
+/* Standalone Subscribe Section */
+.standalone-subscribe {
+    padding: 60px 0;
+    background: rgba(161, 178, 171, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 3;
 }
 
-.events-row .subscribe-section h3 {
+.subscribe-box {
+    background: rgba(244, 243, 239, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow-medium);
+    text-align: center;
+    width: 700px;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 2px solid rgba(194, 192, 183, 0.3);
+}
+
+.subscribe-box h3 {
     color: var(--primary-color);
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
     font-weight: 600;
 }
 
-.events-row .subscribe-section p {
+.subscribe-box p {
     color: var(--text-light);
-    line-height: 1.5;
-    margin-bottom: 15px;
-    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
 }
 
-.events-row .subscribe-form .form-group {
+.subscribe-box .form-group {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    gap: 15px;
+    align-items: stretch;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.events-row .subscribe-form input {
-    width: 100%;
-    padding: 8px 12px;
+.subscribe-box input {
+    flex: 1;
+    padding: 15px 20px;
     border: 1px solid var(--border-color);
-    border-radius: 6px;
-    font-size: 0.9rem;
+    border-radius: 8px;
+    font-size: 1rem;
     background: white;
 }
 
-.events-row .subscribe-form input:focus {
+.subscribe-box input:focus {
     outline: none;
     border-color: var(--secondary-color);
-    box-shadow: 0 0 0 2px rgba(161, 178, 171, 0.1);
+    box-shadow: 0 0 0 3px rgba(161, 178, 171, 0.1);
 }
 
-.events-row .subscribe-form .btn {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+.subscribe-box .btn {
+    padding: 15px 25px;
+    font-size: 1rem;
+    white-space: nowrap;
 }
 
 
@@ -1597,7 +1613,7 @@ section {
         width: 100%;
         max-width: 451px;
         height: auto;
-        min-height: 359px;
+        min-height: 630px;
     }
     
     .events-row .next-event-box {
@@ -1609,6 +1625,22 @@ section {
     .events-row .next-event-box .event-date {
         align-self: center;
         min-width: 70px;
+    }
+    
+    /* Standalone Subscribe Mobile */
+    .subscribe-box {
+        width: 100%;
+        max-width: 100%;
+        padding: 30px 20px;
+    }
+    
+    .subscribe-box .form-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .subscribe-box input {
+        width: 100%;
     }
     
     /* Tablet breakpoint */

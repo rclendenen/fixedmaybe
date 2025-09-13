@@ -148,7 +148,7 @@
                 <div class="section-content">
                     <h2 class="section-title">Upcoming Events</h2>
                     <div class="events-container">
-                        <!-- First Row: Original 3 boxes -->
+                        <!-- First Row: Speaking Topics and Next Event -->
                         <div class="events-row events-row-1">
                             <div class="content-box events-info-box">
                                 <div class="content-icon">
@@ -167,6 +167,25 @@
                                     </ul>
                                 </div>
                             </div>
+                            <div class="content-box next-event-box">
+                                <div class="event-date">
+                                    <div class="date-month">March</div>
+                                    <div class="date-day">15</div>
+                                    <div class="date-year">2025</div>
+                                </div>
+                                <div class="event-details">
+                                    <h3>Women's Book Club Meeting</h3>
+                                    <p>Join Elizabeth for an intimate discussion about grief, healing, and finding hope through storytelling. This special event will include a reading from Unspoken Goodbyes and time for Q&A.</p>
+                                    <div class="event-info">
+                                        <p><i class="fas fa-clock"></i> 2:00 PM - 4:00 PM</p>
+                                        <p><i class="fas fa-map-marker-alt"></i> Arlington Public Library</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Second Row: Calendar and Request Booking -->
+                        <div class="events-row events-row-2">
                             <div class="content-box calendar-box">
                                 <div class="content-icon">
                                     <i class="fas fa-calendar-alt"></i>
@@ -226,46 +245,32 @@
                                 </form>
                             </div>
                         </div>
-                        
-                        <!-- Second Row: Next Event and Subscribe boxes -->
-                        <div class="events-row events-row-2">
-                            <div class="content-box next-event-box">
-                                <div class="event-date">
-                                    <div class="date-month">March</div>
-                                    <div class="date-day">15</div>
-                                    <div class="date-year">2025</div>
-                                </div>
-                                <div class="event-details">
-                                    <h3>Women's Book Club Meeting</h3>
-                                    <p>Join Elizabeth for an intimate discussion about grief, healing, and finding hope through storytelling. This special event will include a reading from Unspoken Goodbyes and time for Q&A.</p>
-                                    <div class="event-info">
-                                        <p><i class="fas fa-clock"></i> 2:00 PM - 4:00 PM</p>
-                                        <p><i class="fas fa-map-marker-alt"></i> Arlington Public Library</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-box subscribe-section">
-                                <div class="content-icon">
-                                    <i class="fas fa-bell"></i>
-                                </div>
-                                <h3>Stay Updated</h3>
-                                <p>Subscribe here to stay up to date with current events and upcoming speaking engagements.</p>
-                                <form class="subscribe-form" id="subscribeForm">
-                                    <div class="form-group">
-                                        <input type="email" id="subscribeEmail" name="email" required placeholder="Enter your email address">
-                                        <button type="submit" class="btn btn-primary">
-                                            <i class="fas fa-bell"></i>
-                                            Subscribe
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Standalone Subscribe Section -->
+        <div class="standalone-subscribe">
+            <div class="container">
+                <div class="subscribe-box">
+                    <div class="content-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe here to stay up to date with current events and upcoming speaking engagements.</p>
+                    <form class="subscribe-form" id="standaloneSubscribeForm">
+                        <div class="form-group">
+                            <input type="email" id="standaloneSubscribeEmail" name="email" required placeholder="Enter your email address">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-bell"></i>
+                                Subscribe
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
         <!-- Books Section -->
         <section class="books" id="books">
