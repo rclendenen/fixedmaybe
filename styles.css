@@ -622,6 +622,14 @@ section {
     font-weight: 500;
 }
 
+.events-row .next-event-box .events-section-title {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: left;
+}
+
 .events-row .next-event-box .event-title {
     display: flex;
     align-items: center;
@@ -666,6 +674,27 @@ section {
 .events-row .next-event-box .event-info i {
     color: var(--secondary-color);
     width: 12px;
+}
+
+.events-row .next-event-box .directions-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 8px;
+    transition: var(--transition);
+}
+
+.events-row .next-event-box .directions-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
 }
 
 /* Standalone Subscribe Section */
