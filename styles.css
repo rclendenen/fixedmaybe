@@ -716,8 +716,8 @@ section {
     border-radius: 20px;
     padding: 40px;
     text-align: center;
-    width: 1220px;
-    max-width: 1220px;
+    width: 800px;
+    max-width: 800px;
     height: 123px;
     margin: 0 auto;
     border: 2px solid rgba(194, 192, 183, 0.3);
@@ -1687,8 +1687,8 @@ section {
     
     /* Standalone Subscribe Mobile */
     .subscribe-box {
-        width: 100%;
-        max-width: 100%;
+        width: 90%;
+        max-width: 90%;
         height: auto;
         min-height: 123px;
         padding: 20px 15px;
