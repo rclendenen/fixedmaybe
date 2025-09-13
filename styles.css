@@ -46,7 +46,7 @@ body {
     --title-font: 'Ink Free', cursive;
     
     /* Spacing */
-    --section-padding: 80px 0;
+    --section-padding: 120px 0;
     --container-padding: 0 30px;
     
     /* Shadows with new color palette */
@@ -66,7 +66,7 @@ body {
     background-image: url('background books.JPEG');
     background-size: cover;
     background-position: center;
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     min-height: 100vh;
 }
@@ -704,11 +704,11 @@ section {
 
 /* Standalone Subscribe Section */
 .standalone-subscribe {
-    padding: 60px 0;
+    padding: 100px 0;
     background: rgba(161, 178, 171, 0.1);
     backdrop-filter: blur(10px);
     position: relative;
-    z-index: 3;
+    z-index: 5;
 }
 
 .subscribe-box {
@@ -1505,7 +1505,7 @@ section {
         transform: none !important;
     }
     :root {
-        --section-padding: 60px 0;
+        --section-padding: 80px 0;
         --container-padding: 0 15px;
     }
     
@@ -1809,7 +1809,7 @@ section {
 
 @media (max-width: 480px) {
     :root {
-        --section-padding: 40px 0;
+        --section-padding: 60px 0;
         --container-padding: 0 10px;
     }
     
