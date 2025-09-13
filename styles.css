@@ -1940,6 +1940,42 @@ section {
     }
     
     /* Events boxes now use the same mobile styling as top content boxes */
+    
+    /* Subscribe Box Mobile */
+    .subscribe-box {
+        width: 95%;
+        max-width: 95%;
+        height: auto;
+        min-height: 100px;
+        padding: 15px 10px;
+    }
+    
+    .subscribe-box h3 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+    }
+    
+    .subscribe-box p {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+    
+    .subscribe-box .form-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .subscribe-box input {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .subscribe-box .btn {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
 }
 
 /* Focus Styles for Accessibility */
