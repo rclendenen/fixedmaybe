@@ -626,7 +626,7 @@ section {
 
 .events-row .next-event-box .events-section-title {
     color: var(--primary-color);
-    font-size: 1.4rem;
+    font-size: 2.2rem;
     margin-bottom: 10px;
     font-family: var(--font-primary);
     font-weight: 600;
@@ -712,29 +712,32 @@ section {
 }
 
 .subscribe-box {
-    background: rgba(244, 243, 239, 0.95);
-    backdrop-filter: blur(10px);
+    background: transparent;
     border-radius: 20px;
     padding: 40px;
-    box-shadow: var(--shadow-medium);
     text-align: center;
-    width: 700px;
-    max-width: 700px;
+    width: 1220px;
+    max-width: 1220px;
+    height: 123px;
     margin: 0 auto;
     border: 2px solid rgba(194, 192, 183, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .subscribe-box h3 {
     color: var(--primary-color);
     font-size: 1.8rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-weight: 600;
 }
 
 .subscribe-box p {
     color: var(--text-light);
     line-height: 1.6;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     font-size: 1.1rem;
 }
 
@@ -1685,7 +1688,9 @@ section {
     .subscribe-box {
         width: 100%;
         max-width: 100%;
-        padding: 30px 20px;
+        height: auto;
+        min-height: 123px;
+        padding: 20px 15px;
     }
     
     .subscribe-box .form-group {
