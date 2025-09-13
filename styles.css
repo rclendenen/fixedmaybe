@@ -600,6 +600,8 @@ section {
     text-align: center;
     min-width: 80px;
     flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 0;
 }
 
 .events-row .next-event-box .date-month {
@@ -644,7 +646,7 @@ section {
 
 .events-row .next-event-box .event-details h3 {
     color: var(--primary-color);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin: 0;
     font-weight: 600;
 }
