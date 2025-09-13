@@ -1685,18 +1685,34 @@ section {
         gap: 10px;
     }
     
+    .events-row .next-event-box {
+        display: grid;
+        grid-template-areas: 
+            "events-title"
+            "date-box"
+            "event-content";
+        gap: 15px;
+    }
+    
     .events-row .next-event-box .events-section-title {
-        order: 1; /* Events title first */
+        grid-area: events-title;
+        order: unset;
     }
     
     .events-row .next-event-box .event-date {
+        grid-area: date-box;
         align-self: center;
         min-width: 70px;
-        order: 2; /* Date appears second */
+        order: unset;
     }
     
     .events-row .next-event-box .event-details {
-        order: 3; /* Event details (Book Signing Event, description, info) appears third */
+        grid-area: event-content;
+        order: unset;
+    }
+    
+    .events-row .next-event-box .event-title {
+        order: 1; /* Book Signing Event title first within event-details */
     }
     
     /* Standalone Subscribe Mobile */
@@ -1951,16 +1967,32 @@ section {
     /* Events boxes now use the same mobile styling as top content boxes */
     
     /* Event Date Ordering for Small Mobile */
+    .events-row .next-event-box {
+        display: grid;
+        grid-template-areas: 
+            "events-title"
+            "date-box"
+            "event-content";
+        gap: 15px;
+    }
+    
     .events-row .next-event-box .events-section-title {
-        order: 1; /* Events title first */
+        grid-area: events-title;
+        order: unset;
     }
     
     .events-row .next-event-box .event-date {
-        order: 2; /* Date appears second */
+        grid-area: date-box;
+        order: unset;
     }
     
     .events-row .next-event-box .event-details {
-        order: 3; /* Event details (Book Signing Event, description, info) appears third */
+        grid-area: event-content;
+        order: unset;
+    }
+    
+    .events-row .next-event-box .event-title {
+        order: 1; /* Book Signing Event title first within event-details */
     }
     
     /* Subscribe Box Mobile */
