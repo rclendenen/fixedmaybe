@@ -1176,10 +1176,11 @@ section {
 
 .events-date-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 451px 451px;
     gap: 3rem;
     align-items: start;
     margin-top: 2rem;
+    justify-content: center;
 }
 
 .next-event-box {
@@ -1191,6 +1192,8 @@ section {
     display: flex;
     gap: 20px;
     align-items: flex-start;
+    width: 451px;
+    height: 359px;
 }
 
 .event-date {
@@ -1263,6 +1266,11 @@ section {
     padding: 30px;
     box-shadow: var(--shadow-medium);
     text-align: center;
+    width: 451px;
+    height: 359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .subscribe-section h3 {
@@ -1612,12 +1620,24 @@ section {
     .events-date-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        justify-content: center;
     }
     
     .next-event-box {
         flex-direction: column;
         text-align: center;
         gap: 15px;
+        width: 100%;
+        max-width: 451px;
+        height: auto;
+        min-height: 359px;
+    }
+    
+    .subscribe-section {
+        width: 100%;
+        max-width: 451px;
+        height: auto;
+        min-height: 359px;
     }
     
     .event-date {
