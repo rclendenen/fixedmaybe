@@ -658,6 +658,9 @@ section {
     margin-bottom: 10px;
     font-size: 1.1rem;
     padding: 3px 0;
+    hyphens: none;
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 .events-row .next-event-box .event-info {
@@ -672,6 +675,9 @@ section {
     gap: 6px;
     font-size: 1.1rem;
     color: var(--text-medium);
+    hyphens: none;
+    word-break: keep-all;
+    overflow-wrap: break-word;
     margin: 0;
     padding: 3px 0;
 }
