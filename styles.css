@@ -1699,14 +1699,6 @@ section {
         order: 3; /* Book Signing Event title after date */
     }
     
-    .events-row .next-event-box .event-details p {
-        order: 4; /* Description after title */
-    }
-    
-    .events-row .next-event-box .event-info {
-        order: 5; /* Event info last */
-    }
-    
     /* Standalone Subscribe Mobile */
     .subscribe-box {
         width: 90%;
@@ -1969,14 +1961,6 @@ section {
     
     .events-row .next-event-box .event-title {
         order: 3; /* Book Signing Event title after date */
-    }
-    
-    .events-row .next-event-box .event-details p {
-        order: 4; /* Description after title */
-    }
-    
-    .events-row .next-event-box .event-info {
-        order: 5; /* Event info last */
     }
     
     /* Subscribe Box Mobile */
