@@ -269,12 +269,9 @@
                     </div>
                     <h3>Stay Updated</h3>
                     <p>Subscribe here to stay up to date with current events and upcoming speaking engagements.</p>
-                    <form class="subscribe-form" id="standaloneSubscribeForm" action="https://formspree.io/f/xjkezazb" method="POST">
+                    <form class="subscribe-form" id="standaloneSubscribeForm">
                         <div class="form-group">
                             <input type="email" id="standaloneSubscribeEmail" name="email" required placeholder="Enter your email address">
-                            <input type="hidden" name="_subject" value="New Newsletter Subscription from elizabethkgreen.com">
-                            <input type="hidden" name="_next" value="https://elizabethkgreen.com/?subscribed=true">
-                            <input type="hidden" name="_captcha" value="false">
                             <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-bell"></i>
                                 Subscribe
@@ -424,7 +421,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
     
-    <!-- Formspree Form Handling -->
+    <!-- Google Apps Script Form Handling -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('standaloneSubscribeForm');
@@ -432,42 +429,45 @@
             const submitButton = form.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.innerHTML;
             
-            // Check if user was redirected back after successful submission
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('subscribed') === 'true') {
-                showSuccessMessage();
-                // Clean up URL
-                window.history.replaceState({}, document.title, window.location.pathname);
-            }
+            // Your Google Apps Script web app URL
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyoO8gGwq-V6CLYGX4bIuHRZpUvdTyv1AXIvAMecj7fRzYZoazH2QOqhs2bQnqq7SlL/exec';
             
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
+                
+                const email = emailInput.value.trim();
+                
+                if (!email) {
+                    showErrorMessage('Please enter a valid email address.');
+                    return;
+                }
                 
                 // Show loading state
                 submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
                 submitButton.disabled = true;
                 
-                // Submit form data
-                const formData = new FormData(form);
-                
-                fetch(form.action, {
+                // Submit to Google Apps Script
+                fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
-                    body: formData,
+                    mode: 'no-cors',
                     headers: {
-                        'Accept': 'application/json'
-                    }
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        timestamp: new Date().toISOString(),
+                        source: 'elizabethkgreen.com'
+                    })
                 })
-                .then(response => {
-                    if (response.ok) {
-                        showSuccessMessage();
-                        form.reset();
-                    } else {
-                        throw new Error('Network response was not ok');
-                    }
+                .then(() => {
+                    // Since we're using no-cors mode, we can't check the response
+                    // But we'll assume success and show the success message
+                    showSuccessMessage();
+                    form.reset();
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    showErrorMessage();
+                    showErrorMessage('Sorry, there was an error. Please try again.');
                 })
                 .finally(() => {
                     // Reset button state
@@ -501,10 +501,10 @@
                 }, 5000);
             }
             
-            function showErrorMessage() {
+            function showErrorMessage(message) {
                 const errorDiv = document.createElement('div');
                 errorDiv.className = 'form-error';
-                errorDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Sorry, there was an error. Please try again.';
+                errorDiv.innerHTML = `<i class="fas fa-exclamation-triangle"></i> ${message}`;
                 errorDiv.style.cssText = `
                     background: #f8d7da;
                     color: #721c24;
