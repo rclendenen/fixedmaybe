@@ -1021,10 +1021,9 @@ section {
 }
 
 .book-cover-large {
-    width: 600px;
-    height: auto;
-    max-height: 700px;
-    min-height: 400px;
+    width: auto;
+    height: 699px;
+    max-width: 600px;
     border-radius: 12px;
     box-shadow: var(--shadow-strong);
     transition: var(--transition);
@@ -1863,9 +1862,10 @@ section {
     }
     
     .book-cover-large {
-        width: 100%;
+        width: auto;
         max-width: 100%;
         height: auto;
+        object-fit: contain;
     }
     
     .current-book h3 {
