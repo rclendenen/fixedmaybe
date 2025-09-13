@@ -1167,13 +1167,13 @@ section {
 }
 
 .upcoming-book-cover {
-    width: 600px;
+    width: auto;
     max-width: 600px;
     height: 699px;
     border-radius: 15px;
     box-shadow: var(--shadow-medium);
     transition: var(--transition);
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .upcoming-book-cover:hover {
@@ -1765,8 +1765,9 @@ section {
     }
     
     .upcoming-book-cover {
-        width: 100%;
+        width: auto;
         max-width: 100%;
+        object-fit: contain;
     }
     
     /* Prayer Section Mobile */
@@ -1905,9 +1906,10 @@ section {
     }
     
     .upcoming-book-cover {
-        width: 100%;
+        width: auto;
         max-width: 100%;
         height: auto;
+        object-fit: contain;
     }
     
     .content-box {
