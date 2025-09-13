@@ -147,112 +147,119 @@
             <div class="container">
                 <div class="section-content">
                     <h2 class="section-title">Upcoming Events</h2>
-                    <div class="events-row">
-                        <div class="content-box events-info-box">
-                            <div class="content-icon">
-                                <i class="fas fa-microphone-alt"></i>
-                            </div>
-                            <h3>Speaking Topics</h3>
-                            <p>Elizabeth is available for book clubs, speaking engagements, and special events. She shares her journey of grief and healing with authenticity and hope, inviting others to find comfort and strength in their own stories.</p>
-                            <div class="speaking-topics">
-                                <h4>Speaking Topics Include:</h4>
-                                <ul>
-                                    <li>Grief and Healing</li>
-                                    <li>Finding Hope in Loss</li>
-                                    <li>The Power of Storytelling</li>
-                                    <li>Faith and Family</li>
-                                    <li>Writing as Therapy</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="content-box calendar-box">
-                            <div class="content-icon">
-                                <i class="fas fa-calendar-alt"></i>
-                            </div>
-                            <h3>Available Dates</h3>
-                            <div class="calendar-container">
-                                <div class="calendar-header">
-                                    <button class="calendar-nav" id="prevMonth">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </button>
-                                    <h4 id="currentMonth">January 2025</h4>
-                                    <button class="calendar-nav" id="nextMonth">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </button>
+                    <div class="events-container">
+                        <!-- First Row: Original 3 boxes -->
+                        <div class="events-row events-row-1">
+                            <div class="content-box events-info-box">
+                                <div class="content-icon">
+                                    <i class="fas fa-microphone-alt"></i>
                                 </div>
-                                <div class="calendar-grid" id="calendarGrid">
-                                    <!-- Calendar will be populated by JavaScript -->
+                                <h3>Speaking Topics</h3>
+                                <p>Elizabeth is available for book clubs, speaking engagements, and special events. She shares her journey of grief and healing with authenticity and hope, inviting others to find comfort and strength in their own stories.</p>
+                                <div class="speaking-topics">
+                                    <h4>Speaking Topics Include:</h4>
+                                    <ul>
+                                        <li>Grief and Healing</li>
+                                        <li>Finding Hope in Loss</li>
+                                        <li>The Power of Storytelling</li>
+                                        <li>Faith and Family</li>
+                                        <li>Writing as Therapy</li>
+                                    </ul>
                                 </div>
-                                <div class="calendar-legend">
-                                    <div class="legend-item">
-                                        <span class="legend-dot available"></span>
-                                        <span>Available</span>
+                            </div>
+                            <div class="content-box calendar-box">
+                                <div class="content-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <h3>Available Dates</h3>
+                                <div class="calendar-container">
+                                    <div class="calendar-header">
+                                        <button class="calendar-nav" id="prevMonth">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <h4 id="currentMonth">January 2025</h4>
+                                        <button class="calendar-nav" id="nextMonth">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
                                     </div>
-                                    <div class="legend-item">
-                                        <span class="legend-dot booked"></span>
-                                        <span>Booked</span>
+                                    <div class="calendar-grid" id="calendarGrid">
+                                        <!-- Calendar will be populated by JavaScript -->
+                                    </div>
+                                    <div class="calendar-legend">
+                                        <div class="legend-item">
+                                            <span class="legend-dot available"></span>
+                                            <span>Available</span>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-dot booked"></span>
+                                            <span>Booked</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="content-box events-form-box">
-                            <div class="content-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <h3>Request Booking</h3>
-                            <form class="events-form" id="eventsForm">
-                                <div class="form-group">
-                                    <label for="eventsName">Name *</label>
-                                    <input type="text" id="eventsName" name="name" required placeholder="Your name">
+                            <div class="content-box events-form-box">
+                                <div class="content-icon">
+                                    <i class="fas fa-envelope"></i>
                                 </div>
-                                <div class="form-group">
-                                    <label for="eventsEmail">Email *</label>
-                                    <input type="email" id="eventsEmail" name="email" required placeholder="your.email@example.com">
-                                </div>
-                                <div class="form-group">
-                                    <label for="eventsSubject">Event Type *</label>
-                                    <input type="text" id="eventsSubject" name="subject" required placeholder="e.g., Book Club, Women's Group, Church Event">
-                                </div>
-                                <div class="form-group">
-                                    <label for="eventsMessage">Event Details *</label>
-                                    <textarea id="eventsMessage" name="message" required rows="3" placeholder="Please provide details about your event, date, location, and audience..."></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-calendar-check"></i>
-                                    Request Booking
-                                </button>
-                            </form>
-                        </div>
-                        <div class="content-box next-event-box">
-                            <div class="event-date">
-                                <div class="date-month">March</div>
-                                <div class="date-day">15</div>
-                                <div class="date-year">2025</div>
-                            </div>
-                            <div class="event-details">
-                                <h3>Women's Book Club Meeting</h3>
-                                <p>Join Elizabeth for an intimate discussion about grief, healing, and finding hope through storytelling. This special event will include a reading from Unspoken Goodbyes and time for Q&A.</p>
-                                <div class="event-info">
-                                    <p><i class="fas fa-clock"></i> 2:00 PM - 4:00 PM</p>
-                                    <p><i class="fas fa-map-marker-alt"></i> Arlington Public Library</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content-box subscribe-section">
-                            <div class="content-icon">
-                                <i class="fas fa-bell"></i>
-                            </div>
-                            <h3>Stay Updated</h3>
-                            <p>Subscribe here to stay up to date with current events and upcoming speaking engagements.</p>
-                            <form class="subscribe-form" id="subscribeForm">
-                                <div class="form-group">
-                                    <input type="email" id="subscribeEmail" name="email" required placeholder="Enter your email address">
+                                <h3>Request Booking</h3>
+                                <form class="events-form" id="eventsForm">
+                                    <div class="form-group">
+                                        <label for="eventsName">Name *</label>
+                                        <input type="text" id="eventsName" name="name" required placeholder="Your name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="eventsEmail">Email *</label>
+                                        <input type="email" id="eventsEmail" name="email" required placeholder="your.email@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="eventsSubject">Event Type *</label>
+                                        <input type="text" id="eventsSubject" name="subject" required placeholder="e.g., Book Club, Women's Group, Church Event">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="eventsMessage">Event Details *</label>
+                                        <textarea id="eventsMessage" name="message" required rows="3" placeholder="Please provide details about your event, date, location, and audience..."></textarea>
+                                    </div>
                                     <button type="submit" class="btn btn-primary">
-                                        <i class="fas fa-bell"></i>
-                                        Subscribe
+                                        <i class="fas fa-calendar-check"></i>
+                                        Request Booking
                                     </button>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <!-- Second Row: Next Event and Subscribe boxes -->
+                        <div class="events-row events-row-2">
+                            <div class="content-box next-event-box">
+                                <div class="event-date">
+                                    <div class="date-month">March</div>
+                                    <div class="date-day">15</div>
+                                    <div class="date-year">2025</div>
                                 </div>
-                            </form>
+                                <div class="event-details">
+                                    <h3>Women's Book Club Meeting</h3>
+                                    <p>Join Elizabeth for an intimate discussion about grief, healing, and finding hope through storytelling. This special event will include a reading from Unspoken Goodbyes and time for Q&A.</p>
+                                    <div class="event-info">
+                                        <p><i class="fas fa-clock"></i> 2:00 PM - 4:00 PM</p>
+                                        <p><i class="fas fa-map-marker-alt"></i> Arlington Public Library</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-box subscribe-section">
+                                <div class="content-icon">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <h3>Stay Updated</h3>
+                                <p>Subscribe here to stay up to date with current events and upcoming speaking engagements.</p>
+                                <form class="subscribe-form" id="subscribeForm">
+                                    <div class="form-group">
+                                        <input type="email" id="subscribeEmail" name="email" required placeholder="Enter your email address">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-bell"></i>
+                                            Subscribe
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
