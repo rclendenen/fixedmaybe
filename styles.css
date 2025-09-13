@@ -1685,6 +1685,10 @@ section {
         gap: 10px;
     }
     
+    .events-row .next-event-box .events-section-title {
+        order: 1; /* Events title first */
+    }
+    
     .events-row .next-event-box .event-date {
         align-self: center;
         min-width: 70px;
@@ -1692,15 +1696,7 @@ section {
     }
     
     .events-row .next-event-box .event-details {
-        order: 1; /* Event details appears first */
-    }
-    
-    .events-row .next-event-box .events-section-title {
-        order: 1; /* Events title first within event-details */
-    }
-    
-    .events-row .next-event-box .event-title {
-        order: 3; /* Book Signing Event title third within event-details */
+        order: 3; /* Event details (Book Signing Event, description, info) appears third */
     }
     
     /* Standalone Subscribe Mobile */
@@ -1955,20 +1951,16 @@ section {
     /* Events boxes now use the same mobile styling as top content boxes */
     
     /* Event Date Ordering for Small Mobile */
+    .events-row .next-event-box .events-section-title {
+        order: 1; /* Events title first */
+    }
+    
     .events-row .next-event-box .event-date {
         order: 2; /* Date appears second */
     }
     
     .events-row .next-event-box .event-details {
-        order: 1; /* Event details appears first */
-    }
-    
-    .events-row .next-event-box .events-section-title {
-        order: 1; /* Events title first within event-details */
-    }
-    
-    .events-row .next-event-box .event-title {
-        order: 3; /* Book Signing Event title third within event-details */
+        order: 3; /* Event details (Book Signing Event, description, info) appears third */
     }
     
     /* Subscribe Box Mobile */
