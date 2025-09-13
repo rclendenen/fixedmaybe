@@ -923,7 +923,7 @@ section {
 
 /* Books Section */
 .books {
-    padding: 120px 0;
+    padding: 60px 0;
     background: rgba(244, 243, 239, 0.1);
     backdrop-filter: blur(10px);
     position: relative;
@@ -1720,7 +1720,7 @@ section {
     
     /* Books Section Mobile */
     .books {
-        padding: 80px 0;
+        padding: 60px 0;
         margin-top: 0;
     }
     
