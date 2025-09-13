@@ -1436,6 +1436,7 @@ section {
 
 /* Prayer Section */
 .prayer {
+    padding: 25px 0;
     background: rgba(194, 192, 183, 0.85);
     backdrop-filter: blur(10px);
     position: relative;
