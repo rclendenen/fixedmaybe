@@ -702,6 +702,14 @@ section {
     box-shadow: var(--shadow-medium);
 }
 
+/* Blank Space Section */
+.blank-space-section {
+    height: 60px;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
 /* Standalone Subscribe Section */
 .standalone-subscribe {
     padding: 60px 0 25px 0;
