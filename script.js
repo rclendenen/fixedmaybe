@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initPrayerForm();
     initEventsForm();
+    initSubscribeForm();
     initCalendar();
     initScrollEffects();
     initParallaxEffects();
@@ -204,6 +205,61 @@ function initEventsForm() {
                     eventsForm.reset();
                 }, function(error) {
                     showMessage('Sorry, there was an error sending your booking request. Please try again.', 'error');
+                    console.error('EmailJS error:', error);
+                })
+                .finally(function() {
+                    // Reset button state
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+}
+
+// Initialize Subscribe Form
+function initSubscribeForm() {
+    const subscribeForm = document.getElementById('subscribeForm');
+    
+    if (subscribeForm) {
+        subscribeForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const email = this.querySelector('#subscribeEmail').value.trim();
+            
+            // Basic validation
+            if (!email) {
+                showMessage('Please enter your email address.', 'error');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+            submitBtn.disabled = true;
+            
+            // Prepare template parameters for EmailJS
+            const templateParams = {
+                to_email: 'writeovercoffeee@gmail.com',
+                from_email: email,
+                subject: 'New Newsletter Subscription',
+                message: `New newsletter subscription from: ${email}`,
+                reply_to: email
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('service_913jvci', 'template_njf9lce', templateParams)
+                .then(function(response) {
+                    showMessage('Thank you for subscribing! You will receive updates about upcoming events.', 'success');
+                    subscribeForm.reset();
+                }, function(error) {
+                    showMessage('Sorry, there was an error with your subscription. Please try again.', 'error');
                     console.error('EmailJS error:', error);
                 })
                 .finally(function() {
