@@ -172,6 +172,7 @@ function initEventsForm() {
             const email = formData.get('email').trim();
             const subject = formData.get('subject').trim();
             const message = formData.get('message').trim();
+            const selectedDate = formData.get('selectedDate');
             
             // Basic validation
             if (!name || !email || !subject || !message) {
@@ -191,11 +192,12 @@ function initEventsForm() {
             submitBtn.disabled = true;
             
             // Prepare email template parameters for booking request
+            const dateInfo = selectedDate ? `\nPreferred Date: ${selectedDate}` : '';
             const templateParams = {
                 from_email: email,
                 from_name: name,
                 subject: `Speaking Engagement Request: ${subject}`,
-                message: `Name: ${name}\nEmail: ${email}\nEvent Type: ${subject}\n\nEvent Details:\n${message}`,
+                message: `Name: ${name}\nEmail: ${email}\nEvent Type: ${subject}${dateInfo}\n\nEvent Details:\n${message}`,
                 to_email: 'writeovercoffeee@gmail.com'
             };
             
@@ -647,6 +649,7 @@ function initCalendar() {
         '2025-06-19', // Juneteenth
         '2025-07-04', // Independence Day
         '2025-09-01', // Labor Day
+        '2025-09-27', // Book Signing Event at Esquinta Dulecra
         '2025-10-13', // Columbus Day
         '2025-11-11', // Veterans Day
         '2025-11-27', // Thanksgiving Day
@@ -728,7 +731,21 @@ function initCalendar() {
                 dayElement.title = 'Click to select this date';
                 
                 dayElement.addEventListener('click', function() {
-                    // You can add booking functionality here
+                    // Remove previous selection
+                    document.querySelectorAll('.calendar-day.selected').forEach(el => {
+                        el.classList.remove('selected');
+                    });
+                    
+                    // Add selection to clicked date
+                    dayElement.classList.add('selected');
+                    
+                    // Update hidden input field with selected date
+                    const selectedDateInput = document.getElementById('selectedDate');
+                    if (selectedDateInput) {
+                        const dateString = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                        selectedDateInput.value = dateString;
+                    }
+                    
                     showMessage(`Selected date: ${monthNames[currentMonth]} ${day}, ${currentYear}`, 'info');
                 });
             }

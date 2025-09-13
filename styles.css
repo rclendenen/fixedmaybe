@@ -622,10 +622,22 @@ section {
     font-weight: 500;
 }
 
+.events-row .next-event-box .event-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.events-row .next-event-box .event-title i {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
 .events-row .next-event-box .event-details h3 {
     color: var(--primary-color);
     font-size: 1.2rem;
-    margin-bottom: 10px;
+    margin: 0;
     font-weight: 600;
 }
 
@@ -829,6 +841,13 @@ section {
     background: rgba(54, 76, 75, 0.3);
     color: var(--primary-color);
     cursor: not-allowed;
+}
+
+.calendar-day.selected {
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+    transform: scale(1.1);
 }
 
 .calendar-day.today {
@@ -1113,10 +1132,11 @@ section {
 .upcoming-book-cover {
     width: 600px;
     max-width: 600px;
-    height: auto;
+    height: 699px;
     border-radius: 15px;
     box-shadow: var(--shadow-medium);
     transition: var(--transition);
+    object-fit: cover;
 }
 
 .upcoming-book-cover:hover {
