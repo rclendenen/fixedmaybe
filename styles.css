@@ -702,17 +702,9 @@ section {
     box-shadow: var(--shadow-medium);
 }
 
-/* Blank Space Section */
-.blank-space-section {
-    height: 60px;
-    background: transparent;
-    position: relative;
-    z-index: 1;
-}
-
 /* Standalone Subscribe Section */
 .standalone-subscribe {
-    padding: 60px 0 25px 0;
+    padding: 60px 0;
     background: rgba(230, 225, 212, 0.9);
     backdrop-filter: blur(10px);
     position: relative;
