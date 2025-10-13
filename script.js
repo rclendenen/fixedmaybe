@@ -652,6 +652,7 @@ function initCalendar() {
         '2025-09-27', // Book Signing Event at Esquinta Dulecra
         '2025-10-13', // Columbus Day
         '2025-11-11', // Veterans Day
+        '2025-11-15', // Unavailable
         '2025-11-27', // Thanksgiving Day
         '2025-12-25', // Christmas Day
         
