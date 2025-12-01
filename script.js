@@ -48,7 +48,7 @@ function initChristmasTheme() {
             setTimeout(() => {
                 christmasPopup.classList.add('show');
                 
-                // Remove ribbon after animation completes (5 seconds)
+                // Remove ribbon after animation completes (8 seconds)
                 setTimeout(() => {
                     christmasPopup.classList.remove('show');
                     // Reset position for next time
@@ -58,7 +58,7 @@ function initChristmasTheme() {
                             christmasPopup.style.animation = '';
                         }, 10);
                     }, 100);
-                }, 5000);
+                }, 8000);
             }, 500);
         }
     } else {
