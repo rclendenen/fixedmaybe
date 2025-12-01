@@ -1121,6 +1121,11 @@ section {
     justify-content: center;
     align-items: start;
     max-width: 100%;
+    margin-bottom: 60px;
+}
+
+.upcoming-book-content:last-of-type {
+    margin-bottom: 0;
 }
 
 .upcoming-book-text {
@@ -1160,6 +1165,20 @@ section {
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
+    margin-bottom: 20px;
+}
+
+.upcoming-book-text p:last-child {
+    margin-bottom: 0;
+}
+
+.upcoming-book-text p strong {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-family: var(--heading-font);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
 }
 
 .upcoming-book-image {
