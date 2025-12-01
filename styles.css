@@ -1739,6 +1739,11 @@ section {
     }
     
     /* Standalone Subscribe Mobile */
+    .standalone-subscribe {
+        padding: 80px 0 100px 0;
+        margin-bottom: 60px;
+    }
+    
     .subscribe-box {
         width: 90%;
         max-width: 90%;
@@ -1774,7 +1779,7 @@ section {
     /* Books Section Mobile */
     .books {
         padding: 80px 0 140px 0;
-        margin-top: 0;
+        margin-top: 60px;
     }
     
     .book-content {
@@ -1825,8 +1830,8 @@ section {
     
     /* Prayer Section Mobile */
     .prayer {
-        padding: 25px 0;
-        margin-top: 0;
+        padding: 80px 0 60px 0;
+        margin-top: 60px;
     }
     
     .prayer-content {
@@ -2257,7 +2262,7 @@ section {
 /* Mobile Responsive for Christmas Theme */
 @media (max-width: 768px) {
     .christmas-lights {
-        top: 120px; /* Adjust for mobile header height */
+        top: 160px; /* Position at bottom of mobile header (header is taller on mobile due to column layout) */
         height: 40px;
     }
     
