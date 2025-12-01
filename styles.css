@@ -2168,6 +2168,7 @@ section {
     filter: brightness(1.5) contrast(0.8) saturate(0);
     color: rgba(255, 255, 255, 0.9);
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4);
+    z-index: 1;
 }
 
 /* Star Sizes */
@@ -2358,7 +2359,7 @@ section {
 
 .christmas-ribbon.show {
     display: block;
-    animation: ribbonFlowWave 8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: ribbonFlowWave 8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
 .christmas-ribbon-content {
@@ -2412,7 +2413,7 @@ section {
     white-space: nowrap;
 }
 
-/* Flowing ribbon with smooth wave motion - creates a wave path as it moves */
+/* Flowing ribbon with smooth wave motion - creates a smooth wave path as it moves */
 @keyframes ribbonFlowWave {
     0% {
         left: -100%;
@@ -2423,134 +2424,74 @@ section {
         opacity: 1;
         transform: translate(0, calc(-50% + 0px));
     }
-    12% {
-        transform: translate(0, calc(-50% + -20px));
-    }
-    14% {
-        transform: translate(0, calc(-50% + -25px));
-    }
-    16% {
-        transform: translate(0, calc(-50% + -20px));
-    }
-    18% {
-        transform: translate(0, calc(-50% + 0px));
+    15% {
+        transform: translate(0, calc(-50% + -15px));
     }
     20% {
-        transform: translate(0, calc(-50% + 20px));
-    }
-    22% {
-        transform: translate(0, calc(-50% + 25px));
-    }
-    24% {
-        transform: translate(0, calc(-50% + 20px));
-    }
-    26% {
         transform: translate(0, calc(-50% + 0px));
+    }
+    25% {
+        transform: translate(0, calc(-50% + 15px));
     }
     28% {
         left: calc(50% - 200px);
-        transform: translate(0, calc(-50% + -18px));
+        transform: translate(0, calc(-50% + 0px));
         opacity: 1;
-    }
-    30% {
-        transform: translate(0, calc(-50% + -20px));
     }
     32% {
-        transform: translate(0, calc(-50% + -18px));
-    }
-    34% {
-        transform: translate(0, calc(-50% + 0px));
+        transform: translate(0, calc(-50% + -12px));
     }
     36% {
-        transform: translate(0, calc(-50% + 18px));
-    }
-    38% {
-        left: calc(50% - 200px);
-        transform: translate(0, calc(-50% + 20px));
-        opacity: 1;
+        transform: translate(0, calc(-50% + 0px));
     }
     40% {
-        transform: translate(0, calc(-50% + 18px));
-    }
-    42% {
-        transform: translate(0, calc(-50% + 0px));
+        left: calc(50% - 200px);
+        transform: translate(0, calc(-50% + 12px));
+        opacity: 1;
     }
     44% {
-        transform: translate(0, calc(-50% + -18px));
-    }
-    46% {
-        left: calc(50% - 200px);
-        transform: translate(0, calc(-50% + -20px));
-        opacity: 1;
+        transform: translate(0, calc(-50% + 0px));
     }
     48% {
-        transform: translate(0, calc(-50% + -18px));
-    }
-    50% {
-        transform: translate(0, calc(-50% + 0px));
-    }
-    52% {
-        transform: translate(0, calc(-50% + 18px));
-    }
-    54% {
         left: calc(50% - 200px);
-        transform: translate(0, calc(-50% + 20px));
+        transform: translate(0, calc(-50% + -12px));
         opacity: 1;
     }
-    56% {
-        transform: translate(0, calc(-50% + 18px));
-    }
-    58% {
+    52% {
         transform: translate(0, calc(-50% + 0px));
     }
+    56% {
+        left: calc(50% - 200px);
+        transform: translate(0, calc(-50% + 12px));
+        opacity: 1;
+    }
     60% {
-        transform: translate(0, calc(-50% + -18px));
+        transform: translate(0, calc(-50% + 0px));
     }
     62% {
         left: calc(50% - 200px);
-        transform: translate(0, calc(-50% + -20px));
+        transform: translate(0, calc(-50% + -12px));
         opacity: 1;
-    }
-    64% {
-        transform: translate(0, calc(-50% + -18px));
     }
     66% {
         transform: translate(0, calc(-50% + 0px));
     }
-    68% {
-        transform: translate(0, calc(-50% + 20px));
-    }
     70% {
-        transform: translate(0, calc(-50% + 25px));
+        transform: translate(0, calc(-50% + 15px));
     }
-    72% {
-        transform: translate(0, calc(-50% + 20px));
-    }
-    74% {
+    75% {
         transform: translate(0, calc(-50% + 0px));
-    }
-    76% {
-        transform: translate(0, calc(-50% + -20px));
-    }
-    78% {
-        transform: translate(0, calc(-50% + -25px));
     }
     80% {
-        transform: translate(0, calc(-50% + -20px));
+        transform: translate(0, calc(-50% + -15px));
     }
-    82% {
+    85% {
         transform: translate(0, calc(-50% + 0px));
     }
-    84% {
-        transform: translate(0, calc(-50% + 20px));
-    }
-    86% {
-        transform: translate(0, calc(-50% + 25px));
-    }
-    88% {
-        transform: translate(0, calc(-50% + 20px));
-    }
     90% {
+        transform: translate(0, calc(-50% + 15px));
+    }
+    95% {
         transform: translate(0, calc(-50% + 0px));
     }
     100% {
@@ -2640,134 +2581,74 @@ section {
             opacity: 1;
             transform: translate(0, calc(-50% + 0px));
         }
-        12% {
-            transform: translate(0, calc(-50% + -15px));
-        }
-        14% {
-            transform: translate(0, calc(-50% + -18px));
-        }
-        16% {
-            transform: translate(0, calc(-50% + -15px));
-        }
-        18% {
-            transform: translate(0, calc(-50% + 0px));
+        15% {
+            transform: translate(0, calc(-50% + -12px));
         }
         20% {
-            transform: translate(0, calc(-50% + 15px));
-        }
-        22% {
-            transform: translate(0, calc(-50% + 18px));
-        }
-        24% {
-            transform: translate(0, calc(-50% + 15px));
-        }
-        26% {
             transform: translate(0, calc(-50% + 0px));
+        }
+        25% {
+            transform: translate(0, calc(-50% + 12px));
         }
         28% {
             left: calc(50% - 150px);
-            transform: translate(0, calc(-50% + -15px));
+            transform: translate(0, calc(-50% + 0px));
             opacity: 1;
-        }
-        30% {
-            transform: translate(0, calc(-50% + -18px));
         }
         32% {
-            transform: translate(0, calc(-50% + -15px));
-        }
-        34% {
-            transform: translate(0, calc(-50% + 0px));
+            transform: translate(0, calc(-50% + -10px));
         }
         36% {
-            transform: translate(0, calc(-50% + 15px));
-        }
-        38% {
-            left: calc(50% - 150px);
-            transform: translate(0, calc(-50% + 18px));
-            opacity: 1;
+            transform: translate(0, calc(-50% + 0px));
         }
         40% {
-            transform: translate(0, calc(-50% + 15px));
-        }
-        42% {
-            transform: translate(0, calc(-50% + 0px));
+            left: calc(50% - 150px);
+            transform: translate(0, calc(-50% + 10px));
+            opacity: 1;
         }
         44% {
-            transform: translate(0, calc(-50% + -15px));
-        }
-        46% {
-            left: calc(50% - 150px);
-            transform: translate(0, calc(-50% + -18px));
-            opacity: 1;
+            transform: translate(0, calc(-50% + 0px));
         }
         48% {
-            transform: translate(0, calc(-50% + -15px));
-        }
-        50% {
-            transform: translate(0, calc(-50% + 0px));
-        }
-        52% {
-            transform: translate(0, calc(-50% + 15px));
-        }
-        54% {
             left: calc(50% - 150px);
-            transform: translate(0, calc(-50% + 18px));
+            transform: translate(0, calc(-50% + -10px));
             opacity: 1;
         }
-        56% {
-            transform: translate(0, calc(-50% + 15px));
-        }
-        58% {
+        52% {
             transform: translate(0, calc(-50% + 0px));
         }
+        56% {
+            left: calc(50% - 150px);
+            transform: translate(0, calc(-50% + 10px));
+            opacity: 1;
+        }
         60% {
-            transform: translate(0, calc(-50% + -15px));
+            transform: translate(0, calc(-50% + 0px));
         }
         62% {
             left: calc(50% - 150px);
-            transform: translate(0, calc(-50% + -18px));
+            transform: translate(0, calc(-50% + -10px));
             opacity: 1;
-        }
-        64% {
-            transform: translate(0, calc(-50% + -15px));
         }
         66% {
             transform: translate(0, calc(-50% + 0px));
         }
-        68% {
-            transform: translate(0, calc(-50% + 15px));
-        }
         70% {
-            transform: translate(0, calc(-50% + 18px));
+            transform: translate(0, calc(-50% + 12px));
         }
-        72% {
-            transform: translate(0, calc(-50% + 15px));
-        }
-        74% {
+        75% {
             transform: translate(0, calc(-50% + 0px));
-        }
-        76% {
-            transform: translate(0, calc(-50% + -15px));
-        }
-        78% {
-            transform: translate(0, calc(-50% + -18px));
         }
         80% {
-            transform: translate(0, calc(-50% + -15px));
+            transform: translate(0, calc(-50% + -12px));
         }
-        82% {
+        85% {
             transform: translate(0, calc(-50% + 0px));
         }
-        84% {
-            transform: translate(0, calc(-50% + 15px));
-        }
-        86% {
-            transform: translate(0, calc(-50% + 18px));
-        }
-        88% {
-            transform: translate(0, calc(-50% + 15px));
-        }
         90% {
+            transform: translate(0, calc(-50% + 12px));
+        }
+        95% {
             transform: translate(0, calc(-50% + 0px));
         }
         100% {
@@ -2776,4 +2657,7 @@ section {
             transform: translate(0, calc(-50% + 0px));
         }
     }
+}
+}
+}
 }

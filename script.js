@@ -44,13 +44,30 @@ function initChristmasTheme() {
         
         // Show flowing ribbon during Christmas period (every page load)
         if (christmasPopup) {
+            // Get audio element for Santa's bells
+            const bellsAudio = document.getElementById('santa-bells-audio');
+            
             // Show ribbon after a short delay for better UX
             setTimeout(() => {
                 christmasPopup.classList.add('show');
                 
+                // Play Santa's bells sound
+                if (bellsAudio) {
+                    bellsAudio.volume = 0.4; // Set volume to 40%
+                    bellsAudio.play().catch(error => {
+                        // Auto-play may be blocked by browser, this is normal
+                        console.log('Audio play prevented by browser:', error);
+                    });
+                }
+                
                 // Remove ribbon after animation completes (8 seconds)
                 setTimeout(() => {
                     christmasPopup.classList.remove('show');
+                    // Stop audio
+                    if (bellsAudio) {
+                        bellsAudio.pause();
+                        bellsAudio.currentTime = 0;
+                    }
                     // Reset position for next time
                     setTimeout(() => {
                         christmasPopup.style.animation = 'none';
