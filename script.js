@@ -30,7 +30,7 @@ function initEmailJS() {
 // Initialize Christmas Theme (Active until January 1st, 2026)
 function initChristmasTheme() {
     const christmasTheme = document.getElementById('christmas-theme');
-    if (!christmasTheme) return;
+    const christmasPopup = document.getElementById('christmas-popup');
     
     // Get current date
     const today = new Date();
@@ -38,10 +38,44 @@ function initChristmasTheme() {
     
     // Check if today is before January 1st, 2026
     if (today < endDate) {
-        christmasTheme.classList.add('active');
+        if (christmasTheme) {
+            christmasTheme.classList.add('active');
+        }
+        
+        // Show popup on first visit (check localStorage)
+        if (christmasPopup) {
+            const popupShown = localStorage.getItem('christmasPopupShown');
+            if (!popupShown) {
+                // Show popup after a short delay for better UX
+                setTimeout(() => {
+                    christmasPopup.classList.add('show');
+                    localStorage.setItem('christmasPopupShown', 'true');
+                }, 500);
+            }
+            
+            // Close popup functionality
+            const closeBtn = christmasPopup.querySelector('.christmas-popup-close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    christmasPopup.classList.remove('show');
+                });
+            }
+            
+            // Close popup when clicking outside
+            christmasPopup.addEventListener('click', (e) => {
+                if (e.target === christmasPopup) {
+                    christmasPopup.classList.remove('show');
+                }
+            });
+        }
     } else {
         // Remove the theme if date has passed
-        christmasTheme.remove();
+        if (christmasTheme) {
+            christmasTheme.remove();
+        }
+        if (christmasPopup) {
+            christmasPopup.remove();
+        }
     }
 }
 
