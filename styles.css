@@ -2465,11 +2465,7 @@ section {
 
 .christmas-ribbon.show {
     display: block;
-    animation: ribbonFlow 8s ease-in-out forwards;
-}
-
-.christmas-ribbon.show .christmas-ribbon-content {
-    animation: ribbonWave 0.6s ease-in-out infinite;
+    animation: ribbonFlowWave 8s ease-in-out forwards;
 }
 
 .christmas-ribbon-content {
@@ -2523,50 +2519,79 @@ section {
     white-space: nowrap;
 }
 
-/* Flowing ribbon animation - left to right with pause in center (slower) */
-@keyframes ribbonFlow {
+/* Flowing ribbon with wave motion - creates a wave path as it moves */
+@keyframes ribbonFlowWave {
     0% {
         left: -100%;
+        top: 50%;
         opacity: 0;
+        transform: translateY(-50%) translateY(0px);
     }
     12% {
         opacity: 1;
+        transform: translateY(-50%) translateY(0px);
+    }
+    15% {
+        transform: translateY(-50%) translateY(-20px);
+    }
+    20% {
+        transform: translateY(-50%) translateY(0px);
+    }
+    25% {
+        transform: translateY(-50%) translateY(20px);
     }
     30% {
         left: calc(50% - 200px);
+        transform: translateY(-50%) translateY(0px);
         opacity: 1;
+    }
+    35% {
+        transform: translateY(-50%) translateY(-15px);
     }
     40% {
         left: calc(50% - 200px);
+        transform: translateY(-50%) translateY(0px);
         opacity: 1;
+    }
+    45% {
+        transform: translateY(-50%) translateY(15px);
     }
     50% {
         left: calc(50% - 200px);
+        transform: translateY(-50%) translateY(0px);
         opacity: 1;
+    }
+    55% {
+        transform: translateY(-50%) translateY(-15px);
     }
     60% {
         left: calc(50% - 200px);
+        transform: translateY(-50%) translateY(0px);
         opacity: 1;
+    }
+    65% {
+        transform: translateY(-50%) translateY(15px);
+    }
+    70% {
+        transform: translateY(-50%) translateY(0px);
+    }
+    75% {
+        transform: translateY(-50%) translateY(-20px);
+    }
+    80% {
+        transform: translateY(-50%) translateY(0px);
+    }
+    85% {
+        transform: translateY(-50%) translateY(20px);
+    }
+    90% {
+        transform: translateY(-50%) translateY(0px);
     }
     100% {
         left: 100%;
+        top: 50%;
         opacity: 0;
-    }
-}
-
-/* Waving motion for the ribbon */
-@keyframes ribbonWave {
-    0%, 100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    25% {
-        transform: translateY(-8px) rotate(2deg);
-    }
-    50% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    75% {
-        transform: translateY(8px) rotate(-2deg);
+        transform: translateY(-50%) translateY(0px);
     }
 }
 
@@ -2656,48 +2681,78 @@ section {
         font-size: 1.8rem;
     }
     
-    @keyframes ribbonFlow {
+    @keyframes ribbonFlowWave {
         0% {
             left: -100%;
+            top: 50%;
             opacity: 0;
+            transform: translateY(-50%) translateY(0px);
         }
         12% {
             opacity: 1;
+            transform: translateY(-50%) translateY(0px);
+        }
+        15% {
+            transform: translateY(-50%) translateY(-15px);
+        }
+        20% {
+            transform: translateY(-50%) translateY(0px);
+        }
+        25% {
+            transform: translateY(-50%) translateY(15px);
         }
         30% {
             left: calc(50% - 150px);
+            transform: translateY(-50%) translateY(0px);
             opacity: 1;
+        }
+        35% {
+            transform: translateY(-50%) translateY(-12px);
         }
         40% {
             left: calc(50% - 150px);
+            transform: translateY(-50%) translateY(0px);
             opacity: 1;
+        }
+        45% {
+            transform: translateY(-50%) translateY(12px);
         }
         50% {
             left: calc(50% - 150px);
+            transform: translateY(-50%) translateY(0px);
             opacity: 1;
+        }
+        55% {
+            transform: translateY(-50%) translateY(-12px);
         }
         60% {
             left: calc(50% - 150px);
+            transform: translateY(-50%) translateY(0px);
             opacity: 1;
+        }
+        65% {
+            transform: translateY(-50%) translateY(12px);
+        }
+        70% {
+            transform: translateY(-50%) translateY(0px);
+        }
+        75% {
+            transform: translateY(-50%) translateY(-15px);
+        }
+        80% {
+            transform: translateY(-50%) translateY(0px);
+        }
+        85% {
+            transform: translateY(-50%) translateY(15px);
+        }
+        90% {
+            transform: translateY(-50%) translateY(0px);
         }
         100% {
             left: 100%;
+            top: 50%;
             opacity: 0;
-        }
-    }
-    
-    @keyframes ribbonWave {
-        0%, 100% {
-            transform: translateY(0px) rotate(0deg);
-        }
-        25% {
-            transform: translateY(-6px) rotate(1.5deg);
-        }
-        50% {
-            transform: translateY(0px) rotate(0deg);
-        }
-        75% {
-            transform: translateY(6px) rotate(-1.5deg);
+            transform: translateY(-50%) translateY(0px);
         }
     }
 }
