@@ -2160,12 +2160,13 @@ section {
 
 /* Christmas Trees */
 .christmas-tree {
-    position: absolute;
+    position: fixed;
     font-size: 120px;
-    opacity: 0.4;
+    opacity: 0.7;
     animation: gentle-sway 4s ease-in-out infinite;
     pointer-events: none;
-    z-index: 1001;
+    z-index: 999;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
 }
 
 .tree-left {
@@ -2253,19 +2254,97 @@ section {
     }
 }
 
-/* Red Christmas Banners */
+/* Red Christmas Banners - Wrapping Paper Style */
 .christmas-banner {
     position: absolute;
     width: 200px;
     height: 40px;
-    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: 
+        /* Snowflake pattern */
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.1) 10px,
+            rgba(255, 255, 255, 0.1) 12px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.08) 10px,
+            rgba(255, 255, 255, 0.08) 12px
+        ),
+        /* Base red gradient */
+        linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+    border: 2px solid rgba(255, 255, 255, 0.4);
     box-shadow: 
-        0 4px 8px rgba(0, 0, 0, 0.2),
-        inset 0 2px 4px rgba(255, 255, 255, 0.2);
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
     transform: rotate(-45deg);
-    opacity: 0.7;
+    opacity: 0.85;
     z-index: 1002;
+    overflow: hidden;
+}
+
+.christmas-banner::before {
+    content: '❄';
+    position: absolute;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    top: 5px;
+    left: 20px;
+    animation: snowflake-float 3s ease-in-out infinite;
+}
+
+.christmas-banner::after {
+    content: '❄';
+    position: absolute;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    bottom: 8px;
+    right: 25px;
+    animation: snowflake-float 2.5s ease-in-out infinite 0.5s;
+}
+
+@keyframes snowflake-float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-3px) rotate(180deg);
+        opacity: 0.8;
+    }
+}
+
+.christmas-banner .snowflake {
+    position: absolute;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    animation: snowflake-float 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.christmas-banner .snowflake:nth-child(1) {
+    top: 8px;
+    left: 15px;
+    animation-delay: 0s;
+}
+
+.christmas-banner .snowflake:nth-child(2) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    animation-delay: 0.7s;
+}
+
+.christmas-banner .snowflake:nth-child(3) {
+    bottom: 8px;
+    right: 15px;
+    animation-delay: 1.4s;
 }
 
 .banner-top-left {

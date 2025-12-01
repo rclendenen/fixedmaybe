@@ -42,21 +42,17 @@ function initChristmasTheme() {
             christmasTheme.classList.add('active');
         }
         
-        // Show popup on first visit (check localStorage)
+        // Show popup during Christmas period (every page load)
         if (christmasPopup) {
-            const popupShown = localStorage.getItem('christmasPopupShown');
-            if (!popupShown) {
-                // Show popup after a short delay for better UX
+            // Show popup after a short delay for better UX
+            setTimeout(() => {
+                christmasPopup.classList.add('show');
+                
+                // Auto-close popup after 3 seconds
                 setTimeout(() => {
-                    christmasPopup.classList.add('show');
-                    localStorage.setItem('christmasPopupShown', 'true');
-                    
-                    // Auto-close popup after 3 seconds
-                    setTimeout(() => {
-                        christmasPopup.classList.remove('show');
-                    }, 3000);
-                }, 500);
-            }
+                    christmasPopup.classList.remove('show');
+                }, 3000);
+            }, 500);
             
             // Close popup functionality
             const closeBtn = christmasPopup.querySelector('.christmas-popup-close');
