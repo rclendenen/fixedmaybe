@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize EmailJS
     initEmailJS();
     
+    // Initialize Christmas Theme (if date is valid)
+    initChristmasTheme();
+    
     // Initialize all functionality
     initSmoothScrolling();
     initContactForm();
@@ -22,6 +25,24 @@ document.addEventListener('DOMContentLoaded', function() {
 function initEmailJS() {
     // Initialize EmailJS with your public key
     emailjs.init('X1aBvO8QvL9P9gKPd');
+}
+
+// Initialize Christmas Theme (Active until January 1st, 2026)
+function initChristmasTheme() {
+    const christmasTheme = document.getElementById('christmas-theme');
+    if (!christmasTheme) return;
+    
+    // Get current date
+    const today = new Date();
+    const endDate = new Date('2026-01-01T00:00:00');
+    
+    // Check if today is before January 1st, 2026
+    if (today < endDate) {
+        christmasTheme.classList.add('active');
+    } else {
+        // Remove the theme if date has passed
+        christmasTheme.remove();
+    }
 }
 
 // Smooth scrolling for content box links

@@ -2083,3 +2083,187 @@ section {
         page-break-after: always;
     }
 }
+
+/* Christmas Theme Styles (Active until January 1st, 2026) */
+.christmas-theme {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden;
+    display: none; /* Hidden by default, shown via JavaScript if date is valid */
+}
+
+.christmas-theme.active {
+    display: block;
+}
+
+/* Christmas Lights String */
+.christmas-lights {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.1) 100%);
+    z-index: 1001;
+}
+
+.christmas-lights .light {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.christmas-lights .light:nth-child(odd) {
+    animation-delay: 0s;
+}
+
+.christmas-lights .light:nth-child(even) {
+    animation-delay: 1s;
+}
+
+.christmas-lights .light:nth-child(3n) {
+    animation-delay: 0.5s;
+}
+
+.christmas-lights .light:nth-child(4n) {
+    animation-delay: 1.5s;
+}
+
+/* Twinkling Animation */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Christmas Trees */
+.christmas-tree {
+    position: absolute;
+    font-size: 60px;
+    opacity: 0.15;
+    animation: gentle-sway 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.tree-left {
+    bottom: 20px;
+    left: 30px;
+    animation-delay: 0s;
+}
+
+.tree-right {
+    bottom: 20px;
+    right: 30px;
+    animation-delay: 2s;
+}
+
+@keyframes gentle-sway {
+    0%, 100% {
+        transform: rotate(-2deg) translateY(0);
+    }
+    50% {
+        transform: rotate(2deg) translateY(-5px);
+    }
+}
+
+/* Twinkling Stars */
+.twinkle {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.6;
+    animation: star-twinkle 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.star1 { top: 15%; left: 10%; animation-delay: 0s; }
+.star2 { top: 25%; left: 85%; animation-delay: 0.5s; }
+.star3 { top: 40%; left: 15%; animation-delay: 1s; }
+.star4 { top: 50%; left: 90%; animation-delay: 1.5s; }
+.star5 { top: 65%; left: 8%; animation-delay: 2s; }
+.star6 { top: 75%; left: 88%; animation-delay: 2.5s; }
+.star7 { top: 85%; left: 12%; animation-delay: 0.3s; }
+.star8 { top: 90%; left: 92%; animation-delay: 0.8s; }
+
+@keyframes star-twinkle {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(0.8) rotate(0deg);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.2) rotate(180deg);
+    }
+}
+
+/* Mobile Responsive for Christmas Theme */
+@media (max-width: 768px) {
+    .christmas-lights {
+        height: 40px;
+    }
+    
+    .christmas-lights .light {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .christmas-tree {
+        font-size: 40px;
+    }
+    
+    .tree-left {
+        left: 10px;
+        bottom: 10px;
+    }
+    
+    .tree-right {
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .twinkle {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .christmas-lights {
+        height: 30px;
+    }
+    
+    .christmas-lights .light {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .christmas-tree {
+        font-size: 30px;
+        opacity: 0.1;
+    }
+    
+    .twinkle {
+        font-size: 16px;
+        opacity: 0.4;
+    }
+}
