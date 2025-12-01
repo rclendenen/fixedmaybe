@@ -2092,7 +2092,7 @@ section {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 1000;
+    z-index: 0;
     overflow: hidden;
     display: none; /* Hidden by default, shown via JavaScript if date is valid */
 }
@@ -2115,7 +2115,7 @@ section {
         rgba(255, 255, 255, 0.1) 0%,
         rgba(255, 255, 255, 0.3) 50%,
         rgba(255, 255, 255, 0.1) 100%);
-    z-index: 1001;
+    z-index: 1;
 }
 
 .christmas-lights .light {
