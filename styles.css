@@ -2161,30 +2161,33 @@ section {
 /* Christmas Trees */
 .christmas-tree {
     position: absolute;
-    font-size: 60px;
-    opacity: 0.15;
+    font-size: 120px;
+    opacity: 0.4;
     animation: gentle-sway 4s ease-in-out infinite;
     pointer-events: none;
+    z-index: 1001;
 }
 
 .tree-left {
-    bottom: 20px;
-    left: 30px;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
     animation-delay: 0s;
 }
 
 .tree-right {
-    bottom: 20px;
-    right: 30px;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
     animation-delay: 2s;
 }
 
 @keyframes gentle-sway {
     0%, 100% {
-        transform: rotate(-2deg) translateY(0);
+        transform: translateY(-50%) rotate(-2deg);
     }
     50% {
-        transform: rotate(2deg) translateY(-5px);
+        transform: translateY(calc(-50% - 5px)) rotate(2deg);
     }
 }
 
@@ -2229,17 +2232,20 @@ section {
     }
     
     .christmas-tree {
-        font-size: 40px;
+        font-size: 80px;
+        opacity: 0.3;
     }
     
     .tree-left {
-        left: 10px;
-        bottom: 10px;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .tree-right {
-        right: 10px;
-        bottom: 10px;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .twinkle {
@@ -2407,8 +2413,20 @@ section {
     }
     
     .christmas-tree {
-        font-size: 30px;
-        opacity: 0.1;
+        font-size: 60px;
+        opacity: 0.25;
+    }
+    
+    .tree-left {
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .tree-right {
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .twinkle {

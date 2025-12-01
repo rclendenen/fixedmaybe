@@ -50,6 +50,11 @@ function initChristmasTheme() {
                 setTimeout(() => {
                     christmasPopup.classList.add('show');
                     localStorage.setItem('christmasPopupShown', 'true');
+                    
+                    // Auto-close popup after 3 seconds
+                    setTimeout(() => {
+                        christmasPopup.classList.remove('show');
+                    }, 3000);
                 }, 500);
             }
             
