@@ -240,6 +240,8 @@ main {
 /* Sections */
 section {
     padding: var(--section-padding);
+    position: relative;
+    z-index: 2;
 }
 
 .section-content {
@@ -2092,7 +2094,7 @@ section {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 1000;
+    z-index: 0;
     overflow: hidden;
     display: none; /* Hidden by default, shown via JavaScript if date is valid */
 }
@@ -2115,7 +2117,7 @@ section {
         rgba(255, 255, 255, 0.1) 0%,
         rgba(255, 255, 255, 0.3) 50%,
         rgba(255, 255, 255, 0.1) 100%);
-    z-index: 1001;
+    z-index: 1;
 }
 
 .christmas-lights .light {
@@ -2168,7 +2170,7 @@ section {
     filter: brightness(1.5) contrast(0.8) saturate(0);
     color: rgba(255, 255, 255, 0.9);
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4);
-    z-index: 1001;
+    z-index: 1;
 }
 
 /* Star Sizes */
@@ -2232,7 +2234,7 @@ section {
     
     .twinkle {
         font-size: 18px;
-        z-index: 1001;
+        z-index: 1;
     }
     
     .star-small {
@@ -2523,7 +2525,7 @@ section {
     .twinkle {
         font-size: 16px;
         opacity: 0.5;
-        z-index: 1001;
+        z-index: 1;
     }
     
     .star-small {
