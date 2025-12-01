@@ -2360,13 +2360,15 @@ section {
 .banner-top-left,
 .banner-bottom-right {
     /* Both ends angled to align with page edges (for -45deg rotation) */
-    clip-path: polygon(30px 0%, calc(100% - 30px) 0%, 100% 50%, calc(100% - 30px) 100%, 30px 100%, 0% 50%);
+    /* Creates a pointed shape that aligns with page corners */
+    clip-path: polygon(40px 0%, calc(100% - 40px) 0%, 100% 30px, 100% calc(100% - 30px), calc(100% - 40px) 100%, 40px 100%, 0% calc(100% - 30px), 0% 30px);
 }
 
 .banner-top-right,
 .banner-bottom-left {
     /* Both ends angled to align with page edges (for 45deg rotation) */
-    clip-path: polygon(30px 0%, calc(100% - 30px) 0%, 100% 50%, calc(100% - 30px) 100%, 30px 100%, 0% 50%);
+    /* Creates a pointed shape that aligns with page corners */
+    clip-path: polygon(40px 0%, calc(100% - 40px) 0%, 100% 30px, 100% calc(100% - 30px), calc(100% - 40px) 100%, 40px 100%, 0% calc(100% - 30px), 0% 30px);
 }
 
 .christmas-banner::before {
