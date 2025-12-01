@@ -40,6 +40,25 @@ function initChristmasTheme() {
     if (today < endDate) {
         if (christmasTheme) {
             christmasTheme.classList.add('active');
+            
+            // Position Christmas lights at bottom of header dynamically
+            function positionChristmasLights() {
+                const header = document.getElementById('header');
+                const christmasLights = document.querySelector('.christmas-lights');
+                
+                if (header && christmasLights) {
+                    // Get the actual header height
+                    const headerHeight = header.offsetHeight;
+                    // Position lights at the bottom of the header
+                    christmasLights.style.top = headerHeight + 'px';
+                }
+            }
+            
+            // Position lights on load and resize
+            positionChristmasLights();
+            window.addEventListener('resize', positionChristmasLights);
+            // Also position after a short delay to ensure header is fully rendered
+            setTimeout(positionChristmasLights, 100);
         }
         
         // Show flowing ribbon during Christmas period (every page load)
