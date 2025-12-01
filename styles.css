@@ -2158,39 +2158,6 @@ section {
     }
 }
 
-/* Christmas Trees */
-.christmas-tree {
-    position: fixed;
-    font-size: 120px;
-    opacity: 0.7;
-    animation: gentle-sway 4s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 999;
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
-}
-
-.tree-left {
-    top: 50%;
-    left: 50px;
-    transform: translateY(-50%);
-    animation-delay: 0s;
-}
-
-.tree-right {
-    top: 50%;
-    right: 50px;
-    transform: translateY(-50%);
-    animation-delay: 2s;
-}
-
-@keyframes gentle-sway {
-    0%, 100% {
-        transform: translateY(-50%) rotate(-2deg);
-    }
-    50% {
-        transform: translateY(calc(-50% - 5px)) rotate(2deg);
-    }
-}
 
 /* Twinkling Stars - Soft White */
 .twinkle {
@@ -2262,25 +2229,9 @@ section {
         height: 8px;
     }
     
-    .christmas-tree {
-        font-size: 80px;
-        opacity: 0.3;
-    }
-    
-    .tree-left {
-        left: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    
-    .tree-right {
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    
     .twinkle {
         font-size: 18px;
+        z-index: 1;
     }
     
     .star-small {
@@ -2371,64 +2322,6 @@ section {
     clip-path: polygon(40px 0%, calc(100% - 40px) 0%, 100% 30px, 100% calc(100% - 30px), calc(100% - 40px) 100%, 40px 100%, 0% calc(100% - 30px), 0% 30px);
 }
 
-.christmas-banner::before {
-    content: '❄';
-    position: absolute;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.6);
-    top: 5px;
-    left: 20px;
-    animation: snowflake-float 3s ease-in-out infinite;
-}
-
-.christmas-banner::after {
-    content: '❄';
-    position: absolute;
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.5);
-    bottom: 8px;
-    right: 25px;
-    animation: snowflake-float 2.5s ease-in-out infinite 0.5s;
-}
-
-@keyframes snowflake-float {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.5;
-    }
-    50% {
-        transform: translateY(-3px) rotate(180deg);
-        opacity: 0.8;
-    }
-}
-
-.christmas-banner .snowflake {
-    position: absolute;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
-    animation: snowflake-float 2s ease-in-out infinite;
-    pointer-events: none;
-}
-
-.christmas-banner .snowflake:nth-child(1) {
-    top: 8px;
-    left: 15px;
-    animation-delay: 0s;
-}
-
-.christmas-banner .snowflake:nth-child(2) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 12px;
-    animation-delay: 0.7s;
-}
-
-.christmas-banner .snowflake:nth-child(3) {
-    bottom: 8px;
-    right: 15px;
-    animation-delay: 1.4s;
-}
 
 .banner-top-left {
     top: 100px;
@@ -2465,7 +2358,7 @@ section {
 
 .christmas-ribbon.show {
     display: block;
-    animation: ribbonFlowWave 8s ease-in-out forwards;
+    animation: ribbonFlowWave 8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .christmas-ribbon-content {
@@ -2519,83 +2412,143 @@ section {
     white-space: nowrap;
 }
 
-/* Flowing ribbon with wave motion - creates a wave path as it moves */
+/* Flowing ribbon with smooth wave motion - creates a wave path as it moves */
 @keyframes ribbonFlowWave {
     0% {
         left: -100%;
         opacity: 0;
         transform: translate(0, calc(-50% + 0px));
     }
-    12% {
+    10% {
         opacity: 1;
         transform: translate(0, calc(-50% + 0px));
     }
+    12% {
+        transform: translate(0, calc(-50% + -20px));
+    }
     14% {
-        transform: translate(0, calc(-50% + -30px));
+        transform: translate(0, calc(-50% + -25px));
+    }
+    16% {
+        transform: translate(0, calc(-50% + -20px));
     }
     18% {
         transform: translate(0, calc(-50% + 0px));
     }
+    20% {
+        transform: translate(0, calc(-50% + 20px));
+    }
     22% {
-        transform: translate(0, calc(-50% + 30px));
+        transform: translate(0, calc(-50% + 25px));
+    }
+    24% {
+        transform: translate(0, calc(-50% + 20px));
     }
     26% {
         transform: translate(0, calc(-50% + 0px));
     }
-    30% {
+    28% {
         left: calc(50% - 200px);
-        transform: translate(0, calc(-50% + -25px));
+        transform: translate(0, calc(-50% + -18px));
         opacity: 1;
+    }
+    30% {
+        transform: translate(0, calc(-50% + -20px));
+    }
+    32% {
+        transform: translate(0, calc(-50% + -18px));
     }
     34% {
         transform: translate(0, calc(-50% + 0px));
     }
+    36% {
+        transform: translate(0, calc(-50% + 18px));
+    }
     38% {
         left: calc(50% - 200px);
-        transform: translate(0, calc(-50% + 25px));
+        transform: translate(0, calc(-50% + 20px));
         opacity: 1;
+    }
+    40% {
+        transform: translate(0, calc(-50% + 18px));
     }
     42% {
         transform: translate(0, calc(-50% + 0px));
     }
+    44% {
+        transform: translate(0, calc(-50% + -18px));
+    }
     46% {
         left: calc(50% - 200px);
-        transform: translate(0, calc(-50% + -25px));
+        transform: translate(0, calc(-50% + -20px));
         opacity: 1;
+    }
+    48% {
+        transform: translate(0, calc(-50% + -18px));
     }
     50% {
         transform: translate(0, calc(-50% + 0px));
     }
+    52% {
+        transform: translate(0, calc(-50% + 18px));
+    }
     54% {
         left: calc(50% - 200px);
-        transform: translate(0, calc(-50% + 25px));
+        transform: translate(0, calc(-50% + 20px));
         opacity: 1;
+    }
+    56% {
+        transform: translate(0, calc(-50% + 18px));
     }
     58% {
         transform: translate(0, calc(-50% + 0px));
     }
+    60% {
+        transform: translate(0, calc(-50% + -18px));
+    }
     62% {
         left: calc(50% - 200px);
-        transform: translate(0, calc(-50% + -25px));
+        transform: translate(0, calc(-50% + -20px));
         opacity: 1;
+    }
+    64% {
+        transform: translate(0, calc(-50% + -18px));
     }
     66% {
         transform: translate(0, calc(-50% + 0px));
     }
+    68% {
+        transform: translate(0, calc(-50% + 20px));
+    }
     70% {
-        transform: translate(0, calc(-50% + 30px));
+        transform: translate(0, calc(-50% + 25px));
+    }
+    72% {
+        transform: translate(0, calc(-50% + 20px));
     }
     74% {
         transform: translate(0, calc(-50% + 0px));
     }
+    76% {
+        transform: translate(0, calc(-50% + -20px));
+    }
     78% {
-        transform: translate(0, calc(-50% + -30px));
+        transform: translate(0, calc(-50% + -25px));
+    }
+    80% {
+        transform: translate(0, calc(-50% + -20px));
     }
     82% {
         transform: translate(0, calc(-50% + 0px));
     }
+    84% {
+        transform: translate(0, calc(-50% + 20px));
+    }
     86% {
-        transform: translate(0, calc(-50% + 30px));
+        transform: translate(0, calc(-50% + 25px));
+    }
+    88% {
+        transform: translate(0, calc(-50% + 20px));
     }
     90% {
         transform: translate(0, calc(-50% + 0px));
@@ -2626,26 +2579,10 @@ section {
         height: 6px;
     }
     
-    .christmas-tree {
-        font-size: 60px;
-        opacity: 0.25;
-    }
-    
-    .tree-left {
-        left: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    
-    .tree-right {
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    
     .twinkle {
         font-size: 16px;
         opacity: 0.5;
+        z-index: 1;
     }
     
     .star-small {
@@ -2699,76 +2636,136 @@ section {
             opacity: 0;
             transform: translate(0, calc(-50% + 0px));
         }
-        12% {
+        10% {
             opacity: 1;
             transform: translate(0, calc(-50% + 0px));
         }
+        12% {
+            transform: translate(0, calc(-50% + -15px));
+        }
         14% {
-            transform: translate(0, calc(-50% + -20px));
+            transform: translate(0, calc(-50% + -18px));
+        }
+        16% {
+            transform: translate(0, calc(-50% + -15px));
         }
         18% {
             transform: translate(0, calc(-50% + 0px));
         }
+        20% {
+            transform: translate(0, calc(-50% + 15px));
+        }
         22% {
-            transform: translate(0, calc(-50% + 20px));
+            transform: translate(0, calc(-50% + 18px));
+        }
+        24% {
+            transform: translate(0, calc(-50% + 15px));
         }
         26% {
             transform: translate(0, calc(-50% + 0px));
         }
-        30% {
+        28% {
             left: calc(50% - 150px);
-            transform: translate(0, calc(-50% + -18px));
+            transform: translate(0, calc(-50% + -15px));
             opacity: 1;
+        }
+        30% {
+            transform: translate(0, calc(-50% + -18px));
+        }
+        32% {
+            transform: translate(0, calc(-50% + -15px));
         }
         34% {
             transform: translate(0, calc(-50% + 0px));
+        }
+        36% {
+            transform: translate(0, calc(-50% + 15px));
         }
         38% {
             left: calc(50% - 150px);
             transform: translate(0, calc(-50% + 18px));
             opacity: 1;
         }
+        40% {
+            transform: translate(0, calc(-50% + 15px));
+        }
         42% {
             transform: translate(0, calc(-50% + 0px));
+        }
+        44% {
+            transform: translate(0, calc(-50% + -15px));
         }
         46% {
             left: calc(50% - 150px);
             transform: translate(0, calc(-50% + -18px));
             opacity: 1;
         }
+        48% {
+            transform: translate(0, calc(-50% + -15px));
+        }
         50% {
             transform: translate(0, calc(-50% + 0px));
+        }
+        52% {
+            transform: translate(0, calc(-50% + 15px));
         }
         54% {
             left: calc(50% - 150px);
             transform: translate(0, calc(-50% + 18px));
             opacity: 1;
         }
+        56% {
+            transform: translate(0, calc(-50% + 15px));
+        }
         58% {
             transform: translate(0, calc(-50% + 0px));
+        }
+        60% {
+            transform: translate(0, calc(-50% + -15px));
         }
         62% {
             left: calc(50% - 150px);
             transform: translate(0, calc(-50% + -18px));
             opacity: 1;
         }
+        64% {
+            transform: translate(0, calc(-50% + -15px));
+        }
         66% {
             transform: translate(0, calc(-50% + 0px));
         }
+        68% {
+            transform: translate(0, calc(-50% + 15px));
+        }
         70% {
-            transform: translate(0, calc(-50% + 20px));
+            transform: translate(0, calc(-50% + 18px));
+        }
+        72% {
+            transform: translate(0, calc(-50% + 15px));
         }
         74% {
             transform: translate(0, calc(-50% + 0px));
         }
+        76% {
+            transform: translate(0, calc(-50% + -15px));
+        }
         78% {
-            transform: translate(0, calc(-50% + -20px));
+            transform: translate(0, calc(-50% + -18px));
+        }
+        80% {
+            transform: translate(0, calc(-50% + -15px));
         }
         82% {
             transform: translate(0, calc(-50% + 0px));
         }
+        84% {
+            transform: translate(0, calc(-50% + 15px));
+        }
         86% {
-            transform: translate(0, calc(-50% + 20px));
+            transform: translate(0, calc(-50% + 18px));
+        }
+        88% {
+            transform: translate(0, calc(-50% + 15px));
         }
         90% {
             transform: translate(0, calc(-50% + 0px));
