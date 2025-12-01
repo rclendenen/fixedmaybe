@@ -42,32 +42,24 @@ function initChristmasTheme() {
             christmasTheme.classList.add('active');
         }
         
-        // Show popup during Christmas period (every page load)
+        // Show flowing ribbon during Christmas period (every page load)
         if (christmasPopup) {
-            // Show popup after a short delay for better UX
+            // Show ribbon after a short delay for better UX
             setTimeout(() => {
                 christmasPopup.classList.add('show');
                 
-                // Auto-close popup after 3 seconds
+                // Remove ribbon after animation completes (5 seconds)
                 setTimeout(() => {
                     christmasPopup.classList.remove('show');
-                }, 3000);
+                    // Reset position for next time
+                    setTimeout(() => {
+                        christmasPopup.style.animation = 'none';
+                        setTimeout(() => {
+                            christmasPopup.style.animation = '';
+                        }, 10);
+                    }, 100);
+                }, 5000);
             }, 500);
-            
-            // Close popup functionality
-            const closeBtn = christmasPopup.querySelector('.christmas-popup-close');
-            if (closeBtn) {
-                closeBtn.addEventListener('click', () => {
-                    christmasPopup.classList.remove('show');
-                });
-            }
-            
-            // Close popup when clicking outside
-            christmasPopup.addEventListener('click', (e) => {
-                if (e.target === christmasPopup) {
-                    christmasPopup.classList.remove('show');
-                }
-            });
         }
     } else {
         // Remove the theme if date has passed
