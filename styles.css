@@ -2262,7 +2262,7 @@ section {
 /* Mobile Responsive for Christmas Theme */
 @media (max-width: 768px) {
     .christmas-lights {
-        top: 160px; /* Position at bottom of mobile header (header is taller on mobile due to column layout) */
+        top: 220px; /* Position at bottom of mobile header (header ~200px tall: 20px padding + 60px photo + 15px gap + 24px name + 20px gap + 56px button + 20px padding) */
         height: 40px;
     }
     
@@ -2553,7 +2553,7 @@ section {
 
 @media (max-width: 480px) {
     .christmas-lights {
-        top: 160px; /* Position at bottom of mobile header */
+        top: 220px; /* Position at bottom of mobile header */
         height: 30px;
     }
     
