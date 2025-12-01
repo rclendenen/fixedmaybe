@@ -1215,12 +1215,12 @@ section {
 
 /* Updated Prayer Section */
 .prayer {
-    padding: 25px 0;
+    padding: 100px 0 80px 0;
     background: rgba(244, 243, 239, 0.1);
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 10;
-    margin-top: 60px;
+    margin-top: 100px;
 }
 
 .prayer-content {
@@ -1469,13 +1469,7 @@ section {
 }
 
 /* Prayer Section */
-.prayer {
-    padding: 25px 0;
-    background: rgba(194, 192, 183, 0.85);
-    backdrop-filter: blur(10px);
-    position: relative;
-    z-index: 5;
-}
+/* Duplicate prayer definition removed - using the one above */
 
 .prayer-content {
     max-width: 600px;
