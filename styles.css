@@ -2553,6 +2553,7 @@ section {
 
 @media (max-width: 480px) {
     .christmas-lights {
+        top: 160px; /* Position at bottom of mobile header */
         height: 30px;
     }
     
