@@ -2126,12 +2126,12 @@ section {
 }
 
 .christmas-lights .light {
-    width: 18px;
-    height: 22px;
+    width: 14px;
+    height: 18px;
     /* Christmas bulb shape - pear/teardrop shape */
     border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
     position: relative;
-    animation: twinkle 2s ease-in-out infinite;
+    animation: flash 1.5s ease-in-out infinite;
     transform-origin: center bottom;
 }
 
@@ -2139,11 +2139,11 @@ section {
 .christmas-lights .light::before {
     content: '';
     position: absolute;
-    top: -4px;
+    top: -3px;
     left: 50%;
     transform: translateX(-50%);
-    width: 4px;
-    height: 5px;
+    width: 3px;
+    height: 4px;
     background: rgba(139, 69, 19, 0.8);
     border-radius: 2px 2px 0 0;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -2153,9 +2153,9 @@ section {
 .christmas-lights .light:nth-child(odd) {
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 
-        0 0 12px rgba(255, 255, 255, 0.9),
-        0 0 24px rgba(255, 255, 255, 0.7),
-        0 0 36px rgba(255, 255, 255, 0.5),
+        0 0 10px rgba(255, 255, 255, 0.9),
+        0 0 20px rgba(255, 255, 255, 0.7),
+        0 0 30px rgba(255, 255, 255, 0.5),
         inset 0 -2px 4px rgba(255, 255, 255, 0.3);
     animation-delay: 0s;
 }
@@ -2163,30 +2163,38 @@ section {
 .christmas-lights .light:nth-child(even) {
     background: rgba(220, 20, 60, 0.95);
     box-shadow: 
-        0 0 12px rgba(220, 20, 60, 0.9),
-        0 0 24px rgba(220, 20, 60, 0.7),
-        0 0 36px rgba(220, 20, 60, 0.5),
+        0 0 10px rgba(220, 20, 60, 0.9),
+        0 0 20px rgba(220, 20, 60, 0.7),
+        0 0 30px rgba(220, 20, 60, 0.5),
         inset 0 -2px 4px rgba(139, 0, 0, 0.3);
-    animation-delay: 1s;
+    animation-delay: 0.75s;
 }
 
 .christmas-lights .light:nth-child(3n) {
-    animation-delay: 0.5s;
+    animation-delay: 0.25s;
 }
 
 .christmas-lights .light:nth-child(4n) {
-    animation-delay: 1.5s;
+    animation-delay: 0.5s;
 }
 
-/* Twinkling Animation */
-@keyframes twinkle {
+.christmas-lights .light:nth-child(5n) {
+    animation-delay: 1s;
+}
+
+.christmas-lights .light:nth-child(6n) {
+    animation-delay: 1.25s;
+}
+
+/* Flashing Animation - size stays constant, only brightness/opacity changes */
+@keyframes flash {
     0%, 100% {
-        opacity: 0.3;
-        transform: scale(0.8);
+        opacity: 0.4;
+        filter: brightness(0.6);
     }
     50% {
         opacity: 1;
-        transform: scale(1.2);
+        filter: brightness(1.5);
     }
 }
 
@@ -2259,8 +2267,8 @@ section {
     }
     
     .christmas-lights .light {
-        width: 14px;
-        height: 18px;
+        width: 12px;
+        height: 16px;
     }
     
     .twinkle {
