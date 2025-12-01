@@ -2355,18 +2355,18 @@ section {
     overflow: hidden;
 }
 
-/* Angled ends for banners - flush with page edges */
-/* Creates diagonal cuts that align with page edges when rotated at 45deg */
+/* Angled ends for banners - flush with page edges on all sides */
+/* Creates diagonal cuts on both ends that align with page edges when rotated */
 .banner-top-left,
 .banner-bottom-right {
-    /* Left end angled up, right end angled down (for -45deg rotation) */
-    clip-path: polygon(30px 0%, 100% 0%, calc(100% - 30px) 100%, 0% 100%);
+    /* Both ends angled to align with page edges (for -45deg rotation) */
+    clip-path: polygon(30px 0%, calc(100% - 30px) 0%, 100% 50%, calc(100% - 30px) 100%, 30px 100%, 0% 50%);
 }
 
 .banner-top-right,
 .banner-bottom-left {
-    /* Left end angled down, right end angled up (for 45deg rotation) */
-    clip-path: polygon(0% 0%, calc(100% - 30px) 0%, 100% 100%, 30px 100%);
+    /* Both ends angled to align with page edges (for 45deg rotation) */
+    clip-path: polygon(30px 0%, calc(100% - 30px) 0%, 100% 50%, calc(100% - 30px) 100%, 30px 100%, 0% 50%);
 }
 
 .christmas-banner::before {
