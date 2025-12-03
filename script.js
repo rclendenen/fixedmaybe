@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initEventsForm();
     initSubscribeForm();
     initStandaloneSubscribeForm();
+    initAuthorReviewForm();
     initCalendar();
     initScrollEffects();
     initParallaxEffects();
@@ -406,6 +407,80 @@ function initStandaloneSubscribeForm() {
                 })
                 .finally(function() {
                     // Reset button state
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+}
+
+// Initialize Author Review Exchange Sign-Up Form
+function initAuthorReviewForm() {
+    const signupForm = document.getElementById('signupForm');
+    const successMessage = document.getElementById('successMessage');
+    const formContainer = document.getElementById('signupFormContainer');
+    
+    if (signupForm) {
+        signupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name').trim();
+            const email = formData.get('email').trim();
+            const reviewFormat = formData.get('reviewFormat');
+            
+            // Basic validation
+            if (!name || !email || !reviewFormat) {
+                showMessage('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            submitBtn.disabled = true;
+            
+            // Prepare email template parameters
+            const templateParams = {
+                from_email: email,
+                from_name: name,
+                subject: 'Author Review Exchange Sign-Up',
+                message: `New sign-up for Author Review Exchange Event:
+                    
+Name: ${name}
+Email: ${email}
+Instagram: ${formData.get('instagram') || 'Not provided'}
+TikTok: ${formData.get('tiktok') || 'Not provided'}
+Book Name: ${formData.get('bookName') || 'Not provided'}
+Book Location: ${formData.get('bookLocation') || 'Not provided'}
+Book Description: ${formData.get('bookDescription') || 'Not provided'}
+Review Format: ${reviewFormat}
+Additional Info: ${formData.get('additionalInfo') || 'Not provided'}`,
+                to_email: 'writeovercoffeee@gmail.com'
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('service_913jvci', 'template_njf9lce', templateParams)
+                .then(function(response) {
+                    // Hide form and show success message
+                    if (formContainer) {
+                        formContainer.style.display = 'none';
+                    }
+                    if (successMessage) {
+                        successMessage.classList.add('show');
+                        // Scroll to success message
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, function(error) {
+                    showMessage('Sorry, there was an error submitting your information. Please try again.', 'error');
+                    console.error('EmailJS error:', error);
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                 });
