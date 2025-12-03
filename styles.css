@@ -713,6 +713,13 @@ section {
     box-shadow: var(--shadow-medium);
 }
 
+.events-row .next-event-box .signup-btn {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Standalone Subscribe Section */
 .standalone-subscribe {
     padding: 100px 0 150px 0;
@@ -1495,6 +1502,20 @@ section {
     flex-direction: column;
     align-items: center;
     gap: 30px;
+}
+
+.footer-text {
+    text-align: center;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: underline;
+    transition: var(--transition);
+}
+
+.footer-link:hover {
+    color: var(--secondary-color);
 }
 
 .social-links {

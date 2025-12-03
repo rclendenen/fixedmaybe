@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Review Exchange Sign-Up - Elizabeth K. Green</title>
+    <meta name="description" content="Sign up for Write Over Coffee by Elizabeth Green: The Author Review Exchange Event on December 5th, 2025">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&family=Ink+Free&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon 1.png">
+    
+    <style>
+        .signup-page {
+            min-height: 100vh;
+            padding: 120px 0 80px;
+            background-image: url('background books.JPEG');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        
+        .signup-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        .signup-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .signup-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .signup-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        .signup-form-container {
+            background: rgba(244, 243, 239, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: var(--shadow-medium);
+            border: 2px solid rgba(194, 192, 183, 0.3);
+        }
+        
+        .signup-form {
+            width: 100%;
+        }
+        
+        .signup-form .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .signup-form .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+        
+        .signup-form .form-group input,
+        .signup-form .form-group textarea,
+        .signup-form .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            font-family: var(--font-secondary);
+            font-size: 1rem;
+            transition: var(--transition);
+            background: white;
+        }
+        
+        .signup-form .form-group input:focus,
+        .signup-form .form-group textarea:focus,
+        .signup-form .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(161, 178, 171, 0.1);
+        }
+        
+        .signup-form .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .signup-form .form-group select {
+            cursor: pointer;
+        }
+        
+        .required-indicator {
+            color: #e74c3c;
+        }
+        
+        .signup-form .btn {
+            width: 100%;
+            margin-top: 10px;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .back-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .success-message {
+            background: rgba(244, 243, 239, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: var(--shadow-medium);
+            border: 2px solid rgba(194, 192, 183, 0.3);
+            text-align: center;
+            display: none;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .success-message i {
+            font-size: 4rem;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+        
+        .success-message h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .success-message p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        @media (max-width: 768px) {
+            .signup-page {
+                padding: 100px 0 60px;
+            }
+            
+            .signup-header h1 {
+                font-size: 2rem;
+            }
+            
+            .signup-form-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="author-info">
+                    <img src="profile.JPG" alt="Elizabeth K. Green - Author" class="author-photo">
+                    <div class="author-text">
+                        <h1 class="author-name">Elizabeth K. Green</h1>
+                        <p class="tagline">Author of Unspoken Goodbyes</p>
+                    </div>
+                </div>
+                <div class="header-cta">
+                    <a href="mailto:writeovercoffeee@gmail.com?subject=Contact Request from Website&body=Hello Elizabeth,%0D%0A%0D%0AI would like to get in touch with you.%0D%0A%0D%0APlease let me know the best way to reach you.%0D%0A%0D%0AThank you!" class="contact-now-btn">
+                        <i class="fas fa-envelope"></i>
+                        Contact Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sign-Up Page Content -->
+    <main class="signup-page">
+        <div class="signup-container">
+            <a href="index.html#events" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Events
+            </a>
+            
+            <div class="signup-header">
+                <h1>Author Review Exchange Sign-Up</h1>
+                <p>Join us for Write Over Coffee by Elizabeth Green: The Author Review Exchange Event</p>
+            </div>
+            
+            <!-- Sign-Up Form -->
+            <div class="signup-form-container" id="signupFormContainer">
+                <form class="signup-form" id="signupForm">
+                    <div class="form-group">
+                        <label for="name">Name <span class="required-indicator">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="Your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email <span class="required-indicator">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="instagram">Instagram Username</label>
+                        <input type="text" id="instagram" name="instagram" placeholder="@yourusername">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tiktok">TikTok Username</label>
+                        <input type="text" id="tiktok" name="tiktok" placeholder="@yourusername">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bookName">Book Name</label>
+                        <input type="text" id="bookName" name="bookName" placeholder="Title of your book">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bookLocation">Where can your book be found? (Amazon link, website, etc.)</label>
+                        <input type="url" id="bookLocation" name="bookLocation" placeholder="https://amazon.com/your-book or your website">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bookDescription">Tell us about your book</label>
+                        <textarea id="bookDescription" name="bookDescription" rows="4" placeholder="Share a brief description of your book..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviewFormat">What format will you provide for review? <span class="required-indicator">*</span></label>
+                        <select id="reviewFormat" name="reviewFormat" required>
+                            <option value="">Please select...</option>
+                            <option value="eBook">eBook</option>
+                            <option value="PDF">PDF</option>
+                            <option value="physical copy">Physical Copy</option>
+                            <option value="audiobook">Audiobook</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additionalInfo">Anything else we should know?</label>
+                        <textarea id="additionalInfo" name="additionalInfo" rows="3" placeholder="Any additional information you'd like to share..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Submit
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                <i class="fas fa-check-circle"></i>
+                <h2>Thank you!</h2>
+                <p>Your information has been received. We will contact you soon with next steps.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Elizabeth K. Green. All rights reserved.</p>
+                    <p><a href="signup.html" class="footer-link">Author Review Exchange Sign-Up</a></p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@ekg5619?_t=ZP-8zEbLS1S2F4&_r=1" target="_blank" rel="noopener" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1BN5qovmYq/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/egreen2828/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@writeovercoffeee?si=aCZBkpH04zTlQBqL" target="_blank" rel="noopener" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="mailto:writeovercoffeee@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize EmailJS
+            emailjs.init('X1aBvO8QvL9P9gKPd');
+            
+            const signupForm = document.getElementById('signupForm');
+            const successMessage = document.getElementById('successMessage');
+            const formContainer = document.getElementById('signupFormContainer');
+            
+            signupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                const name = formData.get('name').trim();
+                const email = formData.get('email').trim();
+                const reviewFormat = formData.get('reviewFormat');
+                
+                // Basic validation
+                if (!name || !email || !reviewFormat) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                if (!isValidEmail(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                
+                // Show loading state
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+                submitBtn.disabled = true;
+                
+                // Prepare email template parameters
+                const templateParams = {
+                    from_email: email,
+                    from_name: name,
+                    subject: 'Author Review Exchange Sign-Up',
+                    message: `New sign-up for Author Review Exchange Event:
+                    
+Name: ${name}
+Email: ${email}
+Instagram: ${formData.get('instagram') || 'Not provided'}
+TikTok: ${formData.get('tiktok') || 'Not provided'}
+Book Name: ${formData.get('bookName') || 'Not provided'}
+Book Location: ${formData.get('bookLocation') || 'Not provided'}
+Book Description: ${formData.get('bookDescription') || 'Not provided'}
+Review Format: ${reviewFormat}
+Additional Info: ${formData.get('additionalInfo') || 'Not provided'}`,
+                    to_email: 'writeovercoffeee@gmail.com'
+                };
+                
+                // Send email using EmailJS
+                emailjs.send('service_913jvci', 'template_njf9lce', templateParams)
+                    .then(function(response) {
+                        // Hide form and show success message
+                        formContainer.style.display = 'none';
+                        successMessage.classList.add('show');
+                        
+                        // Scroll to success message
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, function(error) {
+                        alert('Sorry, there was an error submitting your information. Please try again.');
+                        console.error('EmailJS error:', error);
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    });
+            });
+            
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        });
+    </script>
+</body>
+</html>
+
