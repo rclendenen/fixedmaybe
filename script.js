@@ -428,10 +428,13 @@ function initAuthorReviewForm() {
             const formData = new FormData(this);
             const name = formData.get('name').trim();
             const email = formData.get('email').trim();
-            const reviewFormat = formData.get('reviewFormat');
+            
+            // Get selected review platforms
+            const selectedPlatforms = formData.getAll('reviewPlatform');
+            const platformOtherText = formData.get('platformOtherText') ? formData.get('platformOtherText').trim() : '';
             
             // Basic validation
-            if (!name || !email || !reviewFormat) {
+            if (!name || !email) {
                 showMessage('Please fill in all required fields.', 'error');
                 return;
             }
@@ -441,11 +444,29 @@ function initAuthorReviewForm() {
                 return;
             }
             
+            // Validate that at least one platform is selected
+            if (selectedPlatforms.length === 0) {
+                showMessage('Please select at least one platform for reviews.', 'error');
+                return;
+            }
+            
+            // If "Other" is selected, validate that text is provided
+            if (selectedPlatforms.includes('Other') && !platformOtherText) {
+                showMessage('Please specify the other platform.', 'error');
+                return;
+            }
+            
             // Show loading state
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
             submitBtn.disabled = true;
+            
+            // Format platforms list for email
+            let platformsList = selectedPlatforms.join(', ');
+            if (selectedPlatforms.includes('Other') && platformOtherText) {
+                platformsList = platformsList.replace('Other', `Other (${platformOtherText})`);
+            }
             
             // Prepare email template parameters
             const templateParams = {
@@ -461,7 +482,7 @@ TikTok: ${formData.get('tiktok') || 'Not provided'}
 Book Name: ${formData.get('bookName') || 'Not provided'}
 Book Location: ${formData.get('bookLocation') || 'Not provided'}
 Book Description: ${formData.get('bookDescription') || 'Not provided'}
-Review Format: ${reviewFormat}
+Preferred Review Platforms: ${platformsList}
 Additional Info: ${formData.get('additionalInfo') || 'Not provided'}`,
                 to_email: 'writeovercoffeee@gmail.com'
             };

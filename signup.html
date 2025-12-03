@@ -107,6 +107,34 @@
             cursor: pointer;
         }
         
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+        
+        .checkbox-item label {
+            margin: 0;
+            font-weight: 400;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+        
         .required-indicator {
             color: #e74c3c;
         }
@@ -253,15 +281,42 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="reviewFormat">What format will you provide for review? <span class="required-indicator">*</span></label>
-                        <select id="reviewFormat" name="reviewFormat" required>
-                            <option value="">Please select...</option>
-                            <option value="eBook">eBook</option>
-                            <option value="PDF">PDF</option>
-                            <option value="physical copy">Physical Copy</option>
-                            <option value="audiobook">Audiobook</option>
-                            <option value="other">Other</option>
-                        </select>
+                        <label>What platform do you prefer reviews on? <span class="required-indicator">*</span></label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="platform-tiktok" name="reviewPlatform" value="TikTok">
+                                <label for="platform-tiktok">TikTok</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="platform-instagram" name="reviewPlatform" value="Instagram">
+                                <label for="platform-instagram">Instagram</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="platform-facebook" name="reviewPlatform" value="Facebook">
+                                <label for="platform-facebook">Facebook</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="platform-amazon" name="reviewPlatform" value="Amazon">
+                                <label for="platform-amazon">Amazon</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="platform-goodreads" name="reviewPlatform" value="Goodreads">
+                                <label for="platform-goodreads">Goodreads</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="platform-youtube" name="reviewPlatform" value="YouTube">
+                                <label for="platform-youtube">YouTube</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="platform-blog" name="reviewPlatform" value="Blog Review">
+                                <label for="platform-blog">Blog Review</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="platform-other" name="reviewPlatform" value="Other">
+                                <label for="platform-other">Other</label>
+                            </div>
+                        </div>
+                        <input type="text" id="platform-other-text" name="platformOtherText" placeholder="Please specify..." style="display: none; margin-top: 10px;">
                     </div>
                     
                     <div class="form-group">
@@ -317,6 +372,27 @@
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
+    
+    <script>
+        // Show/hide "Other" text input when "Other" checkbox is checked
+        document.addEventListener('DOMContentLoaded', function() {
+            const otherCheckbox = document.getElementById('platform-other');
+            const otherTextInput = document.getElementById('platform-other-text');
+            
+            if (otherCheckbox && otherTextInput) {
+                otherCheckbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        otherTextInput.style.display = 'block';
+                        otherTextInput.setAttribute('required', 'required');
+                    } else {
+                        otherTextInput.style.display = 'none';
+                        otherTextInput.removeAttribute('required');
+                        otherTextInput.value = '';
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
 
