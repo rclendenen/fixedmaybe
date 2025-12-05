@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initStandaloneSubscribeForm();
     initAuthorReviewForm();
     initCalendar();
+    initEventFlipCard();
     initScrollEffects();
     initParallaxEffects();
     initAccessibility();
@@ -840,6 +841,7 @@ function initCalendar() {
         '2026-01-01', // New Year's Day
         '2026-01-19', // Martin Luther King Jr. Day
         '2026-02-16', // Presidents' Day
+        '2026-03-01', // Book Signing Event at Half Price Books, Dallas
         '2026-05-25', // Memorial Day
         '2026-06-19', // Juneteenth
         '2026-07-04', // Independence Day
@@ -967,4 +969,25 @@ function initCalendar() {
     
     // Initial render
     renderCalendar();
+}
+
+// Event Flip Card functionality
+function initEventFlipCard() {
+    const flipCardContainer = document.querySelector('.flip-card-container');
+    const flipBtn = document.getElementById('flipEventCard');
+    const flipBackBtn = document.getElementById('flipEventCardBack');
+    
+    if (!flipCardContainer || !flipBtn || !flipBackBtn) {
+        return; // Elements not found
+    }
+    
+    flipBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        flipCardContainer.classList.add('flipped');
+    });
+    
+    flipBackBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        flipCardContainer.classList.remove('flipped');
+    });
 }
