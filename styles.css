@@ -798,7 +798,8 @@ section {
 }
 
 .flip-next-btn {
-    bottom: 70px;
+    bottom: 20px;
+    right: 20px;
 }
 
 /* Arrow Button */
@@ -819,6 +820,16 @@ section {
     cursor: pointer;
     transition: var(--transition);
     z-index: 10;
+}
+
+/* Position buttons side by side on the back side (January 31st) */
+.flip-card-back .flip-arrow-btn#flipEventCardBack {
+    right: auto;
+    left: 20px; /* Position Previous Event button on the left */
+}
+
+.flip-card-back .flip-arrow-btn#flipEventCardNext {
+    right: 20px; /* Keep Next Event button on the right */
 }
 
 .events-title-btn {
