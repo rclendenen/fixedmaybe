@@ -839,6 +839,7 @@ function initCalendar() {
         
         // 2026 Holidays
         '2026-01-01', // New Year's Day
+        '2026-01-31', // Book Signing Event at Half Price Books, Mansfield
         '2026-03-01', // Book Signing Event at Half Price Books, Dallas
         '2026-05-25', // Memorial Day
         '2026-06-19', // Juneteenth
@@ -974,18 +975,46 @@ function initEventFlipCard() {
     const flipCardContainer = document.querySelector('.flip-card-container');
     const flipBtn = document.getElementById('flipEventCard');
     const flipBackBtn = document.getElementById('flipEventCardBack');
+    const flipNextBtn = document.getElementById('flipEventCardNext');
+    const flipBackFromThirdBtn = document.getElementById('flipEventCardBackFromThird');
     
-    if (!flipCardContainer || !flipBtn || !flipBackBtn) {
-        return; // Elements not found
+    if (!flipCardContainer) {
+        return; // Container not found
     }
     
-    flipBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        flipCardContainer.classList.add('flipped');
-    });
+    // Navigate from front (Dec 5) to back (Jan 31)
+    if (flipBtn) {
+        flipBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            flipCardContainer.classList.remove('flipped-second');
+            flipCardContainer.classList.add('flipped');
+        });
+    }
     
-    flipBackBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        flipCardContainer.classList.remove('flipped');
-    });
+    // Navigate from back (Jan 31) to front (Dec 5)
+    if (flipBackBtn) {
+        flipBackBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            flipCardContainer.classList.remove('flipped');
+            flipCardContainer.classList.remove('flipped-second');
+        });
+    }
+    
+    // Navigate from back (Jan 31) to third (March 1)
+    if (flipNextBtn) {
+        flipNextBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            flipCardContainer.classList.remove('flipped');
+            flipCardContainer.classList.add('flipped-second');
+        });
+    }
+    
+    // Navigate from third (March 1) to back (Jan 31)
+    if (flipBackFromThirdBtn) {
+        flipBackFromThirdBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            flipCardContainer.classList.remove('flipped-second');
+            flipCardContainer.classList.add('flipped');
+        });
+    }
 }

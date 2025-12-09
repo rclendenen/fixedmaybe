@@ -750,8 +750,13 @@ section {
     transform: rotateY(180deg);
 }
 
+.flip-card-container.flipped-second .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
 .flip-card-front,
-.flip-card-back {
+.flip-card-back,
+.flip-card-third {
     position: absolute;
     top: 0;
     left: 0;
@@ -770,6 +775,30 @@ section {
 
 .flip-card-back {
     transform: rotateY(180deg);
+}
+
+.flip-card-third {
+    transform: rotateY(180deg);
+}
+
+/* Show/hide sides based on state */
+.flip-card-container:not(.flipped):not(.flipped-second) .flip-card-back,
+.flip-card-container:not(.flipped):not(.flipped-second) .flip-card-third {
+    display: none;
+}
+
+.flip-card-container.flipped:not(.flipped-second) .flip-card-front,
+.flip-card-container.flipped:not(.flipped-second) .flip-card-third {
+    display: none;
+}
+
+.flip-card-container.flipped-second .flip-card-front,
+.flip-card-container.flipped-second .flip-card-back {
+    display: none;
+}
+
+.flip-next-btn {
+    bottom: 70px;
 }
 
 /* Arrow Button */
