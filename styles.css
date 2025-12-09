@@ -1960,16 +1960,19 @@ section {
     .events-row .next-event-box .event-details {
         grid-area: event-content;
         order: unset;
-        word-wrap: break-word;
+        word-break: normal;
         overflow-wrap: break-word;
         width: 100%;
         overflow: visible;
+        white-space: normal;
     }
     
     .events-row .next-event-box .event-details p {
-        word-break: break-word;
-        hyphens: auto;
+        word-break: normal;
+        overflow-wrap: break-word;
+        hyphens: none;
         margin-bottom: 8px;
+        white-space: normal;
     }
     
     .events-row .next-event-box .event-title {
@@ -1980,18 +1983,22 @@ section {
     .events-row .next-event-box .event-title h3 {
         font-size: 1.2rem;
         line-height: 1.3;
-        word-wrap: break-word;
+        word-break: normal;
         overflow-wrap: break-word;
+        white-space: normal;
     }
     
     .events-row .next-event-box .event-info {
-        word-wrap: break-word;
+        word-break: normal;
         overflow-wrap: break-word;
+        white-space: normal;
         margin-top: 8px;
     }
     
     .events-row .next-event-box .event-info p {
-        word-break: break-word;
+        word-break: normal;
+        overflow-wrap: break-word;
+        white-space: normal;
         margin-bottom: 5px;
     }
     
