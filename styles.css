@@ -1923,12 +1923,19 @@ section {
         max-width: 451px;
         height: auto;
         min-height: 630px;
+        overflow: visible;
+        padding: 20px 15px;
+    }
+    
+    .events-row .next-event-box {
+        overflow: visible;
     }
     
     .events-row .next-event-box {
         flex-direction: column;
         text-align: center;
-        gap: 10px;
+        gap: 8px;
+        padding: 15px;
     }
     
     .events-row .next-event-box {
@@ -1937,12 +1944,13 @@ section {
             "events-title"
             "date-box"
             "event-content";
-        gap: 15px;
+        gap: 8px;
     }
     
     .events-row .next-event-box .events-section-title {
         grid-area: events-title;
         order: unset;
+        margin-bottom: 0;
     }
     
     .events-row .next-event-box .event-date {
@@ -1950,15 +1958,33 @@ section {
         align-self: center;
         min-width: 70px;
         order: unset;
+        margin-top: 0;
     }
     
     .events-row .next-event-box .event-details {
         grid-area: event-content;
         order: unset;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        width: 100%;
+    }
+    
+    .events-row .next-event-box .event-details p {
+        word-break: break-word;
+        hyphens: auto;
     }
     
     .events-row .next-event-box .event-title {
         order: 1; /* Book Signing Event title first within event-details */
+    }
+    
+    .events-row .next-event-box .event-info {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .events-row .next-event-box .event-info p {
+        word-break: break-word;
     }
     
     /* Standalone Subscribe Mobile */
@@ -2246,22 +2272,42 @@ section {
             "events-title"
             "date-box"
             "event-content";
-        gap: 15px;
+        gap: 8px;
+        padding: 15px;
     }
     
     .events-row .next-event-box .events-section-title {
         grid-area: events-title;
         order: unset;
+        margin-bottom: 0;
     }
     
     .events-row .next-event-box .event-date {
         grid-area: date-box;
         order: unset;
+        margin-top: 0;
     }
     
     .events-row .next-event-box .event-details {
         grid-area: event-content;
         order: unset;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        width: 100%;
+    }
+    
+    .events-row .next-event-box .event-details p {
+        word-break: break-word;
+        hyphens: auto;
+    }
+    
+    .events-row .next-event-box .event-info {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .events-row .next-event-box .event-info p {
+        word-break: break-word;
     }
     
     .events-row .next-event-box .event-title {
