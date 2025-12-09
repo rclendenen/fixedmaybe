@@ -411,6 +411,9 @@ section {
     margin-bottom: 5px;
     font-size: 1.4rem;
     line-height: 1.55;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 /* Style for the buttons inside each box */
@@ -605,6 +608,9 @@ section {
 .events-info-box {
     padding-top: 15px;
     padding-bottom: 1.5rem;
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .events-row .content-box:hover {
@@ -976,8 +982,9 @@ section {
 }
 
 .events-info-box .speaking-topics h4 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 8px;
+    font-weight: 600;
 }
 
 .speaking-topics ul {
@@ -996,10 +1003,12 @@ section {
 /* Tighter spacing for speaking topics list items in events-info-box */
 .events-info-box .speaking-topics li {
     padding: 0;
-    margin-bottom: 2px;
-    font-size: 1.25rem;
+    margin-bottom: 3px;
+    font-size: 1.2rem;
     padding-left: 25px;
-    line-height: 1.35;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .speaking-topics li:before {
