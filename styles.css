@@ -1963,8 +1963,10 @@ section {
         word-break: normal;
         overflow-wrap: break-word;
         width: 100%;
+        max-width: 100%;
         overflow: visible;
         white-space: normal;
+        display: block;
     }
     
     .events-row .next-event-box .event-details p {
@@ -1973,6 +1975,9 @@ section {
         hyphens: none;
         margin-bottom: 8px;
         white-space: normal;
+        display: block;
+        width: 100%;
+        max-width: 100%;
     }
     
     .events-row .next-event-box .event-title {
@@ -1986,6 +1991,9 @@ section {
         word-break: normal;
         overflow-wrap: break-word;
         white-space: normal;
+        display: block;
+        width: 100%;
+        max-width: 100%;
     }
     
     .events-row .next-event-box .event-info {
@@ -1993,6 +2001,13 @@ section {
         overflow-wrap: break-word;
         white-space: normal;
         margin-top: 8px;
+        display: block;
+        width: 100%;
+    }
+    
+    .events-row .next-event-box .event-info p {
+        display: block !important;
+        width: 100% !important;
     }
     
     .events-row .next-event-box .event-info p {
@@ -2000,6 +2015,9 @@ section {
         overflow-wrap: break-word;
         white-space: normal;
         margin-bottom: 5px;
+        display: block;
+        width: 100%;
+        max-width: 100%;
     }
     
     .events-row .next-event-box .location-details {
