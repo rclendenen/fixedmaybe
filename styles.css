@@ -376,12 +376,24 @@ section {
     margin-bottom: 10px;
 }
 
+/* Smaller icon for events-info-box */
+.events-info-box .content-icon {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
 .content-box h3 {
     color: var(--primary-color);
     font-size: 2.2rem;
     margin-bottom: 8px;
     font-family: var(--font-primary);
     font-weight: 600;
+}
+
+/* Tighter spacing for events-info-box */
+.events-info-box h3 {
+    margin-bottom: 5px;
+    font-size: 2rem;
 }
 
 .content-box p {
@@ -392,6 +404,13 @@ section {
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
+}
+
+/* Tighter spacing for events-info-box paragraph */
+.events-info-box p {
+    margin-bottom: 5px;
+    font-size: 1.15rem;
+    line-height: 1.5;
 }
 
 /* Style for the buttons inside each box */
@@ -580,6 +599,12 @@ section {
     max-width: 451px;
     width: 451px;
     padding-bottom: 2rem;
+}
+
+/* Reduced padding for events-info-box to fit content */
+.events-info-box {
+    padding-top: 15px;
+    padding-bottom: 1.5rem;
 }
 
 .events-row .content-box:hover {
@@ -945,6 +970,16 @@ section {
     font-weight: 600;
 }
 
+/* Tighter spacing for speaking topics in events-info-box */
+.events-info-box .speaking-topics {
+    margin-top: 8px;
+}
+
+.events-info-box .speaking-topics h4 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
 .speaking-topics ul {
     list-style: none;
     padding: 0;
@@ -956,6 +991,13 @@ section {
     position: relative;
     padding-left: 30px;
     font-size: 1.1rem;
+}
+
+/* Tighter spacing for speaking topics list items in events-info-box */
+.events-info-box .speaking-topics li {
+    padding: 2px 0;
+    font-size: 1rem;
+    padding-left: 25px;
 }
 
 .speaking-topics li:before {
