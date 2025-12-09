@@ -409,7 +409,7 @@ section {
 /* Tighter spacing for events-info-box paragraph */
 .events-info-box p {
     margin-bottom: 5px;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     line-height: 1.5;
 }
 
@@ -976,7 +976,7 @@ section {
 }
 
 .events-info-box .speaking-topics h4 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-bottom: 6px;
 }
 
@@ -997,7 +997,7 @@ section {
 .events-info-box .speaking-topics li {
     padding: 0;
     margin-bottom: 2px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     padding-left: 25px;
     line-height: 1.3;
 }
