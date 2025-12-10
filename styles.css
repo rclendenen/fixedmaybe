@@ -1929,7 +1929,7 @@ section {
         box-sizing: border-box;
     }
     
-    /* Ensure all flip card sides are the same size on mobile */
+    /* Ensure all flip card sides are the same size on mobile - keep flip functionality */
     .events-row .flip-card-container {
         height: auto !important;
         min-height: auto !important;
@@ -1940,25 +1940,41 @@ section {
         height: auto !important;
         min-height: auto !important;
         width: 100% !important;
-        transform: none !important;
+        /* Keep transform for flip functionality */
     }
     
     .events-row .flip-card-front,
     .events-row .flip-card-back,
     .events-row .flip-card-third {
-        position: relative !important;
+        /* Keep absolute positioning and transforms for flip card to work */
         height: auto !important;
         min-height: auto !important;
         width: 100% !important;
-        transform: none !important;
-        backface-visibility: visible !important;
-        display: block !important;
+        /* Keep backface-visibility for flip to work */
+        /* Keep display: flex but fix text flow inside */
         word-break: normal !important;
         overflow-wrap: normal !important;
         white-space: normal !important;
     }
     
-    /* Ensure back and third slides have same text flow as front */
+    /* Ensure show/hide logic works on mobile - respect display: none */
+    .flip-card-container:not(.flipped):not(.flipped-second) .flip-card-back,
+    .flip-card-container:not(.flipped):not(.flipped-second) .flip-card-third {
+        display: none !important;
+    }
+    
+    .flip-card-container.flipped:not(.flipped-second) .flip-card-front,
+    .flip-card-container.flipped:not(.flipped-second) .flip-card-third {
+        display: none !important;
+    }
+    
+    .flip-card-container.flipped-second .flip-card-front,
+    .flip-card-container.flipped-second .flip-card-back {
+        display: none !important;
+    }
+    
+    /* Fix text flow inside all flip card sides on mobile */
+    .events-row .flip-card-front .event-details,
     .events-row .flip-card-back .event-details,
     .events-row .flip-card-third .event-details {
         display: block !important;
@@ -1972,6 +1988,7 @@ section {
         white-space: normal !important;
     }
     
+    .events-row .flip-card-front .event-details p,
     .events-row .flip-card-back .event-details p,
     .events-row .flip-card-third .event-details p {
         word-break: normal !important;
@@ -1989,6 +2006,7 @@ section {
         clear: both !important;
     }
     
+    .events-row .flip-card-front .event-title h3,
     .events-row .flip-card-back .event-title h3,
     .events-row .flip-card-third .event-title h3 {
         font-size: 1.2rem;
@@ -2003,6 +2021,7 @@ section {
         text-align: left !important;
     }
     
+    .events-row .flip-card-front .event-info,
     .events-row .flip-card-back .event-info,
     .events-row .flip-card-third .event-info {
         word-break: normal !important;
@@ -2015,6 +2034,7 @@ section {
         box-sizing: border-box !important;
     }
     
+    .events-row .flip-card-front .event-info p,
     .events-row .flip-card-back .event-info p,
     .events-row .flip-card-third .event-info p {
         display: block !important;
@@ -2031,6 +2051,7 @@ section {
         flex: none !important;
     }
     
+    .events-row .flip-card-front .location-details,
     .events-row .flip-card-back .location-details,
     .events-row .flip-card-third .location-details {
         width: 100% !important;
@@ -2045,6 +2066,7 @@ section {
         white-space: normal !important;
     }
     
+    .events-row .flip-card-front .location-details p,
     .events-row .flip-card-back .location-details p,
     .events-row .flip-card-third .location-details p {
         word-break: normal !important;
@@ -2055,6 +2077,7 @@ section {
         margin-bottom: 5px !important;
     }
     
+    .events-row .flip-card-front .location-address,
     .events-row .flip-card-back .location-address,
     .events-row .flip-card-third .location-address {
         display: block !important;
