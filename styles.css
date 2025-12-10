@@ -1952,6 +1952,117 @@ section {
         width: 100% !important;
         transform: none !important;
         backface-visibility: visible !important;
+        display: block !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        white-space: normal !important;
+    }
+    
+    /* Ensure back and third slides have same text flow as front */
+    .events-row .flip-card-back .event-details,
+    .events-row .flip-card-third .event-details {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        float: none !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        white-space: normal !important;
+    }
+    
+    .events-row .flip-card-back .event-details p,
+    .events-row .flip-card-third .event-details p {
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        hyphens: none !important;
+        white-space: normal !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+        line-height: 1.5 !important;
+        float: none !important;
+        clear: both !important;
+    }
+    
+    .events-row .flip-card-back .event-title h3,
+    .events-row .flip-card-third .event-title h3 {
+        font-size: 1.2rem;
+        line-height: 1.4;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        white-space: normal !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+    }
+    
+    .events-row .flip-card-back .event-info,
+    .events-row .flip-card-third .event-info {
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        white-space: normal !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    .events-row .flip-card-back .event-info p,
+    .events-row .flip-card-third .event-info p {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        white-space: normal !important;
+        line-height: 1.5 !important;
+        float: none !important;
+        flex: none !important;
+    }
+    
+    .events-row .flip-card-back .location-details,
+    .events-row .flip-card-third .location-details {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        display: block !important;
+        margin-top: 10px !important;
+        overflow: visible !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        white-space: normal !important;
+    }
+    
+    .events-row .flip-card-back .location-details p,
+    .events-row .flip-card-third .location-details p {
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        white-space: normal !important;
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .events-row .flip-card-back .location-address,
+    .events-row .flip-card-third .location-address {
+        display: block !important;
+        width: 100% !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        white-space: normal !important;
+        margin-bottom: 10px !important;
     }
     
     /* Ensure consistent padding and expansion for all event boxes on mobile */
