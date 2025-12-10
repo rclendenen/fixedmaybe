@@ -2245,25 +2245,17 @@ section {
         margin-top: 8px;
     }
     
-    .events-row .next-event-box .flip-arrow-btn {
-        position: relative !important;
-        bottom: auto !important;
-        right: auto !important;
-        left: auto !important;
-        margin-top: 15px !important;
-        margin-bottom: 10px !important;
-        width: 100% !important;
-        justify-content: center !important;
-        display: inline-flex !important;
-    }
-    
-    .events-row .next-event-box .flip-next-btn {
-        position: relative !important;
-        bottom: auto !important;
-        right: auto !important;
-        left: auto !important;
-        margin-top: 10px !important;
-        margin-bottom: 10px !important;
+    /* Hide next/previous event buttons on mobile */
+    .events-row .next-event-box .flip-arrow-btn,
+    .events-row .next-event-box .flip-next-btn,
+    .events-row .flip-card-front .flip-arrow-btn,
+    .events-row .flip-card-back .flip-arrow-btn,
+    .events-row .flip-card-third .flip-arrow-btn,
+    .events-row .next-event-box #flipEventCard,
+    .events-row .next-event-box #flipEventCardBack,
+    .events-row .next-event-box #flipEventCardNext,
+    .events-row .next-event-box #flipEventCardBackFromThird {
+        display: none !important;
     }
     
     /* Standalone Subscribe Mobile */
