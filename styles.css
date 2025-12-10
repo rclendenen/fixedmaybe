@@ -1921,12 +1921,50 @@ section {
     .events-row .content-box {
         width: 100%;
         max-width: 100%;
-        height: auto;
-        min-height: auto;
-        overflow: visible;
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
         padding: 20px 15px;
-        padding-bottom: 30px;
+        padding-bottom: 40px !important;
         box-sizing: border-box;
+    }
+    
+    /* Ensure all flip card sides are the same size on mobile */
+    .events-row .flip-card-container {
+        height: auto !important;
+        min-height: auto !important;
+        width: 100% !important;
+    }
+    
+    .events-row .flip-card-inner {
+        height: auto !important;
+        min-height: auto !important;
+        width: 100% !important;
+        transform: none !important;
+    }
+    
+    .events-row .flip-card-front,
+    .events-row .flip-card-back,
+    .events-row .flip-card-third {
+        position: relative !important;
+        height: auto !important;
+        min-height: auto !important;
+        width: 100% !important;
+        transform: none !important;
+        backface-visibility: visible !important;
+    }
+    
+    /* Ensure consistent padding and expansion for all event boxes on mobile */
+    .events-row .content-box,
+    .events-row .next-event-box {
+        padding-bottom: 50px !important;
+    }
+    
+    /* Make sure speaking topics box also expands */
+    .events-info-box {
+        height: auto !important;
+        min-height: auto !important;
+        padding-bottom: 40px !important;
     }
     
     .events-row .next-event-box {
@@ -1934,10 +1972,13 @@ section {
         text-align: left;
         display: block !important;
         padding: 20px 15px;
-        overflow: visible;
+        padding-bottom: 40px !important;
+        overflow: visible !important;
         width: 100% !important;
         max-width: 100% !important;
         min-width: 0 !important;
+        min-height: auto !important;
+        height: auto !important;
         box-sizing: border-box !important;
         float: none !important;
     }
@@ -2050,12 +2091,33 @@ section {
         max-width: 100% !important;
         min-width: 0 !important;
         box-sizing: border-box !important;
+        display: block !important;
+        margin-top: 10px !important;
+        overflow: visible !important;
     }
     
     .events-row .next-event-box .location-details p {
         word-break: normal !important;
         overflow-wrap: normal !important;
         white-space: normal !important;
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .events-row .next-event-box .location-address {
+        display: block !important;
+        width: 100% !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        white-space: normal !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .events-row .next-event-box .directions-btn {
+        display: inline-block !important;
+        width: auto !important;
+        margin-top: 10px !important;
     }
     
     .events-row .next-event-box .event-info p {
@@ -2073,12 +2135,24 @@ section {
     }
     
     .events-row .next-event-box .flip-arrow-btn {
-        position: relative;
-        bottom: auto;
-        right: auto;
-        margin-top: 15px;
-        width: 100%;
-        justify-content: center;
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        left: auto !important;
+        margin-top: 15px !important;
+        margin-bottom: 10px !important;
+        width: 100% !important;
+        justify-content: center !important;
+        display: inline-flex !important;
+    }
+    
+    .events-row .next-event-box .flip-next-btn {
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        left: auto !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
     }
     
     /* Standalone Subscribe Mobile */
