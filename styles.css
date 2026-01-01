@@ -873,13 +873,23 @@ section {
     z-index: 10;
 }
 
-/* Position buttons side by side on the back side (January 31st) */
+/* Position buttons side by side on the back side (January 24th) */
 .flip-card-back .flip-arrow-btn#flipEventCardBack {
     right: auto;
     left: 20px; /* Position Previous Event button on the left */
 }
 
 .flip-card-back .flip-arrow-btn#flipEventCardNext {
+    right: 20px; /* Keep Next Event button on the right */
+}
+
+/* Position buttons side by side on the third side (January 31st) */
+.flip-card-third .flip-arrow-btn#flipEventCardBackFromThird {
+    right: auto;
+    left: 20px; /* Position Previous Event button on the left */
+}
+
+.flip-card-third .flip-arrow-btn#flipEventCardNextFromThird {
     right: 20px; /* Keep Next Event button on the right */
 }
 
