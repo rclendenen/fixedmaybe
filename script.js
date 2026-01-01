@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize EmailJS
     initEmailJS();
     
-    // Initialize Christmas Theme (if date is valid)
-    initChristmasTheme();
     
     // Initialize all functionality
     initSmoothScrolling();
@@ -29,86 +27,6 @@ function initEmailJS() {
     emailjs.init('X1aBvO8QvL9P9gKPd');
 }
 
-// Initialize Christmas Theme (Active until January 1st, 2026)
-function initChristmasTheme() {
-    const christmasTheme = document.getElementById('christmas-theme');
-    const christmasPopup = document.getElementById('christmas-popup');
-    
-    // Get current date
-    const today = new Date();
-    const endDate = new Date('2026-01-01T00:00:00');
-    
-    // Check if today is before January 1st, 2026
-    if (today < endDate) {
-        if (christmasTheme) {
-            christmasTheme.classList.add('active');
-            
-            // Position Christmas lights at bottom of header dynamically
-            function positionChristmasLights() {
-                const header = document.getElementById('header');
-                const christmasLights = document.querySelector('.christmas-lights');
-                
-                if (header && christmasLights) {
-                    // Get the actual header height
-                    const headerHeight = header.offsetHeight;
-                    // Position lights at the bottom of the header
-                    christmasLights.style.top = headerHeight + 'px';
-                }
-            }
-            
-            // Position lights on load and resize
-            positionChristmasLights();
-            window.addEventListener('resize', positionChristmasLights);
-            // Also position after a short delay to ensure header is fully rendered
-            setTimeout(positionChristmasLights, 100);
-        }
-        
-        // Show flowing ribbon during Christmas period (every page load)
-        if (christmasPopup) {
-            // Get audio element for Santa's bells
-            const bellsAudio = document.getElementById('santa-bells-audio');
-            
-            // Show ribbon after a short delay for better UX
-            setTimeout(() => {
-                christmasPopup.classList.add('show');
-                
-                // Play Santa's bells sound
-                if (bellsAudio) {
-                    bellsAudio.volume = 0.4; // Set volume to 40%
-                    bellsAudio.play().catch(error => {
-                        // Auto-play may be blocked by browser, this is normal
-                        console.log('Audio play prevented by browser:', error);
-                    });
-                }
-                
-                // Remove ribbon after animation completes (8 seconds)
-                setTimeout(() => {
-                    christmasPopup.classList.remove('show');
-                    // Stop audio
-                    if (bellsAudio) {
-                        bellsAudio.pause();
-                        bellsAudio.currentTime = 0;
-                    }
-                    // Reset position for next time
-                    setTimeout(() => {
-                        christmasPopup.style.animation = 'none';
-                        setTimeout(() => {
-                            christmasPopup.style.animation = '';
-                        }, 10);
-                    }, 100);
-                }, 8000);
-            }, 500);
-        }
-    } else {
-        // Remove the theme if date has passed
-        if (christmasTheme) {
-            christmasTheme.remove();
-        }
-        if (christmasPopup) {
-            christmasPopup.remove();
-        }
-    }
-}
 
 // Smooth scrolling for content box links
 function initSmoothScrolling() {
@@ -839,6 +757,7 @@ function initCalendar() {
         
         // 2026 Holidays
         '2026-01-01', // New Year's Day
+        '2026-01-24', // Book Signing Event at Half Price Books, Austin
         '2026-01-31', // Book Signing Event at Half Price Books, Mansfield
         '2026-03-01', // Book Signing Event at Half Price Books, Dallas
         '2026-05-25', // Memorial Day
@@ -970,51 +889,70 @@ function initCalendar() {
     renderCalendar();
 }
 
-// Event Flip Card functionality
+// Event Flip Card functionality - 4 states: front (Dec 5), back (Jan 24), third (Jan 31), fourth (March 1)
 function initEventFlipCard() {
     const flipCardContainer = document.querySelector('.flip-card-container');
     const flipBtn = document.getElementById('flipEventCard');
     const flipBackBtn = document.getElementById('flipEventCardBack');
     const flipNextBtn = document.getElementById('flipEventCardNext');
     const flipBackFromThirdBtn = document.getElementById('flipEventCardBackFromThird');
+    const flipNextFromThirdBtn = document.getElementById('flipEventCardNextFromThird');
+    const flipBackFromFourthBtn = document.getElementById('flipEventCardBackFromFourth');
     
     if (!flipCardContainer) {
         return; // Container not found
     }
     
-    // Navigate from front (Dec 5) to back (Jan 31)
+    // Navigate from front (Dec 5) to back (Jan 24)
     if (flipBtn) {
         flipBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            flipCardContainer.classList.remove('flipped-second');
+            flipCardContainer.classList.remove('flipped-second', 'flipped-third');
             flipCardContainer.classList.add('flipped');
         });
     }
     
-    // Navigate from back (Jan 31) to front (Dec 5)
+    // Navigate from back (Jan 24) to front (Dec 5)
     if (flipBackBtn) {
         flipBackBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            flipCardContainer.classList.remove('flipped');
-            flipCardContainer.classList.remove('flipped-second');
+            flipCardContainer.classList.remove('flipped', 'flipped-second', 'flipped-third');
         });
     }
     
-    // Navigate from back (Jan 31) to third (March 1)
+    // Navigate from back (Jan 24) to third (Jan 31)
     if (flipNextBtn) {
         flipNextBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            flipCardContainer.classList.remove('flipped');
+            flipCardContainer.classList.remove('flipped', 'flipped-third');
             flipCardContainer.classList.add('flipped-second');
         });
     }
     
-    // Navigate from third (March 1) to back (Jan 31)
+    // Navigate from third (Jan 31) to back (Jan 24)
     if (flipBackFromThirdBtn) {
         flipBackFromThirdBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            flipCardContainer.classList.remove('flipped-second');
+            flipCardContainer.classList.remove('flipped-second', 'flipped-third');
             flipCardContainer.classList.add('flipped');
+        });
+    }
+    
+    // Navigate from third (Jan 31) to fourth (March 1)
+    if (flipNextFromThirdBtn) {
+        flipNextFromThirdBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            flipCardContainer.classList.remove('flipped', 'flipped-second');
+            flipCardContainer.classList.add('flipped-third');
+        });
+    }
+    
+    // Navigate from fourth (March 1) to third (Jan 31)
+    if (flipBackFromFourthBtn) {
+        flipBackFromFourthBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            flipCardContainer.classList.remove('flipped', 'flipped-third');
+            flipCardContainer.classList.add('flipped-second');
         });
     }
 }
