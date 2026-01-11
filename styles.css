@@ -146,7 +146,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('hero section update.jpg');
+    background-image: url('https://i.imgur.com/uJpXahb.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -168,9 +168,16 @@ a:hover {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     padding: 0 var(--spacing-md);
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.hero-text {
+    text-align: left;
 }
 
 .hero-name {
@@ -181,9 +188,6 @@ a:hover {
     color: var(--color-charcoal);
     margin: 0 0 var(--spacing-sm) 0;
     text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .hero-headline {
@@ -194,9 +198,21 @@ a:hover {
     color: var(--color-charcoal);
     margin: 0;
     text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+.hero-image-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-framed-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(74, 79, 82, 0.3);
 }
 
 /* Page Header Component (for other pages) */
@@ -465,6 +481,16 @@ a:hover {
         min-height: 500px;
     }
     
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
     .hero-name {
         font-size: 4rem;
         margin-bottom: var(--spacing-xs);
@@ -473,6 +499,10 @@ a:hover {
     .hero-headline {
         font-size: 3rem;
         line-height: 1.3;
+    }
+    
+    .hero-framed-image {
+        max-width: 400px;
     }
     
     .page-header h1 {
@@ -516,7 +546,10 @@ a:hover {
     .hero-headline {
         font-size: 2rem;
         line-height: 1.4;
-        padding: 0 var(--spacing-sm);
+    }
+    
+    .hero-framed-image {
+        max-width: 300px;
     }
     
     .nav-tile {
