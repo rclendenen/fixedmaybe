@@ -102,10 +102,21 @@ a:hover {
 }
 
 .nav-logo {
-    font-family: var(--font-primary);
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--color-charcoal);
+    display: inline-block;
+    background: transparent;
+    text-decoration: none;
+}
+
+.nav-logo-img {
+    height: 60px;
+    width: auto;
+    display: block;
+    background: transparent;
+    transition: var(--transition);
+}
+
+.nav-logo-img:hover {
+    opacity: 0.8;
 }
 
 .nav-menu {
