@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize flip cards
     initFlipCards();
+    
+    // Initialize about page image rotation
+    initAboutImages();
 });
 
 // Initialize EmailJS
@@ -407,6 +410,32 @@ function initParallax() {
     
     // Also update on resize
     window.addEventListener('resize', updateParallax, { passive: true });
+}
+
+// About page image rotation
+function initAboutImages() {
+    const imageFrames = document.querySelectorAll('.about-image-frame');
+    const textSections = document.querySelectorAll('.about-text-section');
+    
+    if (imageFrames.length === 0 || textSections.length === 0) {
+        return; // Not on about page
+    }
+    
+    imageFrames.forEach(frame => {
+        frame.addEventListener('click', function() {
+            const textIndex = parseInt(this.getAttribute('data-text'));
+            
+            // Remove active class from all frames and text sections
+            imageFrames.forEach(f => f.classList.remove('active'));
+            textSections.forEach(s => s.classList.remove('active'));
+            
+            // Add active class to clicked frame and corresponding text
+            this.classList.add('active');
+            if (textSections[textIndex]) {
+                textSections[textIndex].classList.add('active');
+            }
+        });
+    });
 }
 
 // Utility functions
