@@ -17,52 +17,57 @@ body {
 }
 
 :root {
-    /* New Color Palette */
-    --off-white: #F4F3EF;
-    --warm-gray: #7A776E;
-    --soft-blush: #E9DFDA;
-    --dusty-green: #A1B2AB;
-    --light-taupe: #C2C0B7;
-    --greige: #8E8984;
-    --cream-beige: #E6E1D4;
-    --pale-aqua: #DDE4DF;
-    --deep-teal: #364C4B;
+    /* Calm, Organic, Nature-Inspired Color Palette */
+    --warm-linen: #EFE9DF;
+    --soft-greige: #D8CFC3;
+    --sage-green: #A8B7A5;
+    --eucalyptus: #8FA293;
+    --muted-blue-gray: #9FB0B8;
+    --charcoal: #4A4F52;
     
     /* Semantic Color Assignments */
-    --primary-color: #364C4B;
-    --secondary-color: #A1B2AB;
-    --accent-color: #7A776E;
-    --text-dark: #364C4B;
-    --text-light: #7A776E;
-    --text-medium: #8E8984;
-    --bg-light: #F4F3EF;
-    --bg-secondary: #E6E1D4;
-    --bg-accent: #DDE4DF;
-    --border-color: #C2C0B7;
+    --primary-color: #4A4F52; /* Charcoal for headings, primary text, UI */
+    --secondary-color: #A8B7A5; /* Sage green for accents */
+    --accent-sage: #A8B7A5;
+    --accent-eucalyptus: #8FA293;
+    --accent-blue-gray: #9FB0B8;
+    --text-dark: #4A4F52; /* Charcoal */
+    --text-medium: #6B7175;
+    --text-light: #8E9195;
+    --bg-primary: #EFE9DF; /* Warm linen */
+    --bg-secondary: #D8CFC3; /* Soft greige */
+    --bg-accent: rgba(239, 233, 223, 0.8); /* Linen with transparency */
+    --border-color: #D8CFC3;
     
     /* Typography */
-    --font-primary: 'Playfair Display', serif;
-    --font-secondary: 'Source Sans Pro', sans-serif;
-    --title-font: 'Ink Free', cursive;
+    --font-primary: 'Playfair Display', serif; /* For headings */
+    --font-secondary: 'Source Sans Pro', sans-serif; /* For body text */
     
-    /* Spacing */
-    --section-padding: 25px 0;
-    --container-padding: 0 30px;
+    /* Spacing - Generous and breathable */
+    --section-padding: 80px 0;
+    --container-padding: 0 40px;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
     
-    /* Shadows with new color palette */
-    --shadow-light: 0 2px 10px rgba(54, 76, 75, 0.1);
-    --shadow-medium: 0 4px 20px rgba(54, 76, 75, 0.15);
-    --shadow-strong: 0 8px 30px rgba(54, 76, 75, 0.2);
+    /* Shadows - Soft and subtle */
+    --shadow-light: 0 2px 12px rgba(74, 79, 82, 0.08);
+    --shadow-medium: 0 4px 24px rgba(74, 79, 82, 0.12);
+    --shadow-strong: 0 8px 32px rgba(74, 79, 82, 0.15);
     
-    /* Transitions */
+    /* Transitions - Smooth and calm */
     --transition: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
 }
 
 /* Base Typography */
 body {
     font-family: var(--font-secondary);
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--text-dark);
+    background-color: var(--bg-primary);
     background-image: url('background books.JPEG');
     background-size: cover;
     background-position: center;
@@ -73,18 +78,37 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: 1rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
+    letter-spacing: -0.02em;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
+h1 { 
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 500;
+}
+
+h2 { 
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 500;
+}
+
+h3 { 
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 500;
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 500;
+}
 
 p {
-    margin-bottom: 1rem;
-    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
+    line-height: 1.7;
 }
 
 /* Container */
@@ -113,7 +137,7 @@ p {
 
 /* Header */
 .header {
-    background: rgba(244, 243, 239, 0.95);
+    background: rgba(239, 233, 223, 0.95);
     backdrop-filter: blur(15px);
     box-shadow: var(--shadow-light);
     position: sticky;
@@ -143,21 +167,23 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--secondary-color);
+    background: var(--sage-green);
     color: white;
-    padding: 12px 24px;
-    border-radius: 12px;
+    padding: 12px 28px;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 0.95rem;
     transition: var(--transition);
-    box-shadow: var(--shadow-medium);
+    box-shadow: var(--shadow-light);
+    letter-spacing: 0.01em;
 }
 
 .contact-now-btn:hover {
-    background: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-strong);
+    background: var(--eucalyptus);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-medium);
+    color: white;
 }
 
 .author-photo {
@@ -165,21 +191,25 @@ p {
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--secondary-color);
+    border: 2px solid var(--sage-green);
 }
 
 .author-name {
-    font-size: 2rem;
-    color: var(--primary-color);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    color: var(--text-dark);
     margin-bottom: 0.25rem;
-    font-family: var(--title-font);
+    font-family: var(--font-primary);
+    font-weight: 500;
+    letter-spacing: -0.02em;
 }
 
 .tagline {
-    color: var(--text-light);
-    font-size: 1.1rem;
+    color: var(--text-medium);
+    font-size: 1rem;
     margin: 0;
-    font-family: var(--title-font);
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    letter-spacing: 0.01em;
 }
 
 
@@ -190,9 +220,9 @@ main {
 
 /* Content Boxes Hero Section */
 .content-boxes-hero {
-    padding: 120px 0 100px;  /* increased bottom padding for overhanging buttons */
-    background: rgba(244, 243, 239, 0.1);
-    backdrop-filter: blur(10px);
+    padding: var(--spacing-xl) 0 var(--spacing-lg);  /* Generous spacing */
+    background: rgba(239, 233, 223, 0.4);
+    backdrop-filter: blur(8px);
     position: relative;
     z-index: 10;
 }
@@ -202,39 +232,43 @@ main {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 24px;
+    padding: 14px 28px;
     border: none;
     border-radius: 6px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
     transition: var(--transition);
     text-align: center;
+    letter-spacing: 0.01em;
 }
 
 .btn-primary {
-    background: var(--secondary-color);
+    background: var(--sage-green);
     color: white;
+    box-shadow: var(--shadow-light);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background: #2980b9;
-    transform: translateY(-2px);
+    background: var(--eucalyptus);
+    transform: translateY(-1px);
     box-shadow: var(--shadow-medium);
+    color: white;
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    color: var(--text-dark);
+    border: 1.5px solid var(--sage-green);
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus {
-    background: var(--primary-color);
+    background: var(--sage-green);
     color: white;
+    border-color: var(--sage-green);
 }
 
 /* Sections */
@@ -243,7 +277,7 @@ section {
 }
 
 .section-content {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
     position: relative;
@@ -251,29 +285,31 @@ section {
 }
 
 .section-title {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 3rem;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-lg);
     position: relative;
+    font-weight: 500;
+    letter-spacing: -0.02em;
 }
 
 .section-title::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -16px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: var(--secondary-color);
+    width: 50px;
+    height: 2px;
+    background: var(--sage-green);
 }
 
 
 /* About Section */
 .about {
-    padding: 120px 0;
-    background: rgba(230, 225, 212, 0.9);
-    backdrop-filter: blur(10px);
+    padding: var(--spacing-xl) 0;
+    background: rgba(216, 207, 195, 0.3);
+    backdrop-filter: blur(8px);
     position: relative;
     z-index: 10;
     margin-bottom: 0;
@@ -331,7 +367,7 @@ section {
     overflow: hidden;
     box-shadow: var(--shadow-medium);
     transition: var(--transition);
-    border: 3px solid rgba(244, 243, 239, 0.8);
+    border: 2px solid rgba(216, 207, 195, 0.5);
 }
 
 /* Apply this to the top 3 boxes */
@@ -349,61 +385,64 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-bottom: 2rem;   /* reduced space since button overhangs */
-    height: 450px;          /* fixed height to make larger square */
-    background: rgba(244, 243, 239, 0.95);
+    padding-bottom: 2rem;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 25px 35px;
-    box-shadow: var(--shadow-medium);
+    border-radius: 16px;
+    padding: 32px 36px;
+    box-shadow: var(--shadow-light);
     transition: var(--transition);
-    border: 2px solid rgba(194, 192, 183, 0.3);
+    border: 1px solid rgba(216, 207, 195, 0.4);
     text-align: center;
     max-width: 450px;
-    width: 450px;           /* fixed width to match height */
+    width: 450px;
     z-index: 10001;
 }
 
 .content-box:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: var(--shadow-strong);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--sage-green);
     z-index: 10;
 }
 
 .content-icon {
-    font-size: 3.5rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
+    font-size: 3rem;
+    color: var(--sage-green);
+    margin-bottom: 16px;
+    opacity: 0.9;
 }
 
 /* Smaller icon for events-info-box */
 .events-info-box .content-icon {
     font-size: 2.5rem;
-    margin-bottom: 5px;
+    margin-bottom: 12px;
 }
 
 .content-box h3 {
-    color: var(--primary-color);
-    font-size: 2.2rem;
-    margin-bottom: 8px;
+    color: var(--text-dark);
+    font-size: clamp(1.75rem, 2.5vw, 2rem);
+    margin-bottom: 12px;
     font-family: var(--font-primary);
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: -0.01em;
 }
 
 /* Tighter spacing for events-info-box */
 .events-info-box h3 {
-    margin-bottom: 5px;
-    font-size: 2rem;
+    margin-bottom: 10px;
+    font-size: clamp(1.5rem, 2vw, 1.75rem);
 }
 
 .content-box p {
     color: var(--text-dark);
-    line-height: 1.6;
-    margin-bottom: 8px;
-    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    font-size: 1.05rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    hyphens: auto;
+    flex-grow: 1;
 }
 
 /* Tighter spacing for events-info-box paragraph */
@@ -419,59 +458,68 @@ section {
 /* Style for the buttons inside each box */
 .top-box .box-button {
     position: absolute;
-    bottom: -15px;          /* overhang below the box */
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-
-    /* Make all buttons uniform */
     min-width: 160px;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    font-size: 1rem;
-
-    /* Match existing styling */
-    background-color: #567c67;   /* adjust to your theme */
-    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    background-color: var(--sage-green);
+    color: white;
     border: none;
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    z-index: 10;              /* ensure buttons appear above other elements */
+    box-shadow: var(--shadow-light);
+    z-index: 10;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transition);
+    letter-spacing: 0.01em;
 }
 
 .content-btn {
     position: absolute;
-    bottom: 1.5rem;         /* distance from bottom */
+    bottom: 1.5rem;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-
-    /* Make all buttons uniform */
     min-width: 160px;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    font-size: 1rem;
-
-    /* Match existing styling */
-    background-color: #567c67;   /* adjust to your theme */
-    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    background-color: var(--sage-green);
+    color: white;
     border: none;
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow-light);
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     transition: var(--transition);
+    letter-spacing: 0.01em;
 }
 
 /* Keep same size when buttons stack */
 .top-box .box-button:hover {
-    opacity: 0.9;
+    background-color: var(--eucalyptus);
+    transform: translateX(-50%) translateY(-1px);
+    box-shadow: var(--shadow-medium);
+    color: white;
 }
 
 .content-btn:hover {
-    opacity: 0.9;
+    background-color: var(--eucalyptus);
+    transform: translateX(-50%) translateY(-1px);
+    box-shadow: var(--shadow-medium);
+    color: white;
 }
 
 .photo-container:hover {
@@ -486,7 +534,7 @@ section {
     object-fit: contain;
     object-position: center;
     transition: var(--transition);
-    background: rgba(244, 243, 239, 0.1);
+    background: rgba(239, 233, 223, 0.3);
 }
 
 .photo-container:hover .about-photo {
@@ -553,12 +601,12 @@ section {
 
 /* Events Section */
 .events {
-    padding: 120px 0;
-    background: rgba(244, 243, 239, 0.1);
-    backdrop-filter: blur(10px);
+    padding: var(--spacing-xl) 0;
+    background: rgba(239, 233, 223, 0.4);
+    backdrop-filter: blur(8px);
     position: relative;
     z-index: 10;
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 /* Container for the Upcoming Events section */
@@ -585,13 +633,13 @@ section {
 
 /* Individual event boxes */
 .events-row .content-box {
-    background: rgba(244, 243, 239, 0.95);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 25px 35px;
-    box-shadow: var(--shadow-medium);
+    border-radius: 16px;
+    padding: 32px 36px;
+    box-shadow: var(--shadow-light);
     transition: var(--transition);
-    border: 2px solid rgba(194, 192, 183, 0.3);
+    border: 1px solid rgba(216, 207, 195, 0.4);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -616,8 +664,9 @@ section {
 }
 
 .events-row .content-box:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: var(--shadow-strong);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--sage-green);
     z-index: 10;
 }
 
@@ -1172,25 +1221,26 @@ section {
 
 /* Books Section */
 .books {
-    padding: 120px 0 180px 0;
-    background: rgba(244, 243, 239, 0.1);
-    backdrop-filter: blur(10px);
+    padding: var(--spacing-xl) 0 var(--spacing-xl) 0;
+    background: rgba(239, 233, 223, 0.4);
+    backdrop-filter: blur(8px);
     position: relative;
     z-index: 10;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .current-book {
-    margin-bottom: 80px;
+    margin-bottom: var(--spacing-lg);
 }
 
 .current-book h3 {
-    color: var(--primary-color);
-    font-size: 3rem;
-    margin-bottom: 40px;
-    font-family: var(--heading-font);
+    color: var(--text-dark);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-primary);
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: -0.02em;
 }
 
 .book-content {
@@ -1204,30 +1254,29 @@ section {
 }
 
 .book-text {
-    background: rgba(244, 243, 239, 0.95);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 20px 30px;
-    box-shadow: var(--shadow-medium);
+    border-radius: 16px;
+    padding: 40px 36px;
+    box-shadow: var(--shadow-light);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
     min-height: 700px;
     width: 600px;
-    border: 3px solid #567c67;
+    border: 1px solid rgba(216, 207, 195, 0.4);
     position: relative;
     z-index: 10001;
 }
 
 .book-text p {
-    font-size: 1.3rem;
-    line-height: 1.9;
-    margin-bottom: 2rem;
-    color: var(--text-color);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
     word-wrap: break-word;
     overflow-wrap: break-word;
-    hyphens: auto;
 }
 
 .book-actions {
@@ -1452,12 +1501,12 @@ section {
 
 /* Updated Prayer Section */
 .prayer {
-    padding: 100px 0 80px 0;
-    background: rgba(244, 243, 239, 0.1);
-    backdrop-filter: blur(10px);
+    padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
+    background: rgba(216, 207, 195, 0.3);
+    backdrop-filter: blur(8px);
     position: relative;
     z-index: 10;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .prayer-content {
@@ -1470,15 +1519,16 @@ section {
 }
 
 .prayer-description {
-    background: rgba(244, 243, 239, 0.95);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 40px 30px;
-    box-shadow: var(--shadow-medium);
+    border-radius: 16px;
+    padding: 40px 36px;
+    box-shadow: var(--shadow-light);
     width: 600px;
     max-width: 600px;
     position: relative;
     z-index: 10001;
+    border: 1px solid rgba(216, 207, 195, 0.4);
 }
 
 .prayer-description p {
@@ -1492,13 +1542,14 @@ section {
 }
 
 .prayer-form {
-    background: rgba(244, 243, 239, 0.95);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 40px 30px;
-    box-shadow: var(--shadow-medium);
+    border-radius: 16px;
+    padding: 40px 36px;
+    box-shadow: var(--shadow-light);
     width: 600px;
     max-width: 600px;
+    border: 1px solid rgba(216, 207, 195, 0.4);
 }
 
 .prayer-form h3 {
@@ -1632,14 +1683,13 @@ section {
 }
 
 /* Forms */
-.contact-form,
-.prayer-form {
-    background: rgba(244, 243, 239, 0.95);
+.contact-form {
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
-    padding: 50px 40px;
-    border-radius: 20px;
-    box-shadow: var(--shadow-medium);
-    border: 2px solid rgba(194, 192, 183, 0.3);
+    padding: 40px 36px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-light);
+    border: 1px solid rgba(216, 207, 195, 0.4);
     display: flex;
     flex-direction: column;
     min-height: 550px;
@@ -1722,9 +1772,10 @@ section {
 
 /* Footer */
 .footer {
-    background: var(--primary-color);
-    color: white;
-    padding: 40px 0;
+    background: var(--soft-greige);
+    color: var(--text-dark);
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid rgba(216, 207, 195, 0.5);
 }
 
 .footer-content {
@@ -1739,18 +1790,21 @@ section {
 }
 
 .footer-link {
-    color: white;
+    color: var(--text-dark);
     text-decoration: underline;
+    text-decoration-color: var(--sage-green);
+    text-underline-offset: 3px;
     transition: var(--transition);
 }
 
 .footer-link:hover {
-    color: var(--secondary-color);
+    color: var(--sage-green);
+    text-decoration-color: var(--eucalyptus);
 }
 
 .social-links {
     display: flex;
-    gap: 25px;
+    gap: 20px;
     justify-content: center;
 }
 
@@ -1758,20 +1812,24 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
-    background: var(--secondary-color);
-    color: white;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--text-dark);
     border-radius: 50%;
     text-decoration: none;
     transition: var(--transition);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    border: 1px solid rgba(216, 207, 195, 0.5);
 }
 
 .social-links a:hover,
 .social-links a:focus {
-    background: var(--accent-color);
+    background: var(--sage-green);
+    color: white;
     transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+    border-color: var(--sage-green);
 }
 
 /* Responsive Design */
