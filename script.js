@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize parallax effect
     initParallax();
+    
+    // Initialize flip cards
+    initFlipCards();
 });
 
 // Initialize EmailJS
@@ -313,6 +316,30 @@ function initSubscribeForm() {
             }
         });
     }
+}
+
+// Initialize flip cards for events
+function initFlipCards() {
+    const flipCards = document.querySelectorAll('.flip-card');
+    
+    flipCards.forEach(card => {
+        const flipBtn = card.querySelector('.flip-btn');
+        const flipBtnBack = card.querySelector('.flip-btn-back');
+        
+        if (flipBtn) {
+            flipBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                card.classList.add('flipped');
+            });
+        }
+        
+        if (flipBtnBack) {
+            flipBtnBack.addEventListener('click', function(e) {
+                e.preventDefault();
+                card.classList.remove('flipped');
+            });
+        }
+    });
 }
 
 // Parallax effect
