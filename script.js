@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize navigation active state
     initNavigation();
+    
+    // Initialize parallax effect
+    initParallax();
 });
 
 // Initialize EmailJS
@@ -310,6 +313,59 @@ function initSubscribeForm() {
             }
         });
     }
+}
+
+// Parallax effect
+function initParallax() {
+    // Check if user prefers reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return; // Skip parallax if user prefers reduced motion
+    }
+    
+    // Disable parallax on mobile devices for better performance
+    if (window.innerWidth <= 768) {
+        return;
+    }
+    
+    let ticking = false;
+    const parallaxElements = document.querySelectorAll('.page-header, .nav-tile, .book-item, .event-item, .resource-card, .contact-info, .contact-form-container, .about-text, .booking-form, .prayer-form-container, .subscribe-form-container');
+    
+    const updateParallax = () => {
+        const scrolled = window.pageYOffset;
+        
+        parallaxElements.forEach((element, index) => {
+            if (!element) return;
+            
+            const rect = element.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            
+            if (isVisible) {
+                // Different speeds for different elements
+                const speeds = [0.15, 0.12, 0.18, 0.1, 0.14, 0.16, 0.13, 0.11, 0.17, 0.15, 0.12];
+                const speed = speeds[index % speeds.length] || 0.15;
+                const rate = scrolled * speed;
+                
+                // Use transform3d for hardware acceleration
+                element.style.transform = `translate3d(0, ${rate}px, 0)`;
+                element.style.willChange = 'transform';
+            }
+        });
+        
+        ticking = false;
+    };
+    
+    const handleScroll = () => {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    };
+    
+    // Add scroll listener with passive option for better performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initial call
+    updateParallax();
 }
 
 // Utility functions
