@@ -29,10 +29,14 @@ function initNavigation() {
     
     navLinks.forEach(link => {
         const linkPath = link.getAttribute('href');
-        if (currentPath.endsWith(linkPath) || (currentPath.endsWith('/') && linkPath === 'index.html')) {
+        // Remove existing active class first
+        link.classList.remove('active');
+        
+        // Check if this link matches the current page
+        if (currentPath === '/' && linkPath === 'index.html') {
             link.classList.add('active');
-        } else {
-            link.classList.remove('active');
+        } else if (currentPath.endsWith(linkPath)) {
+            link.classList.add('active');
         }
     });
 }
