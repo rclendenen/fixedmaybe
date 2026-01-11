@@ -328,11 +328,9 @@ function initParallax() {
     }
     
     let ticking = false;
-    const parallaxElements = document.querySelectorAll('.page-header, .nav-tile, .book-item, .event-item, .resource-card, .contact-info, .contact-form-container, .about-text, .booking-form, .prayer-form-container, .subscribe-form-container');
+    const parallaxElements = document.querySelectorAll('.page-header, .nav-tile, .book-item, .event-item, .resource-card, .contact-info, .contact-form-container, .about-content, .booking-form, .prayer-form-container, .subscribe-form-container, .book-section, .event-item, .speaking-section');
     
     const updateParallax = () => {
-        const scrolled = window.pageYOffset;
-        
         parallaxElements.forEach((element, index) => {
             if (!element) return;
             
@@ -340,14 +338,27 @@ function initParallax() {
             const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
             
             if (isVisible) {
-                // Different speeds for different elements
-                const speeds = [0.15, 0.12, 0.18, 0.1, 0.14, 0.16, 0.13, 0.11, 0.17, 0.15, 0.12];
-                const speed = speeds[index % speeds.length] || 0.15;
-                const rate = scrolled * speed;
+                // Calculate element's position relative to viewport
+                const elementTop = rect.top + window.pageYOffset;
+                const scrolled = window.pageYOffset;
+                const elementCenter = elementTop + (rect.height / 2);
+                const windowCenter = scrolled + (window.innerHeight / 2);
+                
+                // Different speeds for different elements (negative for opposite direction)
+                const speeds = [-0.1, -0.08, -0.12, -0.06, -0.09, -0.11, -0.07, -0.13, -0.05, -0.1, -0.08, -0.09];
+                const speed = speeds[index % speeds.length] || -0.1;
+                
+                // Calculate parallax offset based on distance from viewport center
+                const distance = (elementCenter - windowCenter) * speed;
+                const offset = distance * 0.3;
                 
                 // Use transform3d for hardware acceleration
-                element.style.transform = `translate3d(0, ${rate}px, 0)`;
+                element.style.transform = `translate3d(0, ${offset}px, 0)`;
                 element.style.willChange = 'transform';
+            } else {
+                // Reset transform when not visible
+                element.style.transform = 'translate3d(0, 0, 0)';
+                element.style.willChange = 'auto';
             }
         });
         
@@ -366,6 +377,9 @@ function initParallax() {
     
     // Initial call
     updateParallax();
+    
+    // Also update on resize
+    window.addEventListener('resize', updateParallax, { passive: true });
 }
 
 // Utility functions

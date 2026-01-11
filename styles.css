@@ -369,18 +369,13 @@ a:hover {
     position: relative;
 }
 
-/* Ensure all text content has white backgrounds */
-.about-text,
-.book-description,
-.event-details,
-.resource-card p,
-.contact-info p,
-.section-title {
-    background-color: white;
-    padding: var(--spacing-md);
-    border-radius: 8px;
-    border: 1px solid var(--color-greige);
-    box-shadow: 0 2px 8px rgba(74, 79, 82, 0.1);
+/* Ensure all text content containers have white backgrounds */
+.about-content {
+    background-color: white !important;
+    padding: var(--spacing-lg) !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--color-greige) !important;
+    box-shadow: 0 2px 8px rgba(74, 79, 82, 0.1) !important;
 }
 
 /* Parallax wrapper for content sections */
