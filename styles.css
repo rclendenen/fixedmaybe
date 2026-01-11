@@ -203,6 +203,9 @@ a:hover {
 .hero-btn {
     margin-top: var(--spacing-md);
     display: inline-block;
+    padding: 1.25rem 2.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
 .hero-image-frame {
