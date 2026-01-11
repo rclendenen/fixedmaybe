@@ -36,8 +36,8 @@
         }
         
         .about-images {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--spacing-md);
         }
         
@@ -49,6 +49,17 @@
         
         @media (max-width: 768px) {
             .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-images {
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--spacing-sm);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .about-images {
                 grid-template-columns: 1fr;
             }
         }
