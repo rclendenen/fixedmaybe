@@ -22,12 +22,7 @@
     <style>
         .signup-page {
             min-height: 100vh;
-            padding: 120px 0 80px;
-            background-image: url('background books.JPEG');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+            padding: 80px 0;
         }
         
         .signup-container {
@@ -43,22 +38,21 @@
         
         .signup-header h1 {
             font-size: 2.5rem;
-            color: white;
+            color: var(--color-charcoal);
             margin-bottom: 15px;
         }
         
         .signup-header p {
             font-size: 1.2rem;
-            color: white;
+            color: var(--color-charcoal);
         }
         
         .signup-form-container {
-            background: rgba(244, 243, 239, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 50px 40px;
-            box-shadow: var(--shadow-medium);
-            border: 2px solid rgba(194, 192, 183, 0.3);
+            background-color: white;
+            border: 1px solid var(--color-greige);
+            border-radius: 8px;
+            padding: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(74, 79, 82, 0.1);
         }
         
         .signup-form {
@@ -72,8 +66,8 @@
         .signup-form .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--text-dark);
+            font-weight: 500;
+            color: var(--color-charcoal);
             font-size: 1rem;
         }
         
@@ -81,21 +75,22 @@
         .signup-form .form-group textarea,
         .signup-form .form-group select {
             width: 100%;
-            padding: 12px;
-            border: 2px solid var(--border-color);
-            border-radius: 6px;
+            padding: 0.75rem;
+            border: 1px solid var(--color-greige);
+            border-radius: 4px;
             font-family: var(--font-secondary);
             font-size: 1rem;
             transition: var(--transition);
-            background: white;
+            background-color: white;
+            color: var(--color-charcoal);
         }
         
         .signup-form .form-group input:focus,
         .signup-form .form-group textarea:focus,
         .signup-form .form-group select:focus {
             outline: none;
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 3px rgba(161, 178, 171, 0.1);
+            border-color: var(--color-eucalyptus);
+            box-shadow: 0 0 0 3px rgba(143, 162, 147, 0.1);
         }
         
         .signup-form .form-group textarea {
@@ -150,7 +145,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: white;
+            color: var(--color-charcoal);
             text-decoration: none;
             margin-bottom: 30px;
             font-weight: 600;
@@ -158,16 +153,15 @@
         }
         
         .back-link:hover {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--color-eucalyptus);
         }
         
         .success-message {
-            background: rgba(244, 243, 239, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 50px 40px;
-            box-shadow: var(--shadow-medium);
-            border: 2px solid rgba(194, 192, 183, 0.3);
+            background-color: white;
+            border: 1px solid var(--color-greige);
+            border-radius: 8px;
+            padding: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(74, 79, 82, 0.1);
             text-align: center;
             display: none;
         }
@@ -208,33 +202,27 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="author-info">
-                    <img src="profile.JPG" alt="Elizabeth K. Green - Author" class="author-photo">
-                    <div class="author-text">
-                        <h1 class="author-name">Elizabeth K. Green</h1>
-                        <p class="tagline">Author of Unspoken Goodbyes</p>
-                    </div>
-                </div>
-                <div class="header-cta">
-                    <a href="mailto:writeovercoffeee@gmail.com?subject=Contact Request from Website&body=Hello Elizabeth,%0D%0A%0D%0AI would like to get in touch with you.%0D%0A%0D%0APlease let me know the best way to reach you.%0D%0A%0D%0AThank you!" class="contact-now-btn">
-                        <i class="fas fa-envelope"></i>
-                        Contact Now
-                    </a>
-                </div>
-            </div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Elizabeth K. Green</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="speaking.html" class="nav-link">Speaking</a></li>
+                <li><a href="books.html" class="nav-link">Books</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
     <!-- Sign-Up Page Content -->
     <main class="signup-page">
         <div class="signup-container">
-            <a href="index.html#events" class="back-link">
+            <a href="speaking.html" class="back-link">
                 <i class="fas fa-arrow-left"></i>
-                Back to Events
+                Back to Speaking
             </a>
             
             <div class="signup-header">
@@ -341,24 +329,23 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer" id="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-text">
                     <p>&copy; 2024 Elizabeth K. Green. All rights reserved.</p>
-                    <p><a href="signup.html" class="footer-link">Author Review Exchange Sign-Up</a></p>
                 </div>
                 <div class="social-links">
-                    <a href="https://www.tiktok.com/@ekg5619?_t=ZP-8zEbLS1S2F4&_r=1" target="_blank" rel="noopener" aria-label="TikTok">
+                    <a href="https://www.tiktok.com/@ekg5619" target="_blank" rel="noopener" aria-label="TikTok">
                         <i class="fab fa-tiktok"></i>
                     </a>
-                    <a href="https://www.facebook.com/share/1BN5qovmYq/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+                    <a href="https://www.facebook.com/share/1BN5qovmYq/" target="_blank" rel="noopener" aria-label="Facebook">
                         <i class="fab fa-facebook"></i>
                     </a>
                     <a href="https://www.instagram.com/egreen2828/" target="_blank" rel="noopener" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.youtube.com/@writeovercoffeee?si=aCZBkpH04zTlQBqL" target="_blank" rel="noopener" aria-label="YouTube">
+                    <a href="https://www.youtube.com/@writeovercoffeee" target="_blank" rel="noopener" aria-label="YouTube">
                         <i class="fab fa-youtube"></i>
                     </a>
                     <a href="mailto:writeovercoffeee@gmail.com" aria-label="Email">

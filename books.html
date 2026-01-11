@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - Elizabeth K. Green</title>
+    <meta name="description" content="Explore Elizabeth K. Green's books including Unspoken Goodbyes and upcoming releases">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon 1.png">
+    
+    <style>
+        .book-section {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .book-item {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: var(--spacing-lg);
+            background-color: white;
+            border: 1px solid var(--color-greige);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            margin-bottom: var(--spacing-lg);
+            align-items: start;
+        }
+        
+        .book-cover {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(74, 79, 82, 0.1);
+        }
+        
+        .book-info h3 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .book-subtitle {
+            font-style: italic;
+            color: var(--color-charcoal);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+        
+        .book-description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .book-description p {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .book-actions {
+            margin-top: var(--spacing-md);
+        }
+        
+        .upcoming-label {
+            display: inline-block;
+            background-color: var(--color-sage);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        @media (max-width: 768px) {
+            .book-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .book-cover {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Elizabeth K. Green</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="speaking.html" class="nav-link">Speaking</a></li>
+                <li><a href="books.html" class="nav-link active">Books</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Books</h1>
+                <p class="page-intro">Explore Elizabeth's published works and upcoming releases.</p>
+            </div>
+
+            <!-- Current Book -->
+            <div class="book-section">
+                <div class="book-item">
+                    <img src="book cover.jpg" alt="Unspoken Goodbyes Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3>Unspoken Goodbyes</h3>
+                        <p class="book-subtitle">A Daughter's Story of Grief, Love, and Healing</p>
+                        <div class="book-description">
+                            <p>
+                                Elizabeth Green is a devoted wife, mother, "Gammy," and a storyteller at heart. She carries both tenderness and tenacity in everything she does. Her father was her hero, her protector, and her greatest cheerleader.
+                            </p>
+                            <p>
+                                When he passed, the grief that followed became the foundation for this memoir. Unspoken Goodbyes: A Daughter's Story of Grief, Love, and Healing was born from heartbreak but rooted in hope.
+                            </p>
+                            <p>
+                                Through these pages, Elizabeth invites readers into her journey of grieving, remembering, growing, and ultimately rediscovering joy. Surrounded by meaningful friendships, heartfelt conversations, and the love of her ever-expanding family, she has learned to live with a deep sense of purpose.
+                            </p>
+                            <p>
+                                She believes in laughing often, loving boldly, and writing bravely. In honoring her father—who, like a mighty oak, stood tall in love and grace—Elizabeth shares her story with the hope that it helps you feel seen in your own.
+                            </p>
+                        </div>
+                        <div class="book-actions">
+                            <a href="https://a.co/d/gGJN8Hv" class="btn btn-primary" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-cart"></i>
+                                Buy on Amazon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Books -->
+            <div class="book-section">
+                <h2 class="section-title">Upcoming Books</h2>
+                
+                <div class="book-item">
+                    <img src="https://i.imgur.com/FNPbsNR.jpg" alt="Tony Boy Adventures Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <span class="upcoming-label">Coming 2026</span>
+                        <h3>Tony Boy Adventures</h3>
+                        <div class="book-description">
+                            <p>
+                                Tony Boy Adventures is a heartfelt children's book inspired by the stories I was told throughout my own childhood—tales that shaped my imagination, taught me valuable lessons, and stayed close to my heart. These were the kinds of stories that made me dream a little bigger and feel a little braver, and now they're becoming something I can share with the world.
+                            </p>
+                            <p>
+                                This book brings those cherished memories to life through playful adventures, warm characters, and moments of wonder that capture the magic I felt growing up. Each story is written with the same love, joy, and comfort that filled the bedtime tales shared with me.
+                            </p>
+                            <p>
+                                I can't wait to share Tony Boy Adventures with young readers and families everywhere in 2026, and I hope it becomes a book that creates treasured memories for your home just as those childhood stories did for me.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <img src="Prodsa gal - 2.PNG" alt="ProdaGal Bible Study Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <span class="upcoming-label">Coming 2026</span>
+                        <h3>ProdaGal – From a Mother's Point of View</h3>
+                        <div class="book-description">
+                            <p>
+                                Elizabeth is currently working on her next book, ProdaGal – From a Mother's Point of View, a unique Bible study inspired by the parable of the Prodigal Son (Luke 15:11–32).
+                            </p>
+                            <p>
+                                While Scripture highlights the father and his two sons, Elizabeth invites readers to step into the untold role of the mother—imagining her prayers, fears, and hopes as she watched her child drift away and ultimately return home.
+                            </p>
+                            <p>
+                                This heartfelt and reflective study offers encouragement, biblical insight, and a tender perspective for parents navigating their own seasons of waiting, heartache, and hope.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Elizabeth K. Green. All rights reserved.</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@ekg5619" target="_blank" rel="noopener" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1BN5qovmYq/" target="_blank" rel="noopener" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/egreen2828/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@writeovercoffeee" target="_blank" rel="noopener" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="mailto:writeovercoffeee@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

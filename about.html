@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Elizabeth K. Green</title>
+    <meta name="description" content="Learn about Elizabeth K. Green, author of Unspoken Goodbyes">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon 1.png">
+    
+    <style>
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: start;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-text p {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .about-images {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        .about-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(74, 79, 82, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Elizabeth K. Green</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="speaking.html" class="nav-link">Speaking</a></li>
+                <li><a href="books.html" class="nav-link">Books</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>About Elizabeth</h1>
+                <p class="page-intro">A devoted wife, mother, and storyteller whose life has been shaped by love, family, and faith.</p>
+            </div>
+
+            <!-- About Content -->
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Elizabeth Green is a devoted wife of 23 years and proud mother of five, whose life 
+                        has been shaped by love, family, and faith. A natural storyteller, Elizabeth has 
+                        been writing since childhood, finding healing and purpose in her words.
+                    </p>
+                    <p>
+                        She is the author of Unspoken Goodbyes: A Daughter's Story of Grief, Love, and Healing, 
+                        a deeply personal memoir that reflects her resilience in the face of grief and her 
+                        commitment to helping others navigate their own journeys of loss.
+                    </p>
+                    <p>
+                        When she isn't writing, Elizabeth can be found singing, cherishing time with friends, 
+                        or pouring into her community at Rush Creek Green Oaks in Arlington, Texas. Known for 
+                        her authenticity and heart for others, she believes in the power of connection — whether 
+                        through words, music, or simply showing up for the people around her.
+                    </p>
+                </div>
+                <div class="about-images">
+                    <img src="husband.PNG" alt="Elizabeth's husband - 23 years of marriage" class="about-image">
+                    <img src="kids.jpg" alt="Elizabeth's five children - her greatest joy" class="about-image">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Elizabeth K. Green. All rights reserved.</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@ekg5619" target="_blank" rel="noopener" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1BN5qovmYq/" target="_blank" rel="noopener" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/egreen2828/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@writeovercoffeee" target="_blank" rel="noopener" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="mailto:writeovercoffeee@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

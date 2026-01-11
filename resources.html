@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Elizabeth K. Green</title>
+    <meta name="description" content="Resources for grief, healing, and personal growth from Elizabeth K. Green">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon 1.png">
+    
+    <style>
+        .resource-section {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .resource-card {
+            background-color: white;
+            border: 1px solid var(--color-greige);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .resource-card h3 {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .resource-card p {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
+        }
+        
+        .prayer-form-container,
+        .subscribe-form-container {
+            background-color: white;
+            border: 1px solid var(--color-greige);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            margin-top: var(--spacing-md);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Elizabeth K. Green</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="speaking.html" class="nav-link">Speaking</a></li>
+                <li><a href="books.html" class="nav-link">Books</a></li>
+                <li><a href="resources.html" class="nav-link active">Resources</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Resources</h1>
+                <p class="page-intro">Find support, encouragement, and resources for your journey of grief, healing, and personal growth.</p>
+            </div>
+
+            <!-- Prayer Request & Coaching -->
+            <div class="resource-section">
+                <div class="resource-card">
+                    <h3>Prayer Request & Personal Coaching</h3>
+                    <p>
+                        Life brings seasons of joy, growth, and also deep challenges. Whether I'm walking with someone through grief, helping them find clarity, or supporting them in their personal growth, my heart is to remind you that you don't have to go through it alone.
+                    </p>
+                    <p>
+                        Through life coaching and personal development services, I offer guidance and encouragement to help you move forward with strength, hope, and purpose.
+                    </p>
+                    <p>
+                        If you're carrying something heavy, I'd love to hear from you. You can use the prayer request form to share what's on your heart. Whether you're seeking encouragement, guidance, or simply someone to listen and pray with you, I'm here to walk alongside you.
+                    </p>
+                    <p>
+                        I also offer coaching opportunities—not counseling, but coaching that's focused on growth, clarity, and moving forward with purpose. If that's something you'd like to explore, you can request a time to talk through the contact form.
+                    </p>
+                    <p>
+                        Together, we can create space for healing, growth, and a renewed sense of direction in your life.
+                    </p>
+                </div>
+
+                <div class="prayer-form-container">
+                    <h3>Submit a Prayer Request</h3>
+                    <form id="prayerForm">
+                        <div class="form-group">
+                            <label for="prayerEmail">Email *</label>
+                            <input type="email" id="prayerEmail" name="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="prayerSubject">Subject *</label>
+                            <input type="text" id="prayerSubject" name="subject" required placeholder="Brief subject of your request">
+                        </div>
+                        <div class="form-group">
+                            <label for="prayerRequest">Prayer Request *</label>
+                            <textarea id="prayerRequest" name="request" rows="5" required placeholder="Please share your prayer request or what you'd like guidance on..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-praying-hands"></i>
+                            Send Prayer Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="resource-section">
+                <div class="subscribe-form-container">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe here to stay up to date with current events and upcoming speaking engagements.</p>
+                    <form id="subscribeForm">
+                        <div class="form-group">
+                            <label for="subscribeEmail">Email Address *</label>
+                            <input type="email" id="subscribeEmail" name="email" required placeholder="Enter your email address">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-bell"></i>
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Elizabeth K. Green. All rights reserved.</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@ekg5619" target="_blank" rel="noopener" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1BN5qovmYq/" target="_blank" rel="noopener" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/egreen2828/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@writeovercoffeee" target="_blank" rel="noopener" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="mailto:writeovercoffeee@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

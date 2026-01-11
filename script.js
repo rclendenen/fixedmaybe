@@ -5,75 +5,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize EmailJS
     initEmailJS();
     
-    
-    // Initialize all functionality
-    initSmoothScrolling();
+    // Initialize form handlers
     initContactForm();
     initPrayerForm();
-    initEventsForm();
+    initSpeakingForm();
     initSubscribeForm();
-    initStandaloneSubscribeForm();
-    initAuthorReviewForm();
-    initCalendar();
-    initEventFlipCard();
-    initScrollEffects();
-    initParallaxEffects();
-    initAccessibility();
+    
+    // Initialize navigation active state
+    initNavigation();
 });
 
 // Initialize EmailJS
 function initEmailJS() {
-    // Initialize EmailJS with your public key
-    emailjs.init('X1aBvO8QvL9P9gKPd');
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init('X1aBvO8QvL9P9gKPd');
+    }
 }
 
-
-// Smooth scrolling for content box links
-function initSmoothScrolling() {
-    const contentLinks = document.querySelectorAll('.content-btn[href^="#"], .btn[href^="#"]');
+// Navigation active state
+function initNavigation() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
     
-    contentLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const offset = headerHeight + 20;
-                
-                const targetPosition = targetSection.offsetTop - offset;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-                
-                // Update URL without jumping
-                history.pushState(null, null, targetId);
-            }
-        });
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (currentPath.endsWith(linkPath) || (currentPath.endsWith('/') && linkPath === 'index.html')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
     });
 }
 
-
 // Contact form handling
 function initContactForm() {
-    const contactForm = document.getElementById('contact-form');
+    const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
             const formData = new FormData(this);
             const name = formData.get('name').trim();
             const email = formData.get('email').trim();
+            const subject = formData.get('subject').trim();
             const message = formData.get('message').trim();
             
             // Basic validation
-            if (!name || !email || !message) {
+            if (!name || !email || !subject || !message) {
                 showMessage('Please fill in all required fields.', 'error');
                 return;
             }
@@ -83,36 +62,52 @@ function initContactForm() {
                 return;
             }
             
-            // Simulate form submission
+            // Show loading state
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-            
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
-            // Simulate API call
-            setTimeout(() => {
-                showMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
-                this.reset();
+            // Prepare email template parameters
+            const templateParams = {
+                from_email: email,
+                from_name: name,
+                subject: subject,
+                message: message,
+                to_email: 'writeovercoffeee@gmail.com'
+            };
+            
+            // Send email using EmailJS
+            if (typeof emailjs !== 'undefined') {
+                emailjs.send('service_913jvci', 'template_njf9lce', templateParams)
+                    .then(function(response) {
+                        showMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
+                        contactForm.reset();
+                    }, function(error) {
+                        showMessage('Sorry, there was an error sending your message. Please try again.', 'error');
+                        console.error('EmailJS error:', error);
+                    })
+                    .finally(function() {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    });
+            } else {
+                showMessage('Email service is not available. Please try again later.', 'error');
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-                
-                // Log form data (for future backend integration)
-                console.log('Contact form submitted:', { name, email, message });
-            }, 1500);
+            }
         });
     }
 }
 
 // Prayer request form handling
 function initPrayerForm() {
-    const prayerForm = document.getElementById('prayer-form');
+    const prayerForm = document.getElementById('prayerForm');
     
     if (prayerForm) {
         prayerForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
             const formData = new FormData(this);
             const email = formData.get('email').trim();
             const subject = formData.get('subject').trim();
@@ -138,45 +133,48 @@ function initPrayerForm() {
             // Prepare email template parameters
             const templateParams = {
                 from_email: email,
-                from_name: email.split('@')[0], // Use email prefix as name
+                from_name: email.split('@')[0],
                 subject: subject,
                 message: request,
                 to_email: 'writeovercoffeee@gmail.com'
             };
             
             // Send email using EmailJS
-            emailjs.send('service_913jvci', 'template_njf9lce', templateParams)
-                .then(function(response) {
-                    showMessage('Thank you for sharing your prayer request. I will be praying for you.', 'success');
-                    prayerForm.reset();
-                }, function(error) {
-                    showMessage('Sorry, there was an error sending your prayer request. Please try again.', 'error');
-                    console.error('EmailJS error:', error);
-                })
-                .finally(function() {
-                    // Reset button state
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                });
+            if (typeof emailjs !== 'undefined') {
+                emailjs.send('service_913jvci', 'template_njf9lce', templateParams)
+                    .then(function(response) {
+                        showMessage('Thank you for sharing your prayer request. I will be praying for you.', 'success');
+                        prayerForm.reset();
+                    }, function(error) {
+                        showMessage('Sorry, there was an error sending your prayer request. Please try again.', 'error');
+                        console.error('EmailJS error:', error);
+                    })
+                    .finally(function() {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    });
+            } else {
+                showMessage('Email service is not available. Please try again later.', 'error');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
         });
     }
 }
 
-// Events form handling
-function initEventsForm() {
-    const eventsForm = document.getElementById('eventsForm');
+// Speaking form handling
+function initSpeakingForm() {
+    const speakingForm = document.getElementById('speakingForm');
     
-    if (eventsForm) {
-        eventsForm.addEventListener('submit', function(e) {
+    if (speakingForm) {
+        speakingForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
             const formData = new FormData(this);
             const name = formData.get('name').trim();
             const email = formData.get('email').trim();
             const subject = formData.get('subject').trim();
             const message = formData.get('message').trim();
-            const selectedDate = formData.get('selectedDate');
             
             // Basic validation
             if (!name || !email || !subject || !message) {
@@ -195,35 +193,39 @@ function initEventsForm() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
-            // Prepare email template parameters for booking request
-            const dateInfo = selectedDate ? `\nPreferred Date: ${selectedDate}` : '';
+            // Prepare email template parameters
             const templateParams = {
                 from_email: email,
                 from_name: name,
                 subject: `Speaking Engagement Request: ${subject}`,
-                message: `Name: ${name}\nEmail: ${email}\nEvent Type: ${subject}${dateInfo}\n\nEvent Details:\n${message}`,
+                message: `Name: ${name}\nEmail: ${email}\nEvent Type: ${subject}\n\nEvent Details:\n${message}`,
                 to_email: 'writeovercoffeee@gmail.com'
             };
             
             // Send email using EmailJS
-            emailjs.send('service_913jvci', 'template_njf9lce', templateParams)
-                .then(function(response) {
-                    showMessage('Thank you for your booking request! I will get back to you soon.', 'success');
-                    eventsForm.reset();
-                }, function(error) {
-                    showMessage('Sorry, there was an error sending your booking request. Please try again.', 'error');
-                    console.error('EmailJS error:', error);
-                })
-                .finally(function() {
-                    // Reset button state
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                });
+            if (typeof emailjs !== 'undefined') {
+                emailjs.send('service_913jvci', 'template_njf9lce', templateParams)
+                    .then(function(response) {
+                        showMessage('Thank you for your booking request! I will get back to you soon.', 'success');
+                        speakingForm.reset();
+                    }, function(error) {
+                        showMessage('Sorry, there was an error sending your booking request. Please try again.', 'error');
+                        console.error('EmailJS error:', error);
+                    })
+                    .finally(function() {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    });
+            } else {
+                showMessage('Email service is not available. Please try again later.', 'error');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
         });
     }
 }
 
-// Initialize Subscribe Form
+// Subscribe form handling
 function initSubscribeForm() {
     const subscribeForm = document.getElementById('subscribeForm');
     
@@ -231,7 +233,6 @@ function initSubscribeForm() {
         subscribeForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
             const email = this.querySelector('#subscribeEmail').value.trim();
             
             // Basic validation
@@ -261,359 +262,50 @@ function initSubscribeForm() {
             };
             
             // Send email using EmailJS
-            emailjs.send('service_913jvci', 'template_njf9lce', templateParams)
-                .then(function(response) {
+            if (typeof emailjs !== 'undefined') {
+                emailjs.send('service_913jvci', 'template_njf9lce', templateParams)
+                    .then(function(response) {
+                        showMessage('Thank you for subscribing! You will receive updates about upcoming events.', 'success');
+                        subscribeForm.reset();
+                    }, function(error) {
+                        showMessage('Sorry, there was an error with your subscription. Please try again.', 'error');
+                        console.error('EmailJS error:', error);
+                    })
+                    .finally(function() {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    });
+            } else {
+                // Fallback to Google Apps Script
+                const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyoO8gGwq-V6CLYGX4bIuHRZpUvdTyv1AXIvAMecj7fRzYZoazH2QOqhs2bQnqq7SlL/exec';
+                
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        timestamp: new Date().toISOString(),
+                        source: 'elizabethkgreen.com'
+                    })
+                })
+                .then(() => {
                     showMessage('Thank you for subscribing! You will receive updates about upcoming events.', 'success');
                     subscribeForm.reset();
-                }, function(error) {
-                    showMessage('Sorry, there was an error with your subscription. Please try again.', 'error');
-                    console.error('EmailJS error:', error);
                 })
-                .finally(function() {
-                    // Reset button state
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                });
-        });
-    }
-}
-
-// Initialize Standalone Subscribe Form
-function initStandaloneSubscribeForm() {
-    const standaloneSubscribeForm = document.getElementById('standaloneSubscribeForm');
-    
-    if (standaloneSubscribeForm) {
-        standaloneSubscribeForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const email = this.querySelector('#standaloneSubscribeEmail').value.trim();
-            
-            // Basic validation
-            if (!email) {
-                showMessage('Please enter your email address.', 'error');
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                showMessage('Please enter a valid email address.', 'error');
-                return;
-            }
-            
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
-            submitBtn.disabled = true;
-            
-            // Prepare template parameters for EmailJS
-            const templateParams = {
-                to_email: 'writeovercoffeee@gmail.com',
-                from_email: email,
-                subject: 'New Newsletter Subscription',
-                message: `New newsletter subscription from: ${email}`,
-                reply_to: email
-            };
-            
-            // Send email using EmailJS
-            emailjs.send('service_913jvci', 'template_njf9lce', templateParams)
-                .then(function(response) {
-                    showMessage('Thank you for subscribing! You will receive updates about upcoming events.', 'success');
-                    standaloneSubscribeForm.reset();
-                }, function(error) {
+                .catch(error => {
+                    console.error('Error:', error);
                     showMessage('Sorry, there was an error with your subscription. Please try again.', 'error');
-                    console.error('EmailJS error:', error);
                 })
-                .finally(function() {
-                    // Reset button state
+                .finally(() => {
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                 });
-        });
-    }
-}
-
-// Initialize Author Review Exchange Sign-Up Form
-function initAuthorReviewForm() {
-    const signupForm = document.getElementById('signupForm');
-    const successMessage = document.getElementById('successMessage');
-    const formContainer = document.getElementById('signupFormContainer');
-    
-    if (signupForm) {
-        signupForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name').trim();
-            const email = formData.get('email').trim();
-            
-            // Get selected review platforms
-            const selectedPlatforms = formData.getAll('reviewPlatform');
-            const platformOtherText = formData.get('platformOtherText') ? formData.get('platformOtherText').trim() : '';
-            
-            // Basic validation
-            if (!name || !email) {
-                showMessage('Please fill in all required fields.', 'error');
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                showMessage('Please enter a valid email address.', 'error');
-                return;
-            }
-            
-            // Validate that at least one platform is selected
-            if (selectedPlatforms.length === 0) {
-                showMessage('Please select at least one platform for reviews.', 'error');
-                return;
-            }
-            
-            // If "Other" is selected, validate that text is provided
-            if (selectedPlatforms.includes('Other') && !platformOtherText) {
-                showMessage('Please specify the other platform.', 'error');
-                return;
-            }
-            
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
-            submitBtn.disabled = true;
-            
-            // Format platforms list for email
-            let platformsList = selectedPlatforms.join(', ');
-            if (selectedPlatforms.includes('Other') && platformOtherText) {
-                platformsList = platformsList.replace('Other', `Other (${platformOtherText})`);
-            }
-            
-            // Prepare email template parameters
-            const templateParams = {
-                from_email: email,
-                from_name: name,
-                subject: 'Author Review Exchange Sign-Up',
-                message: `New sign-up for Author Review Exchange Event:
-                    
-Name: ${name}
-Email: ${email}
-Instagram: ${formData.get('instagram') || 'Not provided'}
-TikTok: ${formData.get('tiktok') || 'Not provided'}
-Book Name: ${formData.get('bookName') || 'Not provided'}
-Book Location: ${formData.get('bookLocation') || 'Not provided'}
-Book Description: ${formData.get('bookDescription') || 'Not provided'}
-Preferred Review Platforms: ${platformsList}
-Additional Info: ${formData.get('additionalInfo') || 'Not provided'}`,
-                to_email: 'writeovercoffeee@gmail.com'
-            };
-            
-            // Send email using EmailJS
-            emailjs.send('service_913jvci', 'template_njf9lce', templateParams)
-                .then(function(response) {
-                    // Hide form and show success message
-                    if (formContainer) {
-                        formContainer.style.display = 'none';
-                    }
-                    if (successMessage) {
-                        successMessage.classList.add('show');
-                        // Scroll to success message
-                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                }, function(error) {
-                    showMessage('Sorry, there was an error submitting your information. Please try again.', 'error');
-                    console.error('EmailJS error:', error);
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                });
-        });
-    }
-}
-
-// Optimized Parallax effects
-function initParallaxEffects() {
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-        return; // Skip parallax if user prefers reduced motion
-    }
-    
-    // Disable parallax on mobile devices for better performance
-    if (window.innerWidth <= 768) {
-        return;
-    }
-    
-    // Single optimized parallax handler
-    let ticking = false;
-    const parallaxElements = [];
-    
-    // Collect all parallax elements
-    const sections = document.querySelectorAll('section');
-    const heroElements = document.querySelectorAll('.hero-text, .hero-image');
-    
-    // Add sections to parallax elements with reduced speeds for smoother effect
-    sections.forEach((section, index) => {
-        const speeds = [0.05, 0.03, 0.08, 0.02, 0.05]; // Much more subtle speeds
-        parallaxElements.push({
-            element: section,
-            speed: speeds[index] || 0.03,
-            type: 'section'
-        });
-    });
-    
-    // Add hero elements to parallax elements
-    heroElements.forEach((element, index) => {
-        parallaxElements.push({
-            element: element,
-            speed: (index + 1) * 0.01, // Very subtle hero parallax
-            type: 'hero'
-        });
-    });
-    
-    // Single scroll handler for all parallax effects
-    const updateParallax = () => {
-        const scrolled = window.pageYOffset;
-        
-        parallaxElements.forEach(({ element, speed, type }) => {
-            if (!element || !element.isConnected) return;
-            
-            const rect = element.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-            
-            if (isVisible) {
-                const rate = scrolled * -speed;
-                
-                // Use transform3d for hardware acceleration and smoother performance
-                element.style.transform = `translate3d(0, ${rate}px, 0)`;
-                element.style.willChange = 'transform';
-            } else {
-                // Reset will-change when not visible for better performance
-                element.style.willChange = 'auto';
-            }
-        });
-        
-        ticking = false;
-    };
-    
-    // Optimized scroll handler with passive listener
-    const handleScroll = () => {
-        if (!ticking) {
-            requestAnimationFrame(updateParallax);
-            ticking = true;
-        }
-    };
-    
-    // Add scroll listener with passive option for better performance
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Clean up function
-    return () => {
-        window.removeEventListener('scroll', handleScroll);
-        // Reset all transforms
-        parallaxElements.forEach(({ element }) => {
-            if (element) {
-                element.style.transform = '';
-                element.style.willChange = 'auto';
-            }
-        });
-    };
-}
-
-// Scroll effects and animations
-function initScrollEffects() {
-    // Fade in elements on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for fade-in effect
-    const fadeElements = document.querySelectorAll('.hero-text, .hero-image, .about-text, .book-details, .contact-info, .contact-form, .prayer-content');
-    
-    fadeElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-    
-    // Header scroll effect with new colors
-    let lastScrollY = window.scrollY;
-    const header = document.querySelector('.header');
-    
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        
-        if (currentScrollY > 100) {
-            header.style.background = 'rgba(244, 243, 239, 0.98)';
-            header.style.backdropFilter = 'blur(15px)';
-        } else {
-            header.style.background = 'rgba(244, 243, 239, 0.95)';
-            header.style.backdropFilter = 'blur(15px)';
-        }
-        
-        lastScrollY = currentScrollY;
-    });
-}
-
-// Accessibility enhancements
-function initAccessibility() {
-    // Skip link functionality
-    const skipLink = document.querySelector('.skip-link');
-    if (skipLink) {
-        skipLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.focus();
-                target.scrollIntoView({ behavior: 'smooth' });
             }
         });
     }
-    
-    // Keyboard navigation for social links
-    const socialLinks = document.querySelectorAll('.social-links a');
-    socialLinks.forEach(link => {
-        link.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                this.click();
-            }
-        });
-    });
-    
-    // Focus management for forms
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        const firstInput = form.querySelector('input, textarea');
-        const lastInput = form.querySelectorAll('input, textarea');
-        
-        if (firstInput && lastInput.length > 0) {
-            const lastElement = lastInput[lastInput.length - 1];
-            
-            // Trap focus within form
-            lastElement.addEventListener('keydown', function(e) {
-                if (e.key === 'Tab' && !e.shiftKey) {
-                    e.preventDefault();
-                    firstInput.focus();
-                }
-            });
-            
-            firstInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Tab' && e.shiftKey) {
-                    e.preventDefault();
-                    lastElement.focus();
-                }
-            });
-        }
-    });
 }
 
 // Utility functions
@@ -647,7 +339,7 @@ function showMessage(message, type = 'info') {
         position: fixed;
         top: 20px;
         right: 20px;
-        z-index: 1000;
+        z-index: 10000;
         background: ${type === 'success' ? '#27ae60' : type === 'error' ? '#e74c3c' : '#3498db'};
         color: white;
         padding: 15px 20px;
@@ -695,264 +387,4 @@ function showMessage(message, type = 'info') {
             setTimeout(() => messageEl.remove(), 300);
         }
     }, 5000);
-}
-
-// Performance optimization
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Optimize scroll events
-const optimizedScrollHandler = debounce(() => {
-    // Scroll-based functionality can be added here
-}, 16); // ~60fps
-
-window.addEventListener('scroll', optimizedScrollHandler);
-
-// Handle reduced motion preference
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    // Disable animations for users who prefer reduced motion
-    document.documentElement.style.setProperty('--transition', 'none');
-}
-
-// Calendar functionality
-function initCalendar() {
-    const calendarGrid = document.getElementById('calendarGrid');
-    const currentMonthEl = document.getElementById('currentMonth');
-    const prevMonthBtn = document.getElementById('prevMonth');
-    const nextMonthBtn = document.getElementById('nextMonth');
-    
-    if (!calendarGrid || !currentMonthEl || !prevMonthBtn || !nextMonthBtn) {
-        return; // Calendar elements not found
-    }
-    
-    let currentDate = new Date();
-    let currentMonth = currentDate.getMonth();
-    let currentYear = currentDate.getFullYear();
-    
-    // National holidays (US) - only these dates are marked as booked
-    const bookedDates = new Set([
-        // 2025 Holidays
-        '2025-01-01', // New Year's Day
-        '2025-01-20', // Martin Luther King Jr. Day
-        '2025-02-17', // Presidents' Day
-        '2025-05-26', // Memorial Day
-        '2025-06-19', // Juneteenth
-        '2025-07-04', // Independence Day
-        '2025-09-01', // Labor Day
-        '2025-09-27', // Book Signing Event at Esquinta Dulecra
-        '2025-10-13', // Columbus Day
-        '2025-11-11', // Veterans Day
-        '2025-11-15', // Unavailable
-        '2025-11-27', // Thanksgiving Day
-        '2025-12-25', // Christmas Day
-        
-        // 2026 Holidays
-        '2026-01-01', // New Year's Day
-        '2026-01-24', // Book Signing Event at Half Price Books, Austin
-        '2026-01-31', // Book Signing Event at Half Price Books, Mansfield
-        '2026-03-01', // Book Signing Event at Half Price Books, Dallas
-        '2026-05-25', // Memorial Day
-        '2026-06-19', // Juneteenth
-        '2026-07-04', // Independence Day
-        '2026-09-07', // Labor Day
-        '2026-10-12', // Columbus Day
-        '2026-11-11', // Veterans Day
-        '2026-11-26', // Thanksgiving Day
-        '2026-12-25'  // Christmas Day
-    ]);
-    
-    const monthNames = [
-        'January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'
-    ];
-    
-    function renderCalendar() {
-        const firstDay = new Date(currentYear, currentMonth, 1);
-        const lastDay = new Date(currentYear, currentMonth + 1, 0);
-        const daysInMonth = lastDay.getDate();
-        const startingDayOfWeek = firstDay.getDay();
-        
-        currentMonthEl.textContent = `${monthNames[currentMonth]} ${currentYear}`;
-        
-        calendarGrid.innerHTML = '';
-        
-        // Add day headers
-        const dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-        dayHeaders.forEach(day => {
-            const dayHeader = document.createElement('div');
-            dayHeader.className = 'calendar-day-header';
-            dayHeader.textContent = day;
-            dayHeader.style.cssText = `
-                font-weight: 600;
-                color: var(--primary-color);
-                text-align: center;
-                padding: 8px 0;
-                font-size: 0.8rem;
-            `;
-            calendarGrid.appendChild(dayHeader);
-        });
-        
-        // Add empty cells for days before the first day of the month
-        for (let i = 0; i < startingDayOfWeek; i++) {
-            const emptyDay = document.createElement('div');
-            emptyDay.className = 'calendar-day other-month';
-            calendarGrid.appendChild(emptyDay);
-        }
-        
-        // Add days of the month
-        for (let day = 1; day <= daysInMonth; day++) {
-            const dayElement = document.createElement('div');
-            dayElement.className = 'calendar-day';
-            dayElement.textContent = day;
-            
-            const dateString = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-            const isBooked = bookedDates.has(dateString);
-            const isToday = currentDate.getDate() === day && 
-                           currentDate.getMonth() === currentMonth && 
-                           currentDate.getFullYear() === currentYear;
-            
-            if (isToday) {
-                dayElement.classList.add('today');
-            }
-            
-            if (isBooked) {
-                dayElement.classList.add('booked');
-                dayElement.title = 'This date is already booked';
-            } else {
-                dayElement.classList.add('available');
-                dayElement.title = 'Click to select this date';
-                
-                dayElement.addEventListener('click', function() {
-                    // Remove previous selection
-                    document.querySelectorAll('.calendar-day.selected').forEach(el => {
-                        el.classList.remove('selected');
-                    });
-                    
-                    // Add selection to clicked date
-                    dayElement.classList.add('selected');
-                    
-                    // Update hidden input field with selected date
-                    const selectedDateInput = document.getElementById('selectedDate');
-                    if (selectedDateInput) {
-                        const dateString = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-                        selectedDateInput.value = dateString;
-                    }
-                    
-                    showMessage(`Selected date: ${monthNames[currentMonth]} ${day}, ${currentYear}`, 'info');
-                });
-            }
-            
-            calendarGrid.appendChild(dayElement);
-        }
-    }
-    
-    function changeMonth(direction) {
-        if (direction === 'prev') {
-            currentMonth--;
-            if (currentMonth < 0) {
-                currentMonth = 11;
-                currentYear--;
-            }
-        } else {
-            currentMonth++;
-            if (currentMonth > 11) {
-                currentMonth = 0;
-                currentYear++;
-            }
-        }
-        
-        // Don't allow going beyond December 2026
-        if (currentYear > 2026 || (currentYear === 2026 && currentMonth > 11)) {
-            if (direction === 'next') {
-                currentMonth = 11;
-                currentYear = 2026;
-                return;
-            }
-        }
-        
-        renderCalendar();
-    }
-    
-    prevMonthBtn.addEventListener('click', () => changeMonth('prev'));
-    nextMonthBtn.addEventListener('click', () => changeMonth('next'));
-    
-    // Initial render
-    renderCalendar();
-}
-
-// Event Flip Card functionality - 4 states: front (Dec 5), back (Jan 24), third (Jan 31), fourth (March 1)
-function initEventFlipCard() {
-    const flipCardContainer = document.querySelector('.flip-card-container');
-    const flipBtn = document.getElementById('flipEventCard');
-    const flipBackBtn = document.getElementById('flipEventCardBack');
-    const flipNextBtn = document.getElementById('flipEventCardNext');
-    const flipBackFromThirdBtn = document.getElementById('flipEventCardBackFromThird');
-    const flipNextFromThirdBtn = document.getElementById('flipEventCardNextFromThird');
-    const flipBackFromFourthBtn = document.getElementById('flipEventCardBackFromFourth');
-    
-    if (!flipCardContainer) {
-        return; // Container not found
-    }
-    
-    // Navigate from front (Dec 5) to back (Jan 24)
-    if (flipBtn) {
-        flipBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            flipCardContainer.classList.remove('flipped-second', 'flipped-third');
-            flipCardContainer.classList.add('flipped');
-        });
-    }
-    
-    // Navigate from back (Jan 24) to front (Dec 5)
-    if (flipBackBtn) {
-        flipBackBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            flipCardContainer.classList.remove('flipped', 'flipped-second', 'flipped-third');
-        });
-    }
-    
-    // Navigate from back (Jan 24) to third (Jan 31)
-    if (flipNextBtn) {
-        flipNextBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            flipCardContainer.classList.remove('flipped', 'flipped-third');
-            flipCardContainer.classList.add('flipped-second');
-        });
-    }
-    
-    // Navigate from third (Jan 31) to back (Jan 24)
-    if (flipBackFromThirdBtn) {
-        flipBackFromThirdBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            flipCardContainer.classList.remove('flipped-second', 'flipped-third');
-            flipCardContainer.classList.add('flipped');
-        });
-    }
-    
-    // Navigate from third (Jan 31) to fourth (March 1)
-    if (flipNextFromThirdBtn) {
-        flipNextFromThirdBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            flipCardContainer.classList.remove('flipped', 'flipped-second');
-            flipCardContainer.classList.add('flipped-third');
-        });
-    }
-    
-    // Navigate from fourth (March 1) to third (Jan 31)
-    if (flipBackFromFourthBtn) {
-        flipBackFromFourthBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            flipCardContainer.classList.remove('flipped', 'flipped-third');
-            flipCardContainer.classList.add('flipped-second');
-        });
-    }
 }
