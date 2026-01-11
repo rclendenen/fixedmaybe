@@ -597,6 +597,9 @@ a:hover {
     color: var(--color-charcoal);
     margin-bottom: var(--spacing-md);
     font-style: italic;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .event-description {
