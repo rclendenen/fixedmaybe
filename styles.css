@@ -488,7 +488,7 @@ a:hover {
 .flip-card {
     background-color: transparent;
     width: 100%;
-    height: 450px;
+    height: 500px;
     perspective: 1000px;
 }
 
@@ -531,7 +531,7 @@ a:hover {
     transform: rotateY(180deg);
     justify-content: flex-start;
     padding: var(--spacing-lg);
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 .flip-card-back .event-title {
@@ -720,7 +720,7 @@ a:hover {
     }
     
     .flip-card {
-        height: 400px;
+        height: 460px;
     }
     
     .event-day {
