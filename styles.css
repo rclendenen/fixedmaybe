@@ -520,22 +520,37 @@ a:hover {
     justify-content: center;
     align-items: center;
     padding: var(--spacing-lg);
-    overflow: hidden;
     box-sizing: border-box;
+}
+
+.flip-card-front {
+    overflow: hidden;
 }
 
 .flip-card-back {
     transform: rotateY(180deg);
     justify-content: flex-start;
-    padding-top: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    overflow-y: auto;
 }
 
 .flip-card-back .event-title {
     margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+}
+
+.flip-card-back .event-description {
+    margin-bottom: var(--spacing-md);
+    flex: 0 1 auto;
+}
+
+.flip-card-back .event-location {
+    margin-bottom: var(--spacing-md);
 }
 
 .flip-card-back .btn {
-    margin-top: var(--spacing-sm);
+    margin-top: auto;
+    margin-bottom: var(--spacing-xs);
 }
 
 .event-date {
@@ -588,12 +603,10 @@ a:hover {
     font-size: 1rem;
     line-height: 1.7;
     color: var(--color-charcoal);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
     text-align: left;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    flex: 1;
-    min-height: 0;
 }
 
 .flip-btn,
