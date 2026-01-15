@@ -120,10 +120,26 @@ a:hover {
 }
 
 .nav-logo {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.nav-logo-main {
     font-family: var(--font-primary);
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
     color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.nav-logo-sub {
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.2;
+    margin-top: 0.1rem;
 }
 
 .nav-menu {
