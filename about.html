@@ -18,6 +18,28 @@
     <link rel="icon" type="image/png" href="favicon 1.png">
     
     <style>
+        .about-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .about-header h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.02em;
+        }
+        
+        .about-header .page-intro {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -46,8 +68,14 @@
         .about-image {
             width: 100%;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(74, 79, 82, 0.1);
+            box-shadow: 0 2px 8px rgba(44, 44, 44, 0.1);
             object-fit: cover;
+        }
+        
+        .about-image:nth-child(1),
+        .about-image:nth-child(3) {
+            max-width: 85%;
+            margin: 0 auto;
         }
         
         .about-image:nth-child(1) {
@@ -79,9 +107,22 @@
                 gap: var(--spacing-sm);
             }
             
+            .about-image:nth-child(1),
+            .about-image:nth-child(3) {
+                max-width: 90%;
+            }
+            
             .about-image:nth-child(2) {
                 max-width: 70%;
                 width: 70%;
+            }
+            
+            .about-header h1 {
+                font-size: 3rem;
+            }
+            
+            .about-header .page-intro {
+                font-size: 1.1rem;
             }
         }
         
@@ -114,7 +155,7 @@
     <main class="main-content">
         <div class="container">
             <!-- Page Header -->
-            <div class="page-header">
+            <div class="about-header">
                 <h1>About Elizabeth</h1>
                 <p class="page-intro">A devoted wife, mother, and storyteller whose life has been shaped by love, family, and faith.</p>
             </div>
