@@ -18,6 +18,28 @@
     <link rel="icon" type="image/png" href="favicon 1.png">
     
     <style>
+        .contact-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .contact-header h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.02em;
+        }
+        
+        .contact-header .page-intro {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -26,8 +48,8 @@
         }
         
         .contact-info {
-            background-color: white;
-            border: 1px solid var(--color-greige);
+            background-color: var(--bg-primary);
+            border: 1px solid var(--color-accent);
             padding: var(--spacing-lg);
             border-radius: 8px;
         }
@@ -68,8 +90,8 @@
         }
         
         .contact-form-container {
-            background-color: white;
-            border: 1px solid var(--color-greige);
+            background-color: var(--bg-primary);
+            border: 1px solid var(--color-accent);
             padding: var(--spacing-lg);
             border-radius: 8px;
         }
@@ -81,6 +103,14 @@
         @media (max-width: 768px) {
             .contact-content {
                 grid-template-columns: 1fr;
+            }
+            
+            .contact-header h1 {
+                font-size: 3rem;
+            }
+            
+            .contact-header .page-intro {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -107,7 +137,7 @@
     <main class="main-content">
         <div class="container">
             <!-- Page Header -->
-            <div class="page-header">
+            <div class="contact-header">
                 <h1>Contact</h1>
                 <p class="page-intro">Get in touch with Elizabeth for inquiries, collaboration, or to share your story.</p>
             </div>

@@ -18,13 +18,35 @@
     <link rel="icon" type="image/png" href="favicon 1.png">
     
     <style>
+        .speaking-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .speaking-header h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.02em;
+        }
+        
+        .speaking-header .page-intro {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
         .speaking-section {
             margin-bottom: var(--spacing-xl);
         }
         
         .speaking-topics {
-            background-color: white;
-            border: 1px solid var(--color-greige);
+            background-color: var(--bg-primary);
+            border: 1px solid var(--color-accent);
             padding: var(--spacing-lg);
             border-radius: 8px;
             margin-top: var(--spacing-md);
@@ -49,7 +71,7 @@
             content: '•';
             position: absolute;
             left: 0;
-            color: var(--color-eucalyptus);
+            color: var(--color-accent);
             font-weight: bold;
         }
         
@@ -67,7 +89,7 @@
         
         .event-date {
             font-weight: 600;
-            color: var(--color-eucalyptus);
+            color: var(--color-accent);
             margin-bottom: var(--spacing-xs);
         }
         
@@ -87,11 +109,21 @@
         }
         
         .booking-form {
-            background-color: white;
-            border: 1px solid var(--color-greige);
+            background-color: var(--bg-primary);
+            border: 1px solid var(--color-accent);
             padding: var(--spacing-lg);
             border-radius: 8px;
             margin-top: var(--spacing-xl);
+        }
+        
+        @media (max-width: 768px) {
+            .speaking-header h1 {
+                font-size: 3rem;
+            }
+            
+            .speaking-header .page-intro {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -117,7 +149,7 @@
     <main class="main-content">
         <div class="container">
             <!-- Page Header -->
-            <div class="page-header">
+            <div class="speaking-header">
                 <h1>Speaking Engagements</h1>
                 <p class="page-intro">Elizabeth shares her story of grief, healing, and hope through powerful speaking engagements. Available for book clubs, women's groups, grief support events, and faith-based gatherings.</p>
             </div>
