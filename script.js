@@ -500,16 +500,17 @@ function initBookingForm() {
             messageContent += `Additional Information: ${additionalInfo || 'N/A'}\n\n`;
             messageContent += `How did you hear: ${hearAbout}\n`;
             
-            // Prepare email template parameters
+            // Prepare email template parameters (matching the speaking form format)
             const templateParams = {
                 from_email: email,
                 from_name: `${firstName} ${lastName}`,
                 subject: `Booking Request: ${eventType || 'Speaking Engagement'} - ${eventDate || 'Date TBD'}`,
                 message: messageContent,
-                reply_to: email
+                reply_to: email,
+                to_email: 'writeovercoffeee@gmail.com'
             };
             
-            // Send email using EmailJS
+            // Send email using EmailJS (same service and template as speaking form)
             if (typeof emailjs !== 'undefined') {
                 emailjs.send('service_913jvci', 'template_njf9lce', templateParams)
                     .then(function(response) {
