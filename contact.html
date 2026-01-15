@@ -42,9 +42,10 @@
         
         .contact-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-xl);
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: var(--spacing-lg);
             margin-top: var(--spacing-xl);
+            align-items: start;
         }
         
         .contact-info {
@@ -100,18 +101,38 @@
             margin-bottom: var(--spacing-md);
         }
         
+        .contact-image-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
         .contact-image {
             width: 100%;
-            max-width: 600px;
-            margin: var(--spacing-xl) auto;
-            display: block;
+            height: auto;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(44, 44, 44, 0.1);
+            object-fit: cover;
+        }
+        
+        @media (max-width: 1024px) {
+            .contact-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .contact-image-wrapper {
+                grid-column: 1 / -1;
+                margin-bottom: var(--spacing-md);
+            }
         }
         
         @media (max-width: 768px) {
             .contact-content {
                 grid-template-columns: 1fr;
+            }
+            
+            .contact-image-wrapper {
+                grid-column: 1;
             }
             
             .contact-header h1 {
@@ -153,6 +174,11 @@
 
             <!-- Contact Content -->
             <div class="contact-content">
+                <!-- Contact Image -->
+                <div class="contact-image-wrapper">
+                    <img src="https://i.imgur.com/qSxE8tK.jpg" alt="Contact Elizabeth" class="contact-image">
+                </div>
+                
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
                     <p>
@@ -196,9 +222,6 @@
                     </form>
                 </div>
             </div>
-            
-            <!-- Contact Image -->
-            <img src="https://i.imgur.com/qSxE8tK.jpg" alt="Contact Elizabeth" class="contact-image">
         </div>
     </main>
 
