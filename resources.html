@@ -22,30 +22,97 @@
             margin-bottom: var(--spacing-xl);
         }
         
+        .resource-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .resource-header h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.02em;
+        }
+        
+        .resource-header .page-intro {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
         .resource-card {
-            background-color: white;
-            border: 1px solid var(--color-greige);
+            background-color: var(--bg-primary);
+            border: 1px solid var(--color-accent);
             padding: var(--spacing-lg);
             border-radius: 8px;
             margin-bottom: var(--spacing-md);
+            text-align: center;
         }
         
         .resource-card h3 {
             margin-bottom: var(--spacing-sm);
+            text-align: center;
         }
         
         .resource-card p {
             margin-bottom: var(--spacing-md);
             line-height: 1.8;
+            text-align: center;
         }
         
-        .prayer-form-container,
-        .subscribe-form-container {
-            background-color: white;
-            border: 1px solid var(--color-greige);
+        .prayer-section-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: start;
+            margin-top: var(--spacing-lg);
+        }
+        
+        .prayer-form-container {
+            background-color: var(--bg-secondary-pink);
+            border: 1px solid var(--color-accent);
             padding: var(--spacing-lg);
             border-radius: 8px;
-            margin-top: var(--spacing-md);
+            text-align: center;
+        }
+        
+        .prayer-form-container h3 {
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .prayer-form-container .form-group {
+            text-align: left;
+        }
+        
+        .prayer-form-container .form-group label {
+            text-align: left;
+        }
+        
+        .resource-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(44, 44, 44, 0.1);
+            object-fit: cover;
+        }
+        
+        @media (max-width: 768px) {
+            .prayer-section-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .resource-header h1 {
+                font-size: 3rem;
+            }
+            
+            .resource-header .page-intro {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -68,7 +135,7 @@
     <main class="main-content">
         <div class="container">
             <!-- Page Header -->
-            <div class="page-header">
+            <div class="resource-header">
                 <h1>Resources</h1>
                 <p class="page-intro">Find support, encouragement, and resources for your journey of grief, healing, and personal growth.</p>
             </div>
@@ -94,44 +161,39 @@
                     </p>
                 </div>
 
-                <div class="prayer-form-container">
-                    <h3>Submit a Prayer Request</h3>
-                    <form id="prayerForm">
-                        <div class="form-group">
-                            <label for="prayerEmail">Email *</label>
-                            <input type="email" id="prayerEmail" name="email" required placeholder="your.email@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="prayerSubject">Subject *</label>
-                            <input type="text" id="prayerSubject" name="subject" required placeholder="Brief subject of your request">
-                        </div>
-                        <div class="form-group">
-                            <label for="prayerRequest">Prayer Request *</label>
-                            <textarea id="prayerRequest" name="request" rows="5" required placeholder="Please share your prayer request or what you'd like guidance on..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-praying-hands"></i>
-                            Send Prayer Request
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Newsletter Signup -->
-            <div class="resource-section">
-                <div class="subscribe-form-container">
-                    <h3>Stay Updated</h3>
-                    <p>Subscribe here to stay up to date with current events and upcoming speaking engagements.</p>
-                    <form id="subscribeForm">
-                        <div class="form-group">
-                            <label for="subscribeEmail">Email Address *</label>
-                            <input type="email" id="subscribeEmail" name="email" required placeholder="Enter your email address">
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-bell"></i>
-                            Subscribe
-                        </button>
-                    </form>
+                <div class="prayer-section-wrapper">
+                    <div class="prayer-form-container">
+                        <h3>Submit a Prayer Request or Book Your Personal Coaching</h3>
+                        <form id="prayerForm">
+                            <div class="form-group">
+                                <label for="prayerEmail">Email *</label>
+                                <input type="email" id="prayerEmail" name="email" required placeholder="your.email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="requestType">Request Type *</label>
+                                <select id="requestType" name="requestType" required>
+                                    <option value="">Select an option</option>
+                                    <option value="prayer">Prayer Request</option>
+                                    <option value="coaching">Book Personal Coaching</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="prayerSubject">Subject *</label>
+                                <input type="text" id="prayerSubject" name="subject" required placeholder="Brief subject of your request">
+                            </div>
+                            <div class="form-group">
+                                <label for="prayerRequest">Your Request or Message *</label>
+                                <textarea id="prayerRequest" name="request" rows="5" required placeholder="Please share your prayer request, coaching inquiry, or what you'd like guidance on..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-praying-hands"></i>
+                                Submit Request
+                            </button>
+                        </form>
+                    </div>
+                    <div>
+                        <img src="https://i.imgur.com/hFiirQy.jpg" alt="Resources" class="resource-image">
+                    </div>
                 </div>
             </div>
         </div>
