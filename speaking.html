@@ -19,9 +19,37 @@
     
     <style>
         .speaking-header {
-            text-align: center;
+            position: relative;
+            text-align: left;
             margin-bottom: var(--spacing-xl);
-            padding: var(--spacing-lg) 0;
+            padding: var(--spacing-xl) var(--spacing-lg);
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-image: url('https://i.imgur.com/ZIvVMtd.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .speaking-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.3);
+            z-index: 1;
+        }
+        
+        .speaking-header h1,
+        .speaking-header .page-intro {
+            position: relative;
+            z-index: 2;
         }
         
         .speaking-header h1 {
@@ -30,14 +58,16 @@
             color: var(--text-primary);
             margin-bottom: var(--spacing-md);
             letter-spacing: -0.02em;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+            max-width: 700px;
         }
         
         .speaking-header .page-intro {
             font-size: 1.3rem;
             line-height: 1.8;
-            color: var(--text-secondary);
+            color: var(--text-primary);
             max-width: 700px;
-            margin: 0 auto;
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
         }
         
         .speaking-section {
@@ -109,12 +139,20 @@
         }
         
         @media (max-width: 768px) {
+            .speaking-header {
+                min-height: 300px;
+                padding: var(--spacing-lg) var(--spacing-md);
+                text-align: center;
+            }
+            
             .speaking-header h1 {
                 font-size: 3rem;
+                max-width: 100%;
             }
             
             .speaking-header .page-intro {
                 font-size: 1.1rem;
+                max-width: 100%;
             }
         }
     </style>
