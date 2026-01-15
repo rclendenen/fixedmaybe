@@ -18,6 +18,28 @@
     <link rel="icon" type="image/png" href="favicon 1.png">
     
     <style>
+        .book-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .book-header h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.02em;
+        }
+        
+        .book-header .page-intro {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
         .book-section {
             margin-bottom: var(--spacing-xl);
         }
@@ -26,18 +48,18 @@
             display: grid;
             grid-template-columns: 300px 1fr;
             gap: var(--spacing-lg);
-            background-color: white;
-            border: 1px solid var(--color-greige);
+            background-color: var(--bg-primary);
+            border: 1px solid var(--color-accent);
             padding: var(--spacing-lg);
             border-radius: 8px;
             margin-bottom: var(--spacing-lg);
-            align-items: start;
+            align-items: center;
         }
         
         .book-cover {
             width: 100%;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(74, 79, 82, 0.1);
+            box-shadow: 0 2px 8px rgba(44, 44, 44, 0.1);
         }
         
         .book-info h3 {
@@ -47,7 +69,7 @@
         
         .book-subtitle {
             font-style: italic;
-            color: var(--color-charcoal);
+            color: var(--text-primary);
             margin-bottom: var(--spacing-md);
             font-size: 1.1rem;
         }
@@ -68,11 +90,11 @@
         
         .upcoming-label {
             display: inline-block;
-            background-color: var(--color-sage);
-            color: white;
-            padding: 0.25rem 0.75rem;
+            background-color: var(--color-accent);
+            color: var(--button-text);
+            padding: 0.5rem 1rem;
             border-radius: 4px;
-            font-size: 0.875rem;
+            font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: var(--spacing-sm);
         }
@@ -85,6 +107,14 @@
             .book-cover {
                 max-width: 250px;
                 margin: 0 auto;
+            }
+            
+            .book-header h1 {
+                font-size: 3rem;
+            }
+            
+            .book-header .page-intro {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -108,7 +138,7 @@
     <main class="main-content">
         <div class="container">
             <!-- Page Header -->
-            <div class="page-header">
+            <div class="book-header">
                 <h1>Books</h1>
                 <p class="page-intro">Explore Elizabeth's published works and upcoming releases.</p>
             </div>
