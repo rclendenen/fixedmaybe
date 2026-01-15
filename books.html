@@ -99,6 +99,20 @@
             margin-bottom: var(--spacing-sm);
         }
         
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .book-item {
+                gap: var(--spacing-md);
+            }
+            
+            .book-header h1 {
+                font-size: 3.5rem;
+            }
+            
+            .book-header h2 {
+                font-size: 3.5rem !important;
+            }
+        }
+        
         @media (max-width: 768px) {
             .book-item {
                 grid-template-columns: 1fr;
