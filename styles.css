@@ -517,6 +517,28 @@ a:hover {
     background-color: transparent;
 }
 
+.stay-updated-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg) 0;
+}
+
+.stay-updated-header h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.02em;
+}
+
+.stay-updated-header .page-intro {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
 .stay-updated-section .subscribe-form-container {
     background-color: var(--bg-secondary-pink);
     border: 1px solid var(--color-accent);
@@ -729,6 +751,10 @@ a:hover {
     .page-header h1 {
         font-size: 3.5rem;
     }
+    
+    .stay-updated-header h2 {
+        font-size: 3.5rem;
+    }
 }
 
 /* MacBook / Desktop Optimizations (1024px+) */
@@ -869,6 +895,14 @@ a:hover {
     .section-title {
         font-size: 1.5rem;
         padding: var(--spacing-sm);
+    }
+    
+    .stay-updated-header h2 {
+        font-size: 2rem;
+    }
+    
+    .stay-updated-header .page-intro {
+        font-size: 1rem;
     }
 }
 
