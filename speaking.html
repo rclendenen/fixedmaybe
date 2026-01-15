@@ -108,14 +108,6 @@
             color: var(--color-charcoal);
         }
         
-        .booking-form {
-            background-color: var(--bg-primary);
-            border: 1px solid var(--color-accent);
-            padding: var(--spacing-lg);
-            border-radius: 8px;
-            margin-top: var(--spacing-xl);
-        }
-        
         @media (max-width: 768px) {
             .speaking-header h1 {
                 font-size: 3rem;
@@ -181,33 +173,6 @@
                     <i class="fas fa-calendar-alt"></i>
                     Upcoming Events
                 </a>
-            </div>
-
-            <!-- Booking Form -->
-            <div class="booking-form">
-                <h2>Request Booking</h2>
-                <form id="speakingForm">
-                    <div class="form-group">
-                        <label for="speakingName">Name *</label>
-                        <input type="text" id="speakingName" name="name" required placeholder="Your name">
-                    </div>
-                    <div class="form-group">
-                        <label for="speakingEmail">Email *</label>
-                        <input type="email" id="speakingEmail" name="email" required placeholder="your.email@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="speakingEventType">Event Type *</label>
-                        <input type="text" id="speakingEventType" name="subject" required placeholder="e.g., Book Club, Women's Group, Church Event">
-                    </div>
-                    <div class="form-group">
-                        <label for="speakingMessage">Event Details *</label>
-                        <textarea id="speakingMessage" name="message" required rows="5" placeholder="Please provide details about your event, date, location, and audience..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-calendar-check"></i>
-                        Request Booking
-                    </button>
-                </form>
             </div>
         </div>
     </main>
