@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initPrayerForm();
     initSpeakingForm();
     initSubscribeForm();
+    initBookingForm();
     
     // Initialize navigation active state
     initNavigation();
@@ -407,6 +408,128 @@ function initParallax() {
     
     // Also update on resize
     window.addEventListener('resize', updateParallax, { passive: true });
+}
+
+// Booking form handling
+function initBookingForm() {
+    const bookingForm = document.getElementById('bookingForm');
+    
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('bookingEmail').value.trim();
+            const phoneCountry = document.getElementById('phoneCountry').value;
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+            const organization = document.getElementById('organization').value.trim();
+            const website = document.getElementById('website').value.trim();
+            const eventType = document.getElementById('eventType').value;
+            const audience = document.getElementById('audience').value;
+            const eventDate = document.getElementById('eventDate').value;
+            const attendance = document.getElementById('attendance').value;
+            const budget = document.getElementById('budget').value;
+            const eventFormat = document.getElementById('eventFormat').value;
+            const eventLocation = document.getElementById('eventLocation').value.trim();
+            const addressCountry = document.getElementById('addressCountry').value;
+            const addressLine1 = document.getElementById('addressLine1').value.trim();
+            const addressLine2 = document.getElementById('addressLine2').value.trim();
+            const city = document.getElementById('city').value.trim();
+            const state = document.getElementById('state').value.trim();
+            const zipCode = document.getElementById('zipCode').value.trim();
+            const mainGoal = document.getElementById('mainGoal').value;
+            const challenges = document.getElementById('challenges').value.trim();
+            const additionalInfo = document.getElementById('additionalInfo').value.trim();
+            const hearAbout = document.getElementById('hearAbout').value.trim();
+            
+            // Collect checkboxes
+            const topics = Array.from(document.querySelectorAll('input[name="topics"]:checked')).map(cb => cb.value).join(', ');
+            const includes = Array.from(document.querySelectorAll('input[name="includes"]:checked')).map(cb => cb.value).join(', ');
+            
+            // Basic validation
+            if (!firstName || !lastName || !email || !phoneNumber || !eventDate || !hearAbout) {
+                showMessage('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Build message content
+            let messageContent = `BOOKING REQUEST\n\n`;
+            messageContent += `CONTACT INFORMATION:\n`;
+            messageContent += `Name: ${firstName} ${lastName}\n`;
+            messageContent += `Email: ${email}\n`;
+            messageContent += `Phone: ${phoneCountry} ${phoneNumber}\n`;
+            messageContent += `Organization: ${organization || 'N/A'}\n`;
+            messageContent += `Website: ${website || 'N/A'}\n\n`;
+            
+            messageContent += `EVENT DETAILS:\n`;
+            messageContent += `Event Type: ${eventType || 'N/A'}\n`;
+            messageContent += `Primary Audience: ${audience || 'N/A'}\n`;
+            messageContent += `Date: ${eventDate}\n`;
+            messageContent += `Estimated Attendance: ${attendance || 'N/A'}\n`;
+            messageContent += `Budget: $${budget || 'N/A'}\n`;
+            messageContent += `Format: ${eventFormat || 'N/A'}\n`;
+            messageContent += `Location: ${eventLocation || 'N/A'}\n\n`;
+            
+            if (addressLine1 || city || state || zipCode) {
+                messageContent += `ADDRESS:\n`;
+                messageContent += `Country: ${addressCountry}\n`;
+                messageContent += `Address Line 1: ${addressLine1 || 'N/A'}\n`;
+                messageContent += `Address Line 2: ${addressLine2 || 'N/A'}\n`;
+                messageContent += `City: ${city || 'N/A'}\n`;
+                messageContent += `State: ${state || 'N/A'}\n`;
+                messageContent += `ZIP Code: ${zipCode || 'N/A'}\n\n`;
+            }
+            
+            messageContent += `SPEAKING TOPICS:\n${topics || 'None selected'}\n\n`;
+            messageContent += `Main Goal: ${mainGoal || 'N/A'}\n\n`;
+            messageContent += `Challenges/Themes: ${challenges || 'N/A'}\n\n`;
+            messageContent += `Would like to include: ${includes || 'None selected'}\n\n`;
+            messageContent += `Additional Information: ${additionalInfo || 'N/A'}\n\n`;
+            messageContent += `How did you hear: ${hearAbout}\n`;
+            
+            // Prepare email template parameters
+            const templateParams = {
+                from_email: email,
+                from_name: `${firstName} ${lastName}`,
+                subject: `Booking Request: ${eventType || 'Speaking Engagement'} - ${eventDate || 'Date TBD'}`,
+                message: messageContent,
+                reply_to: email
+            };
+            
+            // Send email using EmailJS
+            if (typeof emailjs !== 'undefined') {
+                emailjs.send('service_913jvci', 'template_njf9lce', templateParams)
+                    .then(function(response) {
+                        showMessage('Thank you for your booking request! Elizabeth will get back to you soon.', 'success');
+                        bookingForm.reset();
+                    }, function(error) {
+                        showMessage('Sorry, there was an error sending your booking request. Please try again.', 'error');
+                        console.error('EmailJS error:', error);
+                    })
+                    .finally(function() {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    });
+            } else {
+                showMessage('Email service is not available. Please try again later.', 'error');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
 }
 
 // Utility functions
