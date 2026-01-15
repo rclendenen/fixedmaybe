@@ -18,10 +18,13 @@
     <link rel="icon" type="image/png" href="favicon 1.png">
     
     <style>
+        .speaking-header-wrapper {
+            margin-bottom: var(--spacing-xl);
+        }
+        
         .speaking-header {
             position: relative;
             text-align: right;
-            margin-bottom: var(--spacing-xl);
             padding: var(--spacing-xl) var(--spacing-lg);
             min-height: 400px;
             display: flex;
@@ -34,6 +37,7 @@
             background-repeat: no-repeat;
             border-radius: 8px;
             overflow: hidden;
+            margin-bottom: var(--spacing-lg);
         }
         
         .speaking-header::before {
@@ -47,30 +51,48 @@
             z-index: 1;
         }
         
-        .speaking-header h1,
-        .speaking-header .page-intro {
+        .speaking-header h1 {
             position: relative;
             z-index: 2;
-        }
-        
-        .speaking-header h1 {
-            font-size: 4rem;
+            font-size: 5rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: var(--spacing-md);
+            margin-bottom: 0;
             letter-spacing: -0.02em;
-            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9);
             max-width: 700px;
             text-align: right;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            display: inline-block;
         }
         
-        .speaking-header .page-intro {
+        .speaking-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 80%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--color-accent), var(--color-accent));
+            border-radius: 2px;
+        }
+        
+        .speaking-header-intro {
+            text-align: center;
+            padding: var(--spacing-lg);
+            background-color: var(--bg-secondary-pink);
+            border: 1px solid var(--color-accent);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(44, 44, 44, 0.08);
+        }
+        
+        .speaking-header-intro .page-intro {
             font-size: 1.3rem;
             line-height: 1.8;
             color: var(--text-primary);
-            max-width: 700px;
-            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
-            text-align: right;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .speaking-section {
@@ -152,15 +174,19 @@
             }
             
             .speaking-header h1 {
-                font-size: 3rem;
+                font-size: 3.5rem;
                 max-width: 100%;
                 text-align: center;
             }
             
-            .speaking-header .page-intro {
+            .speaking-header h1::after {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60%;
+            }
+            
+            .speaking-header-intro .page-intro {
                 font-size: 1.1rem;
-                max-width: 100%;
-                text-align: center;
             }
         }
     </style>
@@ -187,9 +213,13 @@
     <main class="main-content">
         <div class="container">
             <!-- Page Header -->
-            <div class="speaking-header">
-                <h1>Speaking Engagements</h1>
-                <p class="page-intro">Elizabeth shares her story of grief, healing, and hope through powerful speaking engagements. Available for book clubs, women's groups, grief support events, and faith-based gatherings.</p>
+            <div class="speaking-header-wrapper">
+                <div class="speaking-header">
+                    <h1>Speaking Engagements</h1>
+                </div>
+                <div class="speaking-header-intro">
+                    <p class="page-intro">Elizabeth shares her story of grief, healing, and hope through powerful speaking engagements. Available for book clubs, women's groups, grief support events, and faith-based gatherings.</p>
+                </div>
             </div>
 
             <!-- Speaking Topics -->
