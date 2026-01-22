@@ -656,6 +656,26 @@ a:hover {
     font-weight: 500;
 }
 
+.event-rescheduled-notice {
+    background-color: #ff6b6b;
+    color: var(--button-text);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-date-new {
+    border: 3px solid #4ecdc4;
+    box-shadow: 0 0 10px rgba(78, 205, 196, 0.3);
+}
+
 .event-title {
     font-family: var(--font-primary);
     font-size: 1.75rem;
