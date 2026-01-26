@@ -98,13 +98,28 @@
             margin-bottom: var(--spacing-xl);
         }
         
+        .speaking-topics-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-md);
+            align-items: start;
+        }
+        
         .speaking-topics {
             background-color: var(--bg-primary);
             border: 1px solid var(--color-accent);
             padding: var(--spacing-lg);
             border-radius: 8px;
-            margin-top: var(--spacing-md);
             text-align: center;
+        }
+        
+        .speaking-topics-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(44, 44, 44, 0.1);
+            object-fit: cover;
         }
         
         .speaking-topics h3 {
@@ -182,6 +197,11 @@
             .speaking-header h1 {
                 font-size: 4.5rem;
             }
+            
+            .speaking-topics-wrapper {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
         }
         
         @media (max-width: 768px) {
@@ -208,6 +228,11 @@
             
             .speaking-header-intro .page-intro {
                 font-size: 1.1rem;
+            }
+            
+            .speaking-topics-wrapper {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
             }
         }
     </style>
@@ -245,21 +270,26 @@
 
             <!-- Speaking Topics -->
             <div class="speaking-section">
-                <div class="speaking-topics">
-                    <h3>Speaking Topics</h3>
-                    <p>Elizabeth is available for book clubs, speaking engagements, special events, and community-focused programs. She also works closely with <strong>nursing homes, hospice care teams, caregivers, and families</strong>, offering compassionate conversations that bring comfort, understanding, and hope.</p>
-                    <ul>
-                        <li><strong>Compassionate Conversations for Nursing Homes & Hospice Communities</strong></li>
-                        <li><strong>Supporting Caregivers & Families</strong></li>
-                        <li>Grief and Healing</li>
-                        <li>Faith and Family</li>
-                        <li>Finding Hope in Loss</li>
-                    </ul>
-                    <div style="text-align: center; margin-top: var(--spacing-lg);">
-                        <a href="booking.html" class="btn btn-primary" style="font-size: 1.5rem; padding: 1.5rem 3rem; font-weight: 600;">
-                            <i class="fas fa-calendar-check"></i>
-                            Book Elizabeth Now!
-                        </a>
+                <div class="speaking-topics-wrapper">
+                    <div class="speaking-topics">
+                        <h3>Speaking Topics</h3>
+                        <p>Elizabeth is available for book clubs, speaking engagements, special events, and community-focused programs. She also works closely with <strong>nursing homes, hospice care teams, caregivers, and families</strong>, offering compassionate conversations that bring comfort, understanding, and hope.</p>
+                        <ul>
+                            <li><strong>Compassionate Conversations for Nursing Homes & Hospice Communities</strong></li>
+                            <li><strong>Supporting Caregivers & Families</strong></li>
+                            <li>Grief and Healing</li>
+                            <li>Faith and Family</li>
+                            <li>Finding Hope in Loss</li>
+                        </ul>
+                        <div style="text-align: center; margin-top: var(--spacing-lg);">
+                            <a href="booking.html" class="btn btn-primary" style="font-size: 1.5rem; padding: 1.5rem 3rem; font-weight: 600;">
+                                <i class="fas fa-calendar-check"></i>
+                                Book Elizabeth Now!
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://i.imgur.com/qaZsImk.jpg" alt="Speaking Engagements" class="speaking-topics-image">
                     </div>
                 </div>
             </div>
