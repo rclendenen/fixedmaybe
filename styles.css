@@ -596,14 +596,16 @@ a:hover {
 }
 
 .flip-card-front {
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .flip-card-back {
     transform: rotateY(180deg);
     justify-content: flex-start;
     padding: var(--spacing-lg);
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .flip-card-back .event-title {
