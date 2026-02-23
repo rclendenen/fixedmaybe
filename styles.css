@@ -595,17 +595,23 @@ a:hover {
     box-sizing: border-box;
 }
 
-.flip-card-front {
+.flip-card-front,
+.flip-card-back {
     overflow-y: auto;
     overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.flip-card-front::-webkit-scrollbar,
+.flip-card-back::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .flip-card-back {
     transform: rotateY(180deg);
     justify-content: flex-start;
     padding: var(--spacing-lg);
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 
 .flip-card-back .event-title {
