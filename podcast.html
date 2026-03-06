@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Podcast - Write Over Coffeee | Elizabeth K. Green</title>
+    <title>Write Over Coffeee Podcast | Elizabeth K. Green</title>
     <meta name="description" content="Listen to Write Over Coffeee podcast with Elizabeth K. Green - raw conversations, practical wisdom, and faith-centered encouragement">
     
     <!-- Google Fonts -->
@@ -37,7 +37,13 @@
             line-height: 1.8;
             color: var(--text-secondary);
             max-width: 700px;
-            margin: 0 auto;
+            margin: 0 auto var(--spacing-lg);
+        }
+        
+        .podcast-listen-now-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .podcast-content {
@@ -116,6 +122,14 @@
             transform: translateY(-3px);
         }
         
+        .podcast-player-heading {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+            scroll-margin-top: 100px;
+        }
+        
         .podcast-player-wrapper {
             max-width: 700px;
             margin: 0 auto var(--spacing-xl);
@@ -179,8 +193,11 @@
         <div class="container">
             <!-- Page Header -->
             <div class="podcast-header">
-                <h1>Write Over Coffeee</h1>
+                <h1>Write Over Coffeee Podcast</h1>
                 <p class="page-intro">The podcast with Liz—raw conversations, practical wisdom, and faith-centered encouragement to help you move forward with confidence and clarity.</p>
+                <a href="#podcast-player" class="btn btn-primary podcast-listen-now-btn">
+                    <i class="fas fa-headphones-alt"></i> Listen now
+                </a>
             </div>
 
             <!-- Podcast Cover + Description -->
@@ -205,7 +222,8 @@
                 </div>
             </div>
 
-            <!-- Embedded Player -->
+            <!-- Listen now: embedded player -->
+            <h2 class="podcast-player-heading" id="podcast-player">Listen now</h2>
             <div class="podcast-player-wrapper">
                 <iframe title="Write Over Coffeee Podcast" allowtransparency="true" height="315" width="100%" style="border: none; min-width: min(100%, 430px); height:315px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=wtiej-151a57b-pbblog-playlist&share=1&download=1&rtl=0&fonts=Arial&skin=1&font-color=auto&logo_link=episode_page&order=episodic&limit=10&filter=all&ss=a713390a017602015775e868a2cf26b0&btn-skin=7&size=315" loading="lazy" allowfullscreen=""></iframe>
             </div>
