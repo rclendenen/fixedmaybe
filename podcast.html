@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast - Write Over Coffeee | Elizabeth K. Green</title>
+    <meta name="description" content="Listen to Write Over Coffeee podcast with Elizabeth K. Green - raw conversations, practical wisdom, and faith-centered encouragement">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon 1.png">
+    
+    <style>
+        .podcast-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .podcast-header h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.02em;
+        }
+        
+        .podcast-header .page-intro {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .podcast-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: start;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .podcast-cover-wrapper {
+            text-align: center;
+        }
+        
+        .podcast-cover {
+            max-width: 100%;
+            width: 320px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(44, 44, 44, 0.15);
+            object-fit: cover;
+        }
+        
+        .podcast-description {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--color-accent);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(44, 44, 44, 0.08);
+        }
+        
+        .podcast-description p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+            margin-bottom: 0;
+        }
+        
+        .podcast-listen {
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .podcast-listen h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+        
+        .podcast-platforms {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .podcast-platforms a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            background-color: var(--color-accent);
+            color: var(--button-text);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .podcast-platforms a:hover {
+            background-color: var(--color-accent-hover);
+            color: var(--button-text);
+            transform: translateY(-3px);
+        }
+        
+        .podcast-player-wrapper {
+            max-width: 700px;
+            margin: 0 auto var(--spacing-xl);
+            background-color: var(--bg-primary);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            border: 1px solid var(--color-accent);
+            box-shadow: 0 2px 8px rgba(44, 44, 44, 0.08);
+        }
+        
+        .podcast-player-wrapper iframe {
+            display: block;
+            width: 100%;
+            min-width: min(100%, 430px);
+            height: 315px;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        @media (max-width: 768px) {
+            .podcast-content {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+            
+            .podcast-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .podcast-header .page-intro {
+                font-size: 1.1rem;
+            }
+            
+            .podcast-cover {
+                width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-main">Write Over Coffee</span>
+                <span class="nav-logo-sub">Elizabeth K. Green</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="speaking.html" class="nav-link">Speaking Engagements</a></li>
+                <li><a href="books.html" class="nav-link">Books</a></li>
+                <li><a href="podcast.html" class="nav-link active">Podcast</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="podcast-header">
+                <h1>Write Over Coffeee</h1>
+                <p class="page-intro">The podcast with Liz—raw conversations, practical wisdom, and faith-centered encouragement to help you move forward with confidence and clarity.</p>
+            </div>
+
+            <!-- Podcast Cover + Description -->
+            <div class="podcast-content">
+                <div class="podcast-cover-wrapper">
+                    <img src="https://i.imgur.com/a7d1I1i.jpg" alt="Write Over Coffeee Podcast cover" class="podcast-cover">
+                </div>
+                <div class="podcast-description">
+                    <p>Liz is an author, speaker, and truth-teller dedicated to helping men and women break unhealthy cycles, find healing, and live intentionally. On this podcast, she shares raw conversations, practical wisdom, and faith-centered encouragement to help you move forward with confidence and clarity.</p>
+                </div>
+            </div>
+
+            <!-- Listen on platforms -->
+            <div class="podcast-listen">
+                <h2>Listen on your favorite platform</h2>
+                <div class="podcast-platforms">
+                    <a href="#" title="Apple Podcasts" aria-label="Apple Podcasts"><i class="fab fa-apple"></i></a>
+                    <a href="#" title="Spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                    <a href="#" title="Amazon Music" aria-label="Amazon Music"><i class="fab fa-amazon"></i></a>
+                    <a href="https://www.podbean.com" target="_blank" rel="noopener" title="Podbean" aria-label="Podbean"><i class="fas fa-podcast"></i></a>
+                    <a href="#" title="Google Podcasts" aria-label="Google Podcasts"><i class="fab fa-google"></i></a>
+                </div>
+            </div>
+
+            <!-- Embedded Player -->
+            <div class="podcast-player-wrapper">
+                <iframe title="Write Over Coffeee Podcast" allowtransparency="true" height="315" width="100%" style="border: none; min-width: min(100%, 430px); height:315px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=wtiej-151a57b-pbblog-playlist&share=1&download=1&rtl=0&fonts=Arial&skin=1&font-color=auto&logo_link=episode_page&order=episodic&limit=10&filter=all&ss=a713390a017602015775e868a2cf26b0&btn-skin=7&size=315" loading="lazy" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Elizabeth K. Green. All rights reserved.</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@writeovercoffee?_r=1&_t=ZP-93VZwXl0TWR" target="_blank" rel="noopener" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61587353464992" target="_blank" rel="noopener" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/egreen2828?igsh=eXliNzJxNjR1Njlu&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@writeovercoffeee" target="_blank" rel="noopener" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="mailto:writeovercoffeee@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
