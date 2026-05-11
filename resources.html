@@ -111,6 +111,58 @@
             }
         }
         
+        .review-section {
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .review-section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.02em;
+        }
+        
+        .review-card {
+            background-color: var(--bg-secondary-pink);
+            border: 1px solid var(--color-accent);
+            border-radius: 8px;
+            padding: var(--spacing-lg);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .review-card .review-quote-icon {
+            color: var(--color-accent);
+            font-size: 1.75rem;
+            margin-bottom: var(--spacing-sm);
+            opacity: 0.85;
+        }
+        
+        .review-card blockquote {
+            margin: 0;
+            padding: 0;
+            border: none;
+            font-family: var(--font-secondary);
+            font-size: 1.15rem;
+            line-height: 1.85;
+            color: var(--text-primary);
+            text-align: left;
+        }
+        
+        .review-card cite {
+            display: block;
+            margin-top: var(--spacing-md);
+            font-style: normal;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-align: right;
+            font-family: var(--font-primary);
+        }
+        
         @media (max-width: 768px) {
             .prayer-section-wrapper {
                 grid-template-columns: 1fr;
@@ -122,6 +174,14 @@
             
             .resource-header .page-intro {
                 font-size: 1.1rem;
+            }
+            
+            .review-section-title {
+                font-size: 1.85rem;
+            }
+            
+            .review-card blockquote {
+                font-size: 1.05rem;
             }
         }
     </style>
@@ -173,6 +233,17 @@
                     <p>
                         Sometimes, all we need is someone to listen and pray with us. You can use the prayer request form to share what's on your heart. Whether you're seeking comfort, guidance, or simply a moment of prayer, I'm here to walk alongside you in faith and support.
                     </p>
+                </div>
+
+                <div class="review-section" aria-labelledby="review-heading">
+                    <h2 id="review-heading" class="review-section-title">What clients are saying</h2>
+                    <div class="review-card">
+                        <div class="review-quote-icon" aria-hidden="true"><i class="fas fa-quote-left"></i></div>
+                        <blockquote>
+                            <p>I have been seeing this grief coach for about 2 months now and I couldn't be happier with my decision to hire her. She is such a kind and wonderful person. She actually listens to me and has helped me even in our short time working together. I have trust issues so that says a lot for her. I trust her completely. I know she will be tough on me when I need it and she will be gentle with me when I need that. She is very dedicated to helping her clients and getting to the root of their problems. I recommend her 100%. She will help you work through all your problems guide you to feel more confident in your journey to self healing. I just love her to pieces !</p>
+                            <cite>— AJ</cite>
+                        </blockquote>
+                    </div>
                 </div>
 
                 <div class="prayer-section-wrapper">
