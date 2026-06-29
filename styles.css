@@ -268,11 +268,11 @@ a:hover {
 }
 
 .hero-intro {
-    margin-top: clamp(2rem, 4vw, 3rem);
+    margin-top: clamp(0.75rem, 1.5vw, 1.25rem);
 }
 
 .hero-intro-accent {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .hero-intro-accent-icon {
