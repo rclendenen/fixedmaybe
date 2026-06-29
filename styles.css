@@ -204,16 +204,16 @@ a:hover {
 .hero {
     position: relative;
     width: 100%;
-    min-height: 95vh;
+    min-height: auto;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding: clamp(120px, 14vw, 180px) clamp(1.5rem, 6vw, 5rem);
+    justify-content: center;
+    padding: clamp(100px, 12vw, 140px) clamp(1.5rem, 5vw, 4rem);
     background-image: url('https://i.imgur.com/gsxFi4E.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .hero::before {
@@ -223,7 +223,7 @@ a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.3);
     z-index: 1;
 }
 
@@ -231,15 +231,78 @@ a:hover {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1400px;
-    margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0;
 }
 
-.hero-text {
-    max-width: 650px;
-    text-align: left;
+.hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 38%);
+    gap: clamp(2.5rem, 5vw, 4.5rem);
+    align-items: center;
+    width: 100%;
     animation: heroFadeUp 700ms ease-out both;
+}
+
+.hero-text {
+    min-width: 0;
+    text-align: left;
+}
+
+.hero-image-wrapper {
+    width: 100%;
+    max-width: 420px;
+    justify-self: end;
+    align-self: center;
+}
+
+.hero-portrait {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 22px;
+    box-shadow: 0 12px 40px rgba(31, 46, 74, 0.08);
+    display: block;
+}
+
+.hero-intro {
+    margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.hero-intro-accent {
+    margin-bottom: 1rem;
+}
+
+.hero-intro-accent-icon {
+    font-size: 0.75rem;
+    color: var(--hero-gold);
+    opacity: 0.9;
+}
+
+.hero-intro-heading {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: clamp(1.65rem, 2.8vw, 2.35rem);
+    line-height: 1.35;
+    color: var(--hero-navy);
+    margin-bottom: 1rem;
+    letter-spacing: 0.01em;
+}
+
+.hero-intro-name {
+    font-weight: 700;
+}
+
+.hero-intro-body {
+    font-family: var(--font-secondary);
+    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--hero-body);
+    max-width: 550px;
+    margin: 0;
 }
 
 .hero .hero-title {
@@ -305,93 +368,8 @@ a:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hero-text {
+    .hero-layout {
         animation: none;
-    }
-}
-
-/* Introduction Section */
-.intro-section {
-    padding: clamp(80px, 10vw, 120px) var(--spacing-md);
-    background-color: transparent;
-}
-
-.intro-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 40% 1fr;
-    gap: clamp(3.75rem, 5vw, 5rem);
-    align-items: center;
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 700ms ease-out, transform 700ms ease-out;
-}
-
-.intro-section.is-visible .intro-container {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.intro-image-wrapper {
-    width: 100%;
-}
-
-.intro-image {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 22px;
-    box-shadow: 0 12px 40px rgba(31, 46, 74, 0.08);
-    display: block;
-}
-
-.intro-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.intro-accent {
-    margin-bottom: 1.25rem;
-}
-
-.intro-accent-icon {
-    font-size: 0.75rem;
-    color: var(--hero-gold);
-    opacity: 0.9;
-}
-
-.intro-heading {
-    font-family: var(--font-primary);
-    font-weight: 600;
-    font-size: clamp(1.85rem, 3.5vw, 2.75rem);
-    line-height: 1.35;
-    color: var(--hero-navy);
-    margin-bottom: 1.25rem;
-    letter-spacing: 0.01em;
-}
-
-.intro-name {
-    font-weight: 700;
-}
-
-.intro-body {
-    font-family: var(--font-secondary);
-    font-size: clamp(1rem, 1.8vw, 1.125rem);
-    font-weight: 400;
-    line-height: 1.8;
-    color: var(--hero-body);
-    max-width: 550px;
-    margin: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .intro-container {
-        opacity: 1;
-        transform: none;
-        transition: none;
     }
 }
 
@@ -881,8 +859,11 @@ a:hover {
     }
     
     .hero {
-        min-height: 90vh;
-        padding: clamp(100px, 12vw, 140px) clamp(2rem, 5vw, 4rem);
+        padding: clamp(100px, 12vw, 130px) clamp(2rem, 4vw, 3rem);
+    }
+
+    .hero-layout {
+        gap: clamp(2rem, 4vw, 3rem);
     }
     
     .hero-line--headline {
@@ -895,10 +876,6 @@ a:hover {
     
     .hero-line--script {
         font-size: clamp(2.75rem, 6vw, 4.25rem);
-    }
-
-    .intro-container {
-        gap: clamp(2rem, 4vw, 3.5rem);
     }
     
     .events-grid {
@@ -940,9 +917,34 @@ a:hover {
     .container {
         max-width: 1200px;
     }
-    
-    .hero {
-        min-height: 95vh;
+}
+
+/* Hero stacks on tablet portrait and below */
+@media (max-width: 900px) {
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .hero-text {
+        text-align: center;
+        order: 1;
+    }
+
+    .hero-image-wrapper {
+        order: 2;
+        justify-self: center;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .hero-intro-body {
+        margin: 0 auto;
+    }
+
+    .hero-divider {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -987,20 +989,11 @@ a:hover {
     
     /* Fix hero overlap with sticky nav; iOS Safari address bar */
     .hero {
-        min-height: 100vh;
-        min-height: -webkit-fill-available;
-        padding: clamp(100px, 18vw, 130px) var(--spacing-md) clamp(80px, 12vw, 120px);
-        justify-content: center;
+        padding: clamp(100px, 18vw, 120px) var(--spacing-md) clamp(64px, 10vw, 96px);
     }
-    
-    .hero-content {
-        display: flex;
-        justify-content: center;
-    }
-    
-    .hero-text {
-        text-align: center;
-        margin: 0 auto;
+
+    .hero .hero-intro-heading {
+        font-size: clamp(1.55rem, 5.5vw, 2rem);
     }
     
     .hero-divider {
@@ -1021,29 +1014,6 @@ a:hover {
     .hero-line--script {
         font-size: clamp(2.5rem, 10vw, 3.75rem);
         line-height: 1.35;
-    }
-
-    .intro-section {
-        padding: clamp(48px, 12vw, 80px) var(--spacing-md);
-    }
-
-    .intro-container {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-        text-align: center;
-    }
-
-    .intro-image-wrapper {
-        max-width: 340px;
-        margin: 0 auto;
-    }
-
-    .intro-content {
-        align-items: center;
-    }
-
-    .intro-body {
-        margin: 0 auto;
     }
     
     .btn {
@@ -1140,31 +1110,27 @@ a:hover {
     }
     
     .hero {
-        padding: 90px var(--spacing-sm) 70px;
+        padding: 90px var(--spacing-sm) 56px;
     }
-    
+
     .hero-line--headline {
         font-size: clamp(1.6rem, 7vw, 2rem);
     }
-    
+
     .hero-line--accent {
         font-size: clamp(1.4rem, 6vw, 1.85rem);
     }
-    
+
     .hero-line--script {
         font-size: clamp(2.25rem, 11vw, 3.25rem);
     }
 
-    .intro-section {
-        padding: 48px var(--spacing-sm);
+    .hero-image-wrapper {
+        max-width: 260px;
     }
 
-    .intro-image-wrapper {
-        max-width: 280px;
-    }
-
-    .intro-heading {
-        font-size: clamp(1.6rem, 7vw, 2rem);
+    .hero .hero-intro-heading {
+        font-size: clamp(1.5rem, 7vw, 1.85rem);
     }
     
     .events-section h2,
