@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize flip cards
     initFlipCards();
+
+    // Initialize scroll animations
+    initScrollAnimations();
 });
 
 // Initialize EmailJS
@@ -612,4 +615,30 @@ function showMessage(message, type = 'info') {
             setTimeout(() => messageEl.remove(), 300);
         }
     }, 5000);
+}
+
+// Subtle fade-up when sections enter the viewport
+function initScrollAnimations() {
+    const sections = document.querySelectorAll('.intro-section');
+
+    if (!sections.length) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        sections.forEach(section => section.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    sections.forEach(section => observer.observe(section));
 }
