@@ -99,11 +99,10 @@
         }
         
         .speaking-topics-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-lg);
             margin-top: var(--spacing-md);
-            align-items: start;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .speaking-topics {
@@ -114,12 +113,21 @@
             text-align: center;
         }
         
-        .speaking-topics-image {
+        .speaking-photos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+            max-width: 720px;
+            margin: 0 auto var(--spacing-lg);
+        }
+        
+        .speaking-photos img {
             width: 100%;
-            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(44, 44, 44, 0.1);
-            object-fit: cover;
+            display: block;
         }
         
         .speaking-topics h3 {
@@ -239,10 +247,6 @@
                 font-size: 4.5rem;
             }
             
-            .speaking-topics-wrapper {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-md);
-            }
         }
         
         @media (max-width: 768px) {
@@ -271,9 +275,8 @@
                 font-size: 1.1rem;
             }
             
-            .speaking-topics-wrapper {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-md);
+            .speaking-photos {
+                gap: var(--spacing-sm);
             }
         }
     </style>
@@ -330,15 +333,16 @@
                             </a>
                         </div>
                     </div>
-                    <div>
-                        <img src="https://i.imgur.com/qaZsImk.jpg" alt="Speaking Engagements" class="speaking-topics-image">
-                    </div>
                 </div>
             </div>
 
             <!-- Speaking sample video -->
             <div class="speaking-section speaking-video-section">
                 <h2>Speaking sample</h2>
+                <div class="speaking-photos">
+                    <img src="https://i.imgur.com/641HhG5.jpg" alt="Elizabeth K. Green speaking engagement">
+                    <img src="https://i.imgur.com/DymUypd.jpg" alt="Elizabeth K. Green speaking engagement">
+                </div>
                 <div class="speaking-video-wrapper">
                     <video controls playsinline preload="metadata" title="Elizabeth K. Green speaking">
                         <source src="https://i.imgur.com/wKnvTGr.mp4" type="video/mp4">
