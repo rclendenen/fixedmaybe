@@ -68,7 +68,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: var(--spacing-xl);
-            align-items: center;
+            align-items: stretch;
             margin-top: var(--spacing-lg);
         }
         
@@ -78,6 +78,7 @@
             padding: var(--spacing-lg);
             border-radius: 8px;
             text-align: center;
+            height: 100%;
         }
         
         .prayer-form-container h3 {
@@ -93,12 +94,21 @@
             text-align: left;
         }
         
+        .resource-image-wrapper {
+            position: relative;
+            height: 100%;
+            min-height: 0;
+        }
+        
         .resource-image {
+            position: absolute;
+            inset: 0;
             width: 100%;
-            height: auto;
+            height: 100%;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(44, 44, 44, 0.1);
             object-fit: cover;
+            display: block;
         }
         
         @media (min-width: 768px) and (max-width: 1024px) {
@@ -166,6 +176,12 @@
         @media (max-width: 768px) {
             .prayer-section-wrapper {
                 grid-template-columns: 1fr;
+            }
+            
+            .resource-image-wrapper {
+                position: relative;
+                min-height: 320px;
+                height: 320px;
             }
             
             .resource-header h1 {
@@ -245,7 +261,7 @@
                             </button>
                         </form>
                     </div>
-                    <div>
+                    <div class="resource-image-wrapper">
                         <img src="https://i.imgur.com/RyyEFse.jpg" alt="Resources" class="resource-image">
                     </div>
                 </div>
