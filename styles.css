@@ -31,6 +31,8 @@
     --bg-linen: var(--bg-primary);
     --color-greige: var(--color-accent);
     --color-charcoal: var(--text-primary);
+    --color-eucalyptus: var(--color-accent);
+    --primary-color: var(--color-accent);
     
     /* Typography */
     --font-primary: 'Playfair Display', serif;
@@ -74,6 +76,11 @@ body {
     background-repeat: no-repeat;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* iOS Safari: fixed background can cause jank; use scroll on touch devices */
@@ -677,7 +684,7 @@ a:hover {
 
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: var(--spacing-lg);
     margin-top: var(--spacing-lg);
 }
@@ -893,6 +900,8 @@ a:hover {
     
     .nav-menu {
         gap: var(--spacing-sm);
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .content-grid-2 {
