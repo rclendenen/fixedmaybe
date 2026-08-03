@@ -100,7 +100,7 @@
         
         .speaking-topics-wrapper {
             margin-top: var(--spacing-md);
-            max-width: 800px;
+            max-width: 720px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -108,8 +108,9 @@
         .speaking-topics {
             background-color: var(--bg-primary);
             border: 1px solid var(--color-accent);
-            padding: var(--spacing-lg);
+            padding: var(--spacing-xl) var(--spacing-lg);
             border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(44, 44, 44, 0.08);
             text-align: center;
         }
         
@@ -131,60 +132,67 @@
         }
         
         .speaking-topics h3 {
-            margin-bottom: var(--spacing-md);
-            font-size: 2.25rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--text-primary);
+            margin: 0 auto var(--spacing-md);
+            max-width: 600px;
             line-height: 1.25;
         }
         
-        .speaking-topics > p {
-            text-align: center;
-            max-width: 640px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: var(--spacing-lg);
-            line-height: 1.75;
+        .speaking-topics-intro {
+            font-size: 1.1rem;
+            line-height: 1.8;
             color: var(--text-secondary);
+            max-width: 640px;
+            margin: 0 auto var(--spacing-xl);
+            text-align: center;
         }
         
         .speaking-topic-list {
             list-style: none;
             padding: 0;
-            margin: 0 0 var(--spacing-lg);
-            text-align: left;
+            margin: 0 0 var(--spacing-xl);
+            text-align: center;
         }
         
         .speaking-topic-list li {
             padding: var(--spacing-md) 0;
-            border-top: 1px solid var(--color-greige);
+            max-width: 640px;
+            margin: 0 auto;
         }
         
-        .speaking-topic-list li:last-child {
-            border-bottom: 1px solid var(--color-greige);
+        .speaking-topic-list li + li {
+            margin-top: var(--spacing-sm);
+            border-top: 1px solid var(--color-greige);
+            padding-top: var(--spacing-lg);
         }
         
         .speaking-topic-list h4 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.35rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin: 0 0 var(--spacing-xs);
+            margin: 0 0 var(--spacing-sm);
+            text-align: center;
         }
         
         .speaking-topic-list p {
             margin: 0;
-            line-height: 1.7;
+            font-size: 1.05rem;
+            line-height: 1.8;
             color: var(--text-secondary);
-            text-align: left;
+            text-align: center;
         }
         
         .speaking-topics-closing {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
             text-align: center;
             max-width: 640px;
             margin: 0 auto;
-            line-height: 1.75;
-            color: var(--text-secondary);
         }
         
         .speaking-video-section {
@@ -340,9 +348,13 @@
             <!-- Speaking Topics -->
             <div class="speaking-section">
                 <div class="speaking-topics-wrapper">
+                    <div class="speaking-photos">
+                        <img src="https://i.imgur.com/641HhG5.jpg" alt="Elizabeth K. Green speaking engagement">
+                        <img src="https://i.imgur.com/DymUypd.jpg" alt="Elizabeth K. Green speaking engagement">
+                    </div>
                     <div class="speaking-topics">
-                        <h3>Speaking Engagements</h3>
-                        <p>Elizabeth speaks with warmth, honesty, and a touch of humor, creating a space where women feel as though they are sitting together over coffee with a trusted friend. Through personal stories, biblical truth, and heartfelt encouragement, she reminds women that they are seen, their stories matter, and God is still working—even in the seasons they never expected.</p>
+                        <h3>Speaking Topics</h3>
+                        <p class="speaking-topics-intro">Elizabeth speaks with warmth, honesty, and a touch of humor, creating a space where women feel as though they are sitting together over coffee with a trusted friend. Through personal stories, biblical truth, and heartfelt encouragement, she reminds women that they are seen, their stories matter, and God is still working—even in the seasons they never expected.</p>
                         <ul class="speaking-topic-list">
                             <li>
                                 <h4>Hope in the Hard Seasons</h4>
