@@ -100,7 +100,7 @@
         
         .speaking-topics-wrapper {
             margin-top: var(--spacing-md);
-            max-width: 720px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -132,35 +132,59 @@
         
         .speaking-topics h3 {
             margin-bottom: var(--spacing-md);
-            font-size: 2.5rem;
+            font-size: 2.25rem;
             font-weight: 700;
             color: var(--text-primary);
+            line-height: 1.25;
         }
         
-        .speaking-topics p {
+        .speaking-topics > p {
             text-align: center;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.75;
+            color: var(--text-secondary);
         }
         
-        .speaking-topics ul {
+        .speaking-topic-list {
             list-style: none;
-            padding-left: 0;
-            text-align: center;
-            display: inline-block;
-        }
-        
-        .speaking-topics li {
-            padding: var(--spacing-xs) 0;
-            padding-left: var(--spacing-md);
-            position: relative;
+            padding: 0;
+            margin: 0 0 var(--spacing-lg);
             text-align: left;
         }
         
-        .speaking-topics li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--color-accent);
-            font-weight: bold;
+        .speaking-topic-list li {
+            padding: var(--spacing-md) 0;
+            border-top: 1px solid var(--color-greige);
+        }
+        
+        .speaking-topic-list li:last-child {
+            border-bottom: 1px solid var(--color-greige);
+        }
+        
+        .speaking-topic-list h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 var(--spacing-xs);
+        }
+        
+        .speaking-topic-list p {
+            margin: 0;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            text-align: left;
+        }
+        
+        .speaking-topics-closing {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.75;
+            color: var(--text-secondary);
         }
         
         .speaking-video-section {
@@ -309,7 +333,7 @@
                     <h1>Speaking Engagements</h1>
                 </div>
                 <div class="speaking-header-intro">
-                    <p class="page-intro">Elizabeth shares her story of grief, healing, and hope through powerful speaking engagements. Available for book clubs, women's groups, grief support events, and faith-based gatherings.</p>
+                    <p class="page-intro">Real Stories. Honest Faith. Hope for Every Season.</p>
                 </div>
             </div>
 
@@ -317,15 +341,35 @@
             <div class="speaking-section">
                 <div class="speaking-topics-wrapper">
                     <div class="speaking-topics">
-                        <h3>Speaking Topics</h3>
-                        <p>Elizabeth is available for book clubs, speaking engagements, special events, and community-focused programs. She also works closely with <strong>nursing homes, hospice care teams, caregivers, and families</strong>, offering compassionate conversations that bring comfort, understanding, and hope.</p>
-                        <ul>
-                            <li><strong>Compassionate Conversations for Nursing Homes & Hospice Communities</strong></li>
-                            <li><strong>Supporting Caregivers & Families</strong></li>
-                            <li>Grief and Healing</li>
-                            <li>Faith and Family</li>
-                            <li>Finding Hope in Loss</li>
+                        <h3>Speaking Engagements</h3>
+                        <p>Elizabeth speaks with warmth, honesty, and a touch of humor, creating a space where women feel as though they are sitting together over coffee with a trusted friend. Through personal stories, biblical truth, and heartfelt encouragement, she reminds women that they are seen, their stories matter, and God is still working—even in the seasons they never expected.</p>
+                        <ul class="speaking-topic-list">
+                            <li>
+                                <h4>Hope in the Hard Seasons</h4>
+                                <p>Encouragement for women walking through uncertainty, disappointment, emotional exhaustion, or seasons when hope feels difficult to hold onto.</p>
+                            </li>
+                            <li>
+                                <h4>Unspoken Goodbyes</h4>
+                                <p>Inspired by Elizabeth’s book, this message explores the many forms of grief—from losing someone we love to experiencing estrangement, changing relationships, caregiving, or the loss of the life we once knew.</p>
+                            </li>
+                            <li>
+                                <h4>Finding Strength Through Grief</h4>
+                                <p>An honest and compassionate conversation about making room for grief, discovering strength in vulnerability, and finding hope while learning to live within a new normal.</p>
+                            </li>
+                            <li>
+                                <h4>ProdaGal: Faith in the Waiting</h4>
+                                <p>Inspired by Elizabeth’s upcoming Bible study, <em>ProdaGal</em>, this message speaks to the heart of the woman who is praying, waiting, and trusting God with someone she loves. It offers encouragement for surrendering what we cannot control and allowing Jesus to meet us in the waiting.</p>
+                            </li>
+                            <li>
+                                <h4>Resilience Rooted in Faith</h4>
+                                <p>A message about rising after life changes, rebuilding after disappointment, and discovering that resilience does not mean having it all together—it means continuing to trust God one faithful step at a time.</p>
+                            </li>
+                            <li>
+                                <h4>Seen, Loved, and Never Alone</h4>
+                                <p>Created for women’s conferences, retreats, Bible studies, and special gatherings, this message reminds women of every age and season that their identity is not defined by grief, fear, rejection, or past mistakes, but by the truth of who God says they are.</p>
+                            </li>
                         </ul>
+                        <p class="speaking-topics-closing">Elizabeth is available for women’s conferences, church retreats, Bible studies, grief gatherings, podcasts, community events, and intimate coffee-and-conversation settings. Each message can be thoughtfully shaped around the heart, theme, and needs of your gathering.</p>
                         <div style="text-align: center; margin-top: var(--spacing-lg);">
                             <a href="booking.html" class="btn btn-primary" style="font-size: 1.5rem; padding: 1.5rem 3rem; font-weight: 600;">
                                 <i class="fas fa-calendar-check"></i>
